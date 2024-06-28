@@ -1,0 +1,10 @@
+git init
+git add origin "direcciones del repo.git"
+git config --global push.default current
+quarto render
+git add docs
+git commit -m "Publish site to docs/"
+git push
+
+----
+

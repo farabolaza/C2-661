@@ -1,0 +1,38 @@
+---
+title: "TP 03 Arrays y Numpy qmd"
+jupyter: python3
+---
+
+# Arrays en Python
+
+Para resolver esta guía pueden revisar el [apunte](https://colab.research.google.com/drive/1ouJhLmE5PclOwe19QgzcstNqBrAlAN5N) que tienen sobre elementos básicos de Python, en particular apartado sobre *listas*.
+
+Nos basaremos tanto en listas de Python como en arrays de Numpy. Ambos objetos tienen sus particularidades y elegir uno u otro dependerá de las necesidades de cada caso.
+
+## 1. Números hasta que se ingrese cero
+
+::: panel-tabset
+## Consigna
+
+Realizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. El Programa debe imprimir luego todos los números ingresados.
+
+## Solución
+
+Un enfoque lineal consiste en pedir valores dentro de un bucle while hasta que se ingrese el cero, guardando en cada ciclo el valor del número ingresado en una lista y luego imprimrir esa lista.
+
+``` python
+entrada = int(input('ingrese un número entero: ')) listado = [] # creo una lista vacía para ir llenándola  while entrada != 0:   listado.append(entrada)   entrada = int(input('ingrese un número entero: ')) print(listado)
+```
+:::
+
+``` {python}
+#| eval: false
+
+entrada = int(input('ingrese un número entero: '))
+listado = [] # creo una lista vacía para ir llenándola
+
+while entrada != 0:
+  listado.append(entrada)
+  entrada = int(input('ingrese un número entero: '))
+print(listado)
+```

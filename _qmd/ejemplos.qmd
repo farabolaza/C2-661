@@ -1,0 +1,71 @@
+---
+title: " Computación 2-661"
+subtitle: "INSPT UTN: Física y física aplicada"
+format: html
+title-block-banner: "dark"
+page-layout: full
+sidebar: false
+toc: false
+navbar: true
+---
+
+::: {layout-ncol="3"}
+
+### **Profesor**
+- {{< fa user >}}  Prof. Federico Arabolaza
+- {{< fa envelope >}}  federico.arabolaza@institución.com
+- {{< fa building-columns >}}  INSPT UTN
+
+### Cursada
+- {{< fa location-dot >}}   Triunvirato
+- {{< fa clock >}}  Martes de 19:00 a 20:20
+- 
+
+### Secciones
+- {{< fa calendar-check >}}  Programa de la materia
+- {{< fa calendar-days >}}  Calendario de clases
+- {{< fa file-pen >}}  Prácticas
+- {{< fa file-lines >}}  Apuntes
+- {{< fa file-pdf >}}  Bibliografía
+- {{< fa file-arrow-down >}}  Descargars
+
+:::
+
+---------
+
+Luego hay otras cosas
+
+::: {layout-ncol="2"}
+### List One
+
+-   Item A
+-   Item B
+-   Item C
+
+### List Two
+
+-   Item X
+-   Item Y
+-   Item Z
+:::
+
+::: {layout-ncol=2}
+
+- Item X
+- Item Y
+- Item Z
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. 
+:::
+
+
+:::{.column-body style="background-color: blue"}
+# Computación 1-661
+## INSPT UTN: Física y física aplicada
+:::
+
+::: {.lead}
+Este texto debería tener este formato
+:::
+
+----------

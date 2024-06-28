@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+  
+
+website:
+  title: "C2-661"
+  description: "Materia de la carrera Física y Física Aplicada"
+  page-navigation: true
+  navbar: 
+    pinned: false
+    logo: utn.png
+    background: primary
+    right:
+      - text: "Apuntes"
+        file: 00 apuntes.qmd
+      - text: "Prácticas"
+        file: 00 practicas.qmd
+
+  sidebar:
+    subtitle: "C2-661"   
+    pinned: false
+    align: left
+    background: primary
+    border: false
+    type: dark
+    style: "docked"
+    collapse-level: 1
+    search: true
+    contents: 
+      - auto: Apuntes
+      - auto: Prácticas
+
+
+format:
+  html:
+    lang: "es"
+    code-overflow: wrap
+    css: styles.css
+    theme:
+      light: [litera,custom.scss]
+      dark: darkly
+    toc: true
+    code-tools: true
+    grid:
+      sidebar-width: 250px
+      margin-width: 350px
+      gutter-width: 1.5rem
+
+execute: 
+  freeze: auto

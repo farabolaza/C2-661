@@ -1,0 +1,87 @@
+---
+title: "matplotlib demo"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+For a demonstration of a line plot on a polar axis, see @fig-polar.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+::: {#exr-un-problema}
+# Problema dificil
+Esta es una pregunta dificil
+:::
+
+::: {#sol-un-problema}
+Esta es la solución al problema anterior
+:::
+
+::: {#exr-otro}
+# Problema dificil
+Esta es una pregunta dificil
+:::
+
+::: {#sol-otro}
+Esta es la solución al problema anterior
+:::
+
+Ver el @exr-un-problema
+Ver el @exr-otro
+
+
+::: {.details}
+Algo que se oculta
+:::
+
+```{=html}
+<details>
+  <summary>System Requirements</summary>
+  <p>
+    Requires a computer running an operating system. The computer must have some
+    memory and ideally some kind of long-term storage. An input device as well
+    as some form of output device is recommended.
+  </p>
+</details>
+<details>
+  <summary>System Requirements</summary>
+  <p>
+    Requires a computer running an operating system. The computer must have some
+    memory and ideally some kind of long-term storage. An input device as well
+    as some form of output device is recommended.
+  </p>
+</details>
+```
+
+
+::: {#exr-}
+# Problema facil
+Esta es una pregunta dificil
+:::
+
+```{=html}
+<details>
+<summary>Solución</summary>
+
+::: {#sol-}
+Esta es la solución al problema fácil
+:::
+</details>

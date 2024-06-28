@@ -1,0 +1,62 @@
+---
+title: "Primer parcial"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+
+## Primer parcial
+
+::: {.#exr-primero}
+## Primer ejercicio
+
+Crear una función que devuelva tres arrays, uno para  el tiempo y otros dos para las posiciones de 
+un $x$ e $y$ en el plano para condiciones iniciales arbiatrarias ($a_x$,$a_y$,$v_x$,$v_y$,$x_0$,$y_0$,$\Delta t$) 
+de un cuerpo para un intervalo de tiempo dado.
+:::
+
+::: {.#exr-segundo}
+## Segundo ejercicio
+Sea $a_y=3$, $v_{0x}=10$ y $x_0=2$ genere un dataframe con valores creados con la función anterior 
+para el tiempo de vuelo del cuerpo y guardelo como .csv.
+:::
+
+::: {.#exr-tercero}
+## Tercer ejercicio
+
+Importe los datos del csv, conviértalos a arrays de numpy y haga gráficas $x(t)$, $y(t)$, $v_x(t)$, 
+$v_y(t)$ e $y(x)$ que incluyan los nombres de los ejes con sus rótulos respctivos.
+:::
+
+::: {.#exr-extra}
+## Cuarto ejercicio
+
+Haga una animación de la gráfica $y(x)$ para el tiempo de vuelo.
+:::
+
+
+``` python
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+def f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):
+
+    t = np.linspace(0,dt,50*dt)
+    x = ax*t**2 + v0x*t + x0
+    y = ay*t**2 + v0y*t + y0
+
+    yr = y[y>0]
+    xr = x[:len(y[y>0])]
+    tr = t[:len(y[y>0])]
+
+    d = np.array([tr,xr,yr])
+    d2 = pd.DataFrame(d.T, columns=['t','x','y'])
+
+    return d
+
+```

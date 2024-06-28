@@ -1,0 +1,7 @@
+---
+title: "Prácticas"
+subtitle: "Listado de prácticas"
+listing:
+  contents: Prácticas
+sidebar: true
+---

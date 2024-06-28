@@ -1,0 +1,12 @@
+{
+  "hash": "43d63f44b079ab463e5c6af90c23801b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: TP 03 Arrays y Numpy qmd\n---\n\n# Arrays en Python\n\nPara resolver esta guía pueden revisar el [apunte](https://colab.research.google.com/drive/1ouJhLmE5PclOwe19QgzcstNqBrAlAN5N) que tienen sobre elementos básicos de Python, en particular apartado sobre *listas*.\n\nNos basaremos tanto en listas de Python como en arrays de Numpy. Ambos objetos tienen sus particularidades y elegir uno u otro dependerá de las necesidades de cada caso.\n\n## 1. Números hasta que se ingrese cero\n\n::: panel-tabset\n## Consigna\n\nRealizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. El Programa debe imprimir luego todos los números ingresados.\n\n## Solución\n\nUn enfoque lineal consiste en pedir valores dentro de un bucle while hasta que se ingrese el cero, guardando en cada ciclo el valor del número ingresado en una lista y luego imprimrir esa lista.\n\n``` python\nentrada = int(input('ingrese un número entero: ')) listado = [] # creo una lista vacía para ir llenándola  while entrada != 0:   listado.append(entrada)   entrada = int(input('ingrese un número entero: ')) print(listado)\n```\n:::\n\n::: {#17d35139 .cell execution_count=1}\n``` {.python .cell-code}\nentrada = int(input('ingrese un número entero: '))\nlistado = [] # creo una lista vacía para ir llenándola\n\nwhile entrada != 0:\n  listado.append(entrada)\n  entrada = int(input('ingrese un número entero: '))\nprint(listado)\n```\n:::\n\n\n",
+    "supporting": [
+      "TP 03 Arrays2_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
