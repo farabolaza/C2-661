@@ -1,16 +1,5 @@
 [
   {
-    "listing": "/00 practicas.html",
-    "items": [
-      "/Prácticas/EV 01 1P 2024.html",
-      "/Prácticas/TP 01 Variables, entradas y salidas.html",
-      "/Prácticas/TP 02 Iteraciones.html",
-      "/Prácticas/TP 03 Arrays.html",
-      "/Prácticas/TP 04 Matplotlib.html",
-      "/Prácticas/TP 06 Sympy.html"
-    ]
-  },
-  {
     "listing": "/00 apuntes.html",
     "items": [
       "/Apuntes/01 Python intro 101 (2024).html",
@@ -20,8 +9,18 @@
       "/Apuntes/05 Matplotlib.html",
       "/Apuntes/06 Matplotlib_2.html",
       "/Apuntes/07 Scipy y Ajuste de curvas.html",
-      "/Apuntes/08 Sympy.html",
-      "/Apuntes/EV 01 1P 2024.html"
+      "/Apuntes/08 Sympy.html"
+    ]
+  },
+  {
+    "listing": "/00 practicas.html",
+    "items": [
+      "/Practicas/EV 01 1P 2024.html",
+      "/Practicas/TP 01 Variables, entradas y salidas.html",
+      "/Practicas/TP 02 Iteraciones.html",
+      "/Practicas/TP 03 Arrays.html",
+      "/Practicas/TP 04 Matplotlib.html",
+      "/Practicas/TP 06 Sympy.html"
     ]
   }
 ]

@@ -1,241 +1,241 @@
 [
   {
-    "objectID": "Prácticas/TP 06 Sympy.html",
-    "href": "Prácticas/TP 06 Sympy.html",
+    "objectID": "Practicas/TP 06 Sympy.html",
+    "href": "Practicas/TP 06 Sympy.html",
     "title": "TP 06 Sympy",
     "section": "",
     "text": "Ejercicios resueltos y para hacer\n\nimport sympy as smp\nimport pandas as pd\nimport numpy as np\n\n\n\nUn objeto que está cayendo con aceleración constante \\(g\\) se choca contra una plataforma que acelera hacia arriba:\n\nObjeto \\(h_o(t) = h_0 - v_o t - \\frac{1}{2}gt^2\\)\nPlatforma \\(h_p(t) = v_p t + \\frac{1}{2}qt^2\\)\n\nEncontrar la velocidad inciial del objeto \\(v_0\\) tal que cuando se encuentren ambos tengan la misma velocidad.\nTenemos que encontrar \\(v_0\\) y \\(t\\) en estas ecuaciones\n\n\\(h_0(t) = h_p(t)\\)\n$ (t) = - (t) $\n\nPara que funcionen en Sympy las tenemos que reescribir igualadas a cero\n\n\\(h_0(t) - h_p(t) = 0\\)\n\\(\\frac{dh_0}{dt} + \\frac{dh_p}{dt} = 0\\)\n\n\nt, h0, v0, g, vp, q = smp.symbols('t h_0 v_0 g v_p q', real=True, positive=True)\n# es una buena práctica achicar el ámbito o dominino de nuestras variables cuando\n# podemos asumirlo por restricciones físicas del problema. En este caso\n# podemos definir todas nuestras variables como reales y positivas\n\nDefinimos laexpresiones en sympy\n\nh0t = h0 - v0*t - smp.Rational(1,2)*g*t**2\ndh0dt = g*t - v0\nhpt = vp*t + smp.Rational(1,2)*q*t**2\ndhpdt = vp + q*t\n\nDefinimos las ecuaciones\n\neq1 = h0t - hpt\neq2 = dh0dt + dhpdt\n\nLas resolvemos usando smp.solve(). También existe el método o función solveset() que da los resultados en forma de conjunto y suele ser más general y poderosa que smp.solve().\n\nsmp.solve([eq1, eq2], [t, v0])[0]\n\n((-2*v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)/(g + q),\n v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)\n\n\n\nt_col, v_ini = smp.solve([eq1, eq2], [t, v0])[0]\n\n\nv_ini\n\n\\(\\displaystyle \\frac{v_{p}}{3} + \\frac{\\sqrt{2} \\sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}\\)\n\n\n\nt_col\n\n\\(\\displaystyle \\frac{- \\frac{2 v_{p}}{3} + \\frac{\\sqrt{2} \\sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}}{g + q}\\)\n\n\n¿A que velocidad se encuentran?\n\ndh0dt.subs([(t,t_col),(v0,v_ini)]).simplify()\n\n\\(\\displaystyle \\frac{- g v_{p} - \\frac{q v_{p}}{3} - \\frac{q \\sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\\)\n\n\n\ndhpdt.subs([(t,t_col),(v0,v_ini)]).simplify()\n\n\\(\\displaystyle \\frac{g v_{p} + \\frac{q v_{p}}{3} + \\frac{q \\sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\\)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 06 Sympy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 06 Sympy.html#encuentro-con-condiciones",
-    "href": "Prácticas/TP 06 Sympy.html#encuentro-con-condiciones",
+    "objectID": "Practicas/TP 06 Sympy.html#encuentro-con-condiciones",
+    "href": "Practicas/TP 06 Sympy.html#encuentro-con-condiciones",
     "title": "TP 06 Sympy",
     "section": "",
     "text": "Un objeto que está cayendo con aceleración constante \\(g\\) se choca contra una plataforma que acelera hacia arriba:\n\nObjeto \\(h_o(t) = h_0 - v_o t - \\frac{1}{2}gt^2\\)\nPlatforma \\(h_p(t) = v_p t + \\frac{1}{2}qt^2\\)\n\nEncontrar la velocidad inciial del objeto \\(v_0\\) tal que cuando se encuentren ambos tengan la misma velocidad.\nTenemos que encontrar \\(v_0\\) y \\(t\\) en estas ecuaciones\n\n\\(h_0(t) = h_p(t)\\)\n$ (t) = - (t) $\n\nPara que funcionen en Sympy las tenemos que reescribir igualadas a cero\n\n\\(h_0(t) - h_p(t) = 0\\)\n\\(\\frac{dh_0}{dt} + \\frac{dh_p}{dt} = 0\\)\n\n\nt, h0, v0, g, vp, q = smp.symbols('t h_0 v_0 g v_p q', real=True, positive=True)\n# es una buena práctica achicar el ámbito o dominino de nuestras variables cuando\n# podemos asumirlo por restricciones físicas del problema. En este caso\n# podemos definir todas nuestras variables como reales y positivas\n\nDefinimos laexpresiones en sympy\n\nh0t = h0 - v0*t - smp.Rational(1,2)*g*t**2\ndh0dt = g*t - v0\nhpt = vp*t + smp.Rational(1,2)*q*t**2\ndhpdt = vp + q*t\n\nDefinimos las ecuaciones\n\neq1 = h0t - hpt\neq2 = dh0dt + dhpdt\n\nLas resolvemos usando smp.solve(). También existe el método o función solveset() que da los resultados en forma de conjunto y suele ser más general y poderosa que smp.solve().\n\nsmp.solve([eq1, eq2], [t, v0])[0]\n\n((-2*v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)/(g + q),\n v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)\n\n\n\nt_col, v_ini = smp.solve([eq1, eq2], [t, v0])[0]\n\n\nv_ini\n\n\\(\\displaystyle \\frac{v_{p}}{3} + \\frac{\\sqrt{2} \\sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}\\)\n\n\n\nt_col\n\n\\(\\displaystyle \\frac{- \\frac{2 v_{p}}{3} + \\frac{\\sqrt{2} \\sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}}{g + q}\\)\n\n\n¿A que velocidad se encuentran?\n\ndh0dt.subs([(t,t_col),(v0,v_ini)]).simplify()\n\n\\(\\displaystyle \\frac{- g v_{p} - \\frac{q v_{p}}{3} - \\frac{q \\sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\\)\n\n\n\ndhpdt.subs([(t,t_col),(v0,v_ini)]).simplify()\n\n\\(\\displaystyle \\frac{g v_{p} + \\frac{q v_{p}}{3} + \\frac{q \\sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\\)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 06 Sympy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html",
-    "href": "Prácticas/TP 03 Arrays.html",
+    "objectID": "Practicas/TP 03 Arrays.html",
+    "href": "Practicas/TP 03 Arrays.html",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Para resolver esta guía pueden revisar el apunte que tienen sobre elementos básicos de Python, en particular apartado sobre listas.\nNos basaremos tanto en listas de Python como en arrays de Numpy. Ambos objetos tienen sus particularidades y elegir uno u otro dependerá de las necesidades de cada caso.\n\n\n\n\nRealizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. El Programa debe imprimir luego todos los números ingresados.\n\n\n\nUn enfoque lineal consiste en pedir valores dentro de un bucle while hasta que se ingrese el cero, guardando en cada ciclo el valor del número ingresado en una lista y luego imprimrir esa lista.\n\nentrada = int(input('ingrese un número entero: '))\nlistado = [] # creo una lista vacía para ir llenándola\n\nwhile entrada != 0:\n  listado.append(entrada)\n  entrada = int(input('ingrese un número entero: '))\nprint(listado)\n\ningrese un número entero:2\ningrese un número entero: 3\ningrese un número entero: 5\ningrese un número entero: 0\n[2, 3, 5]\n\n\n¿Cómo podrías emplear esto mismo dentro de una función?\n\n\n\n\n\n\nRealizar un programa que tome un arreglo de números A = [1, 5, 8, 3, 30, 9, 13]. El programa debe imprimir la suma de todos los elementos y el promedio.\n\n\n\nPodemos pedir los valores uno a uno, como en el caso anterior, o directamente usar los que existen en la lista. Debemos recorrer el listado, ya sea con un bucle for o uno while.\n\nA = [1,2,7,5,6,6,6,6,6,6,7,8]\n\n\nprint('Recorrer con un bucle for')\nfor elemento in A:\n\n  print(elemento)\n\n\nprint('Recorrer con un bucle while')\ni = 0\nwhile i &lt; len(A):\n\n  print(A[i])\n  i+=1\n\n\ndef sumapromedio(listado):\n  \"\"\"\n  Si se le provee una lista ejecuta la suma\n  y el promedio de los elementos de la misma\n  \"\"\"\n  if type(listado) != list:\n    print('de un a lista como entrada')\n  else:\n    suma = 0\n    longitud = len(listado)\n\n    for elemento in listado:\n      suma = suma + elemento\n    promedio = suma/longitud\n    return suma, promedio\n\n\n\n\nsumapromedio(A)\n\n(66, 5.5)\n\n\n\n\n\n\n\n\nCon el anterior arreglo, realizar un programa que solicite el ingreso de un número e imprima el elemento en la posición solicitada. Si llega a ingresarse un número mayor a la cantidad de elementos, el programa debe imprimir todos los elementos y aclarar esa situación.\n\n\n\n\ndef ubicar(arreglo,posicion):\n  \"\"\"\n  param arreglo: una lista\n  param posicion: el índice\n  \"\"\"\n\n  if type(arreglo) != list:\n    print('debe proveer una lista')\n  elif posicion &gt; len(arreglo):\n      print(arreglo)\n  else:\n    print(arreglo[posicion])\n\n\n\nubicar(A,0)\nubicar(A,5)\nubicar(A,16)\n\n[1, 2, 7, 5, 6, 6, 6, 6, 6, 6, 7, 8]\n\n\n\n\n\n\n\n\nRealizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero (que no debe ubicarse en el vector). Luego debe imprimir los elementos desde el último hasta el primero en orden inverso de carga.\n\n\n\nEn un enfoque lineal, este problema es parecido al primer ejercicio, sólo que al imprimir la lista, debemos darla en orden inverso. Para ello repasamos las ‘rebanadas’ o slices de las listas de python. Una de las siguientes operaciones de rebanado nos da la misma lista en orden inverso. En general un rebanado de lista es de la forma lista[desde:hasta:paso]\n\nB = [1,0,3,5,5,6,3,2]\n\nprint(B[0:2])\nprint(B[0::2])\nprint(B[:-1])\nprint(B[:-2])\nprint(B[::-2])\nprint(B[::-3])\nprint(B[::-1])\n\n[1, 0]\n[1, 3, 5, 3]\n[1, 0, 3, 5, 5, 6, 3]\n[1, 0, 3, 5, 5, 6]\n[2, 6, 5, 0]\n[2, 5, 0]\n[2, 3, 6, 5, 5, 3, 0, 1]\n\n\nCombinando ambas cosas, es posible llegar a una solución sin mayor esfuerzo.\n\n\n\n\n\n\nRealizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. A continuación debe imprimir el máximo, el promedio y la suma de todos los números ingresados.\n\n\n\nLo único nuevo de este ejercicio es que debemos ubicar el máximo. La solución cambia algo si lo pensamos de forma en que suponemos que los números son ingresados uno a uno o si provinenen de una lista ya existente.\nVamos a intentar el enfoque en donde los números se ingresan uno a uno.\n\nentrada = int(input('ingrese un número entero: '))\nlistado = [] # creo una lista vacía para ir llenándola\nmaximo = 0\nwhile entrada != 0:\n  if entrada &gt; maximo:\n    maximo = entrada\n  listado.append(entrada)\n  entrada = int(input('ingrese un número entero: '))\nprint(listado, maximo)\n\ningrese un número entero: 12\ningrese un número entero: 5\ningrese un número entero: 7\ningrese un número entero: 4\ningrese un número entero: 2\ningrese un número entero: 0\n[12, 5, 7, 4, 2] 12\n\n\n\n# Se puede hacer un poco de trampa y usar la función max\nC = [1,2,3,4,5,6,67]\nprint(max(C))\n\n67\n\n\n\n\n\n\n\n\nRealizar un programa que genere un vector tiempo con números del 0 al 3 con un paso de 0.1 segundos. A continuación se debe llenar un vector posiciones que calcule las posiciones correspondientes a un tiro vertical de 3 segundos de duración que comience con velocidad inicial 30 m/s, y una altura inicial de 45 m. Si ambos vectores tienen el mismo tamaño agregando\nimport matplotlib.pyplot as plt\nal principio del código, se pueden graficar ambos vectores mediante el comando plt.plot(t,y)\n\n\n\nLa parte física del problema no debería ser dificil, para crear un array tal como pide el problema, usamos la función arange de Numpy.\nOtra función que se puede usar para crear arrays es linspace\n\nimport numpy as np\n\nt = np.arange(0,3,0.1)\n\nprint(t)\n\n[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7\n 1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9]\n\n\n\n\n\n\n\n\nOrdenar de la manera tradicional un arreglo de menor a mayor, implementando un burbujeo o bubble sort.\n\n\n\nSe puede hacer trampa y usar las función sort o el método sorted\n\nL=[1,2,0,-1,3]\nprint(L)\nL.sort()\nprint(L) # modifica la lista original\n\nL2=[1,2,0,-1,3]\n\nN= sorted(L2) # no modifica la lista original\nprint(N)\nprint(L2)\n\n[1, 2, 0, -1, 3]\n[-1, 0, 1, 2, 3]\n[-1, 0, 1, 2, 3]\n[1, 2, 0, -1, 3]\n\n\nEn un enfoque funcional, podemos tener lo siguiente: calculamos la longitud del array, luego, lo recorremos con un bucle, dentro de ese bucle, vamos hasta el anteúltimo y comparamos los dos últimos elementos (el anteúltimo y el último), si estan ordenados de menor a mayor, los dejamos como están, sino, los invertimos y eso se hace para cada una de las posiciones dentro del bucle, lo que nos deja el array ordenado.\n\ndef burbuja(arreglo):\n    # Calculamos la longitud del arreglo para tener un código más limpio\n    longitud = len(arreglo)\n    # Recorremos todo el arreglo\n    for i in range(longitud):\n        # Dentro del ciclo, volvemos a recorrerlo. Pero ahora hasta el penúltimo elemento\n        for indice_actual in range(longitud - 1):\n            indice_siguiente_elemento = indice_actual + 1\n            # Si el actual es mayor que el siguiente, ...\n            # Nota: para un orden inverso, cambia `&gt;` por `&lt;`\n            if arreglo[indice_actual] &gt; arreglo[indice_siguiente_elemento]:\n                # ... intercambiamos los elementos\n                arreglo[indice_siguiente_elemento], arreglo[indice_actual] = arreglo[indice_actual], arreglo[indice_siguiente_elemento]\n    # No hace falta regresar nada, pues el arreglo ya fue modificado\n\n\n# Ejemplo\nmi_arreglo = [3, 4, 1, 2, 3, 7, 55, 34, 43, 3]\nprint(\"Original: \")\nprint(mi_arreglo)\nburbuja(mi_arreglo)\nprint(\"Ordenado: \")\nprint(mi_arreglo)\n\n\n\n\n\n\n\na=[]\nb=int(input(\"ingresa numero\"))\nwhile b :\n  a.append(b)\nb=int(input(\"ingresa numero\"))\nprint(a)\n10) ¿Qué muestra por pantalla el siguiente código?\na=[1,5,3,6,8,10]\nfor i in range(len(a)-2):\n  print(a[i])\n11) ¿Qué muestra por pantalla el siguiente código?\na=[1,5,3,6,8,10]\nfor b in a:\n  if b%2!=0:\n    print(b)\n\n\n\na=[1,50,13,6]\ni=0\nfor b in a:\n  if b%2==0:\n    print(a[i])\n    a.append(b-1)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#números-hasta-que-se-ingrese-cero",
-    "href": "Prácticas/TP 03 Arrays.html#números-hasta-que-se-ingrese-cero",
+    "objectID": "Practicas/TP 03 Arrays.html#números-hasta-que-se-ingrese-cero",
+    "href": "Practicas/TP 03 Arrays.html#números-hasta-que-se-ingrese-cero",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Realizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. El Programa debe imprimir luego todos los números ingresados.\n\n\n\nUn enfoque lineal consiste en pedir valores dentro de un bucle while hasta que se ingrese el cero, guardando en cada ciclo el valor del número ingresado en una lista y luego imprimrir esa lista.\n\nentrada = int(input('ingrese un número entero: '))\nlistado = [] # creo una lista vacía para ir llenándola\n\nwhile entrada != 0:\n  listado.append(entrada)\n  entrada = int(input('ingrese un número entero: '))\nprint(listado)\n\ningrese un número entero:2\ningrese un número entero: 3\ningrese un número entero: 5\ningrese un número entero: 0\n[2, 3, 5]\n\n\n¿Cómo podrías emplear esto mismo dentro de una función?",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#suma-y-promedio",
-    "href": "Prácticas/TP 03 Arrays.html#suma-y-promedio",
+    "objectID": "Practicas/TP 03 Arrays.html#suma-y-promedio",
+    "href": "Practicas/TP 03 Arrays.html#suma-y-promedio",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Realizar un programa que tome un arreglo de números A = [1, 5, 8, 3, 30, 9, 13]. El programa debe imprimir la suma de todos los elementos y el promedio.\n\n\n\nPodemos pedir los valores uno a uno, como en el caso anterior, o directamente usar los que existen en la lista. Debemos recorrer el listado, ya sea con un bucle for o uno while.\n\nA = [1,2,7,5,6,6,6,6,6,6,7,8]\n\n\nprint('Recorrer con un bucle for')\nfor elemento in A:\n\n  print(elemento)\n\n\nprint('Recorrer con un bucle while')\ni = 0\nwhile i &lt; len(A):\n\n  print(A[i])\n  i+=1\n\n\ndef sumapromedio(listado):\n  \"\"\"\n  Si se le provee una lista ejecuta la suma\n  y el promedio de los elementos de la misma\n  \"\"\"\n  if type(listado) != list:\n    print('de un a lista como entrada')\n  else:\n    suma = 0\n    longitud = len(listado)\n\n    for elemento in listado:\n      suma = suma + elemento\n    promedio = suma/longitud\n    return suma, promedio\n\n\n\n\nsumapromedio(A)\n\n(66, 5.5)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#encontrar-un-elemento-dado-un-índice",
-    "href": "Prácticas/TP 03 Arrays.html#encontrar-un-elemento-dado-un-índice",
+    "objectID": "Practicas/TP 03 Arrays.html#encontrar-un-elemento-dado-un-índice",
+    "href": "Practicas/TP 03 Arrays.html#encontrar-un-elemento-dado-un-índice",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Con el anterior arreglo, realizar un programa que solicite el ingreso de un número e imprima el elemento en la posición solicitada. Si llega a ingresarse un número mayor a la cantidad de elementos, el programa debe imprimir todos los elementos y aclarar esa situación.\n\n\n\n\ndef ubicar(arreglo,posicion):\n  \"\"\"\n  param arreglo: una lista\n  param posicion: el índice\n  \"\"\"\n\n  if type(arreglo) != list:\n    print('debe proveer una lista')\n  elif posicion &gt; len(arreglo):\n      print(arreglo)\n  else:\n    print(arreglo[posicion])\n\n\n\nubicar(A,0)\nubicar(A,5)\nubicar(A,16)\n\n[1, 2, 7, 5, 6, 6, 6, 6, 6, 6, 7, 8]",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#imprimir-en-orden-inverso",
-    "href": "Prácticas/TP 03 Arrays.html#imprimir-en-orden-inverso",
+    "objectID": "Practicas/TP 03 Arrays.html#imprimir-en-orden-inverso",
+    "href": "Practicas/TP 03 Arrays.html#imprimir-en-orden-inverso",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Realizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero (que no debe ubicarse en el vector). Luego debe imprimir los elementos desde el último hasta el primero en orden inverso de carga.\n\n\n\nEn un enfoque lineal, este problema es parecido al primer ejercicio, sólo que al imprimir la lista, debemos darla en orden inverso. Para ello repasamos las ‘rebanadas’ o slices de las listas de python. Una de las siguientes operaciones de rebanado nos da la misma lista en orden inverso. En general un rebanado de lista es de la forma lista[desde:hasta:paso]\n\nB = [1,0,3,5,5,6,3,2]\n\nprint(B[0:2])\nprint(B[0::2])\nprint(B[:-1])\nprint(B[:-2])\nprint(B[::-2])\nprint(B[::-3])\nprint(B[::-1])\n\n[1, 0]\n[1, 3, 5, 3]\n[1, 0, 3, 5, 5, 6, 3]\n[1, 0, 3, 5, 5, 6]\n[2, 6, 5, 0]\n[2, 5, 0]\n[2, 3, 6, 5, 5, 3, 0, 1]\n\n\nCombinando ambas cosas, es posible llegar a una solución sin mayor esfuerzo.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#encontrar-el-máximo",
-    "href": "Prácticas/TP 03 Arrays.html#encontrar-el-máximo",
+    "objectID": "Practicas/TP 03 Arrays.html#encontrar-el-máximo",
+    "href": "Practicas/TP 03 Arrays.html#encontrar-el-máximo",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Realizar un programa que solicite el ingreso de números enteros hasta que se ingrese el cero. A continuación debe imprimir el máximo, el promedio y la suma de todos los números ingresados.\n\n\n\nLo único nuevo de este ejercicio es que debemos ubicar el máximo. La solución cambia algo si lo pensamos de forma en que suponemos que los números son ingresados uno a uno o si provinenen de una lista ya existente.\nVamos a intentar el enfoque en donde los números se ingresan uno a uno.\n\nentrada = int(input('ingrese un número entero: '))\nlistado = [] # creo una lista vacía para ir llenándola\nmaximo = 0\nwhile entrada != 0:\n  if entrada &gt; maximo:\n    maximo = entrada\n  listado.append(entrada)\n  entrada = int(input('ingrese un número entero: '))\nprint(listado, maximo)\n\ningrese un número entero: 12\ningrese un número entero: 5\ningrese un número entero: 7\ningrese un número entero: 4\ningrese un número entero: 2\ningrese un número entero: 0\n[12, 5, 7, 4, 2] 12\n\n\n\n# Se puede hacer un poco de trampa y usar la función max\nC = [1,2,3,4,5,6,67]\nprint(max(C))\n\n67",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#vectores-de-tiempo-en-numpy",
-    "href": "Prácticas/TP 03 Arrays.html#vectores-de-tiempo-en-numpy",
+    "objectID": "Practicas/TP 03 Arrays.html#vectores-de-tiempo-en-numpy",
+    "href": "Practicas/TP 03 Arrays.html#vectores-de-tiempo-en-numpy",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Realizar un programa que genere un vector tiempo con números del 0 al 3 con un paso de 0.1 segundos. A continuación se debe llenar un vector posiciones que calcule las posiciones correspondientes a un tiro vertical de 3 segundos de duración que comience con velocidad inicial 30 m/s, y una altura inicial de 45 m. Si ambos vectores tienen el mismo tamaño agregando\nimport matplotlib.pyplot as plt\nal principio del código, se pueden graficar ambos vectores mediante el comando plt.plot(t,y)\n\n\n\nLa parte física del problema no debería ser dificil, para crear un array tal como pide el problema, usamos la función arange de Numpy.\nOtra función que se puede usar para crear arrays es linspace\n\nimport numpy as np\n\nt = np.arange(0,3,0.1)\n\nprint(t)\n\n[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7\n 1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9]",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#ordenamiento-tradicional",
-    "href": "Prácticas/TP 03 Arrays.html#ordenamiento-tradicional",
+    "objectID": "Practicas/TP 03 Arrays.html#ordenamiento-tradicional",
+    "href": "Practicas/TP 03 Arrays.html#ordenamiento-tradicional",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "Ordenar de la manera tradicional un arreglo de menor a mayor, implementando un burbujeo o bubble sort.\n\n\n\nSe puede hacer trampa y usar las función sort o el método sorted\n\nL=[1,2,0,-1,3]\nprint(L)\nL.sort()\nprint(L) # modifica la lista original\n\nL2=[1,2,0,-1,3]\n\nN= sorted(L2) # no modifica la lista original\nprint(N)\nprint(L2)\n\n[1, 2, 0, -1, 3]\n[-1, 0, 1, 2, 3]\n[-1, 0, 1, 2, 3]\n[1, 2, 0, -1, 3]\n\n\nEn un enfoque funcional, podemos tener lo siguiente: calculamos la longitud del array, luego, lo recorremos con un bucle, dentro de ese bucle, vamos hasta el anteúltimo y comparamos los dos últimos elementos (el anteúltimo y el último), si estan ordenados de menor a mayor, los dejamos como están, sino, los invertimos y eso se hace para cada una de las posiciones dentro del bucle, lo que nos deja el array ordenado.\n\ndef burbuja(arreglo):\n    # Calculamos la longitud del arreglo para tener un código más limpio\n    longitud = len(arreglo)\n    # Recorremos todo el arreglo\n    for i in range(longitud):\n        # Dentro del ciclo, volvemos a recorrerlo. Pero ahora hasta el penúltimo elemento\n        for indice_actual in range(longitud - 1):\n            indice_siguiente_elemento = indice_actual + 1\n            # Si el actual es mayor que el siguiente, ...\n            # Nota: para un orden inverso, cambia `&gt;` por `&lt;`\n            if arreglo[indice_actual] &gt; arreglo[indice_siguiente_elemento]:\n                # ... intercambiamos los elementos\n                arreglo[indice_siguiente_elemento], arreglo[indice_actual] = arreglo[indice_actual], arreglo[indice_siguiente_elemento]\n    # No hace falta regresar nada, pues el arreglo ya fue modificado\n\n\n# Ejemplo\nmi_arreglo = [3, 4, 1, 2, 3, 7, 55, 34, 43, 3]\nprint(\"Original: \")\nprint(mi_arreglo)\nburbuja(mi_arreglo)\nprint(\"Ordenado: \")\nprint(mi_arreglo)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 03 Arrays.html#otros-ejercicios",
-    "href": "Prácticas/TP 03 Arrays.html#otros-ejercicios",
+    "objectID": "Practicas/TP 03 Arrays.html#otros-ejercicios",
+    "href": "Practicas/TP 03 Arrays.html#otros-ejercicios",
     "title": "TP 03 Arrays y Numpy",
     "section": "",
     "text": "a=[]\nb=int(input(\"ingresa numero\"))\nwhile b :\n  a.append(b)\nb=int(input(\"ingresa numero\"))\nprint(a)\n10) ¿Qué muestra por pantalla el siguiente código?\na=[1,5,3,6,8,10]\nfor i in range(len(a)-2):\n  print(a[i])\n11) ¿Qué muestra por pantalla el siguiente código?\na=[1,5,3,6,8,10]\nfor b in a:\n  if b%2!=0:\n    print(b)\n\n\n\na=[1,50,13,6]\ni=0\nfor b in a:\n  if b%2==0:\n    print(a[i])\n    a.append(b-1)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 03 Arrays y Numpy"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "",
     "text": "Computación 2 - Física y física aplicada 2661 # TP 01: Variables, entradas y salidas",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#conversión-de-temperatura",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#conversión-de-temperatura",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#conversión-de-temperatura",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#conversión-de-temperatura",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Conversión de temperatura",
     "text": "Conversión de temperatura\n\nPlanteo\nEl usuario ingresa un número que representa una temperatura en °C. El programa imprime esa temperatura en F\n\n\nSolución\n\nprint(\"ingrese la temperatura en C\") # se imprime un mensaje\nC = float(input()) # se pide un valor por teclado y se lo convierte en número\nF =(C*1.80+32)\nprint(f\"La temperatura es {F} F\")\n\ningrese la temperatura en C\nh\n\n\nValueError: could not convert string to float: 'h'\n\n\n\n\nVersión mejorada\n¿Cómo hacer para tratar con un dato erróneo? Por ejemplo, un usuario ingresa un valor no númerico. En tal caso, el programa anterior arrojaría un error. Pruebe correr el programa anterior ingresando un valor no numérico.\n\ndef caf():\n  c = input()\n\n  try:\n    C = float(c)\n    F =(C*1.80+32)\n    print(f\"La temperatura es {F} F\")\n\n  except:\n    print(\"ingrese un valor númerico como temperatura\")\n    caf()",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#superficie-de-un-triángulo",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#superficie-de-un-triángulo",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#superficie-de-un-triángulo",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#superficie-de-un-triángulo",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Superficie de un triángulo",
     "text": "Superficie de un triángulo\n\nPlanteo\nRealizar un programa en el que se ingrese la base y la altura de un triángulo e informe su superficie. El programa debe imprimir una leyenda que incluya los datos de entrada y el resultado.\nIngrese la base del triángulo: 8 Ingrese la altura del triángulo: 5 La superficie del triángulo de base 7 y altura 5 es 17.50\n\n\nSolución\nCon lo hecho en el problema anterior se puede resolver. Recordar que la potenciación es una multipliación repetida, por lo que en pyhton el operador es **.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#dígitos-de-un-número",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#dígitos-de-un-número",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#dígitos-de-un-número",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#dígitos-de-un-número",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Dígitos de un número",
     "text": "Dígitos de un número\n\nPlanteo\nDesarrollar un programa en el que se ingrese un número de 5 dígitos y que luego muestre cada dígito separado por un guión\n\n\nSolución\nUna forma de encontrar el primer dígito de un número es dividirlo por \\(10^n\\) donde n es el orden de magnitud del número y quedarse con la parte entera. Por ejemplo: Si tenemos el número 1450 y lo dividimos por 1000 el primer dígito es la parte entera del resultado de la división, usando la operación división entera // y módulo % podemos obtener los elementos necesarios para resolver este problema. Para el resto de los dígitos, usando el operador módulo en potencias de diez decrecientes, obtenemos los “restos” usamos para reiterar el proceso de obtener el primer dígito.\n\nprint(1450//1000)\n\n1\n\n\n\nprint(1450%1000)\n\n450\n\n\n\n450//100\n\n4\n\n\n\n450%100\n\n50\n\n\n\nprint(1450%1000//100,\"-\",1450%1000%100//10)\n\n4 - 5",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#pitágoras-2",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#pitágoras-2",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#pitágoras-2",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#pitágoras-2",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Pitágoras 2",
     "text": "Pitágoras 2\n\nPlanteo\nHacer un programa en el que se ingrese la medida de los catetos de un triángulo rectángulo y que se calcule y muestre el perímetro de dicho triángulo. Incluir math a fin de utilizar la función sqrt(expresión) que calcula la raíz cuadrada de un número.\nPara usar la función, tenemos que importarla desde el módulo math. Para ello hacemos\nimport math\no\nimport math.sqrt as sqrt\nLa diferencia es qe en el primer caso tendremos que llamarla usando el nombre completo math.sqrt(num) mientras que en el segundo caso no. Como opción, también se puede prescindir de la raíz cuadrada y elevar a \\(\\frac{1}{2}\\).\n\n\nSolución\nCon lo visto hasta ahora se puede resolver este problema.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#conversiones-de-tiempo",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#conversiones-de-tiempo",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#conversiones-de-tiempo",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#conversiones-de-tiempo",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Conversiones de tiempo",
     "text": "Conversiones de tiempo\n\nPlanteo\nElaborar un programa en el que se ingrese una cantidad expresada en segundos y luego la exprese en días, horas, minutos y segundos.\nEjemplo: Ingrese tiempo en segundos: 93714.\n1 dia(s), 2 hora(s), 1 minuto(s), 54 segundo(s)\n\n\nSolución\nSimilar al problema de los dígitos, solo que el resto no resulta de dividir por potencias de diez, sino de 60.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#tiro-vertical",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#tiro-vertical",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#tiro-vertical",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#tiro-vertical",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Tiro vertical",
     "text": "Tiro vertical\n\nPlanteo\nEl usuario ingresa un instante de tiempo (t) y el programa calcula e imprime la posición de un móvil arrojado a 20 m/s hacia arriba en el planeta tierra para ese instante de tiempo.\n\n\nSolución\nEscribir una ecuación para la la posición en función del tiempo con los datos del problema y crear la variable t como dato de entrada.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#comparación-de-números",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#comparación-de-números",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#comparación-de-números",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#comparación-de-números",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Comparación de números",
     "text": "Comparación de números\n\nPlanteo\nRealizar un programa en el que se ingresen dos números enteros positivos. Luego deberá restar el mayor del menor e indicar si dicha diferencia es un valor que está entre ambos números (es decir, es mayor que el más chico y menor que el más grande de los ingresados).\n\n\nSolución\nSe almacenan los dos números a comparar, se efectúan los cálculos, se devuelve el resultado condicionalmente usando if para cada caso.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
   {
-    "objectID": "Prácticas/TP 01 Variables, entradas y salidas.html#aprobación-con-condiciones",
-    "href": "Prácticas/TP 01 Variables, entradas y salidas.html#aprobación-con-condiciones",
+    "objectID": "Practicas/TP 01 Variables, entradas y salidas.html#aprobación-con-condiciones",
+    "href": "Practicas/TP 01 Variables, entradas y salidas.html#aprobación-con-condiciones",
     "title": "TP 01 Variables, entradas y salidas",
     "section": "Aprobación con condiciones",
     "text": "Aprobación con condiciones\n\nPlanteo\nRealizar un programa que solicite 3 notas de parciales obtenidas por un alumno. A continuación se mostrará por pantalla un mensaje que indique la situación del alumno:\n\nSi el alumno aprobó los 3 parciales (nota 4 o más) y su promedio es mayor a 7, promociona la materia con la nota promedio.\nSi el alumno aprobó los 3 parciales pero su promedio no supera los 7 puntos, debe rendir examen final.\nSi el alumno no aprobó uno o más parciales, se solicitará que se ingrese la nota de un recuperatorio. Si éste hubiera sido aprobado, se informará el promedio general (3 parciales + el recuperatorio) y su condición de aprobado (aún cuando el promedio no supere los 4 puntos).\nSi no hubiera aprobado el recuperatorio se informará que el alumno fue aplazado.\n\n\n\nSolución\nEste código no resuelve todo el problema pero presenta algunas herramientas útiles, como limitar los dígitos que se muestran al imprimir una variable o el uso de la funcion suma sobre los elementos de una lista. Lea atentamente cada línea y asegúrese de que comprende qué hace en cada caso. El problema requiere evaluar los escenarios posibles por lo que quizás le resulte útil hacer un bosquejo en papel sobre los posibles casos para luego pasarlos a código.\n\ndef calif(n=3):\n  \"\"\"\n  Función que hace lo que se pide\n  \"\"\"\n  notas = []\n  for i in range(n):\n    print(f\"ingrese la {i+1} nota\")\n    nota = float(input())\n    notas.append(nota)\n\n  prom = (sum(notas))/n\n  return f\"{prom:.2f}\"\n\n\n\n\n7",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 01 Variables, entradas y salidas"
     ]
   },
@@ -247,14 +247,138 @@
     "text": "Profesor\n\n Prof. Federico Arabolaza\n federico.arabolaza@inspt.utn.edu.ar\n INSPT UTN\n\n\n\nCursada\n\n Triunvirato 3174\n Martes de 19:00 a 20:20\n\n\n\nSecciones\n\n Programa de la materia\n Calendario de clases\n Prácticas\n Apuntes\n Bibliografía\n Descargas"
   },
   {
-    "objectID": "Apuntes/08 Sympy.html",
-    "href": "Apuntes/08 Sympy.html",
-    "title": "08 Sympy",
+    "objectID": "Apuntes/07 Scipy y Ajuste de curvas.html",
+    "href": "Apuntes/07 Scipy y Ajuste de curvas.html",
+    "title": "07 Scipy",
     "section": "",
-    "text": "Sympy\nEl módulo Sympy permite hace cálculo matemático simbólico, del que hacemos en lápiz y papel, pero usando una computadora.\nPara usarlo debemos importar el módulo, como hacemos con todos los otros. Como los nombres de las funciones matemáticas suelen coincidir entre módulos, por ejemplo, la funcion sin (seno) existe tanto en numpy como en sympy, por lo que se recomienda usar un alias para el módulo.\n\nimport sympy as smp\n\n\nVariables y símbolos\nEn sympy, nuestras variables tradicionales convien con los llamos symbols que son los objetos que sympy usa para calcular. Veamos un ejemplo:\n\nx,y,z = smp.symbols('x y z')\n# a la izquierda variables de python\n# a la derecha los objeto symbol de sympy cuyos nombres aparecen en las expresiones\nf = x+y+z\nf.subs([(x,0),(y,1),(z,6)])\n\n\\(\\displaystyle 7\\)\n\n\n\n1/x\n# x en esta línea es la variable de python, pero lo que imprime sympy\n# es la letra que definimos dentro de la función symbols\n\n\\(\\displaystyle \\frac{1}{x}\\)\n\n\n\ny = smp.symbols('m')\n1/y\n\n\\(\\displaystyle \\frac{1}{m}\\)\n\n\nEsta evaluación en ocasiones es mejor si usamosevalf (si consultamos la ayuda de subs veremos por que´)\n\n(1/x).evalf(subs={x: 3.0}, n=21)\nLos resultados obtenidos usando subs, si bien parecen los que se obtendrían de una expresión en python directo, o de numpy, suelen ser mas bien lentos, pero cobran utilidad no cuando solo se desea remplazar algunos valores o hacer una gráfica (veremos más adelante como ir y volver desde el mundo simbólico de sympy al numérico de numpy o matplotlib) sino hacer operaciones de cálculo con ellas.\nConviene siempre que se sepa e dominio de una variable especificarlo, para que sympy no intentente encontrar soluciones que no no nos sirven. Si las variables son reales, no nos interesan soluciones complejas, por ejemplo.\n\na = smp.symbols('a0',real=True )\nb = smp.symbols('b0',integer=True )\nc = smp.symbols('b0',integer=True, possitive=True )\n\n\n\nÁlgebra elemental\nCon sympy podemos encontrar soluciones a ecuaciones, factorizar, expandir términos, etc.\npoly ayuda\n\nsmp.factor(x**2+2*x-1)\nsmp.roots(x**2+2*x-1)\nsmp.factor(x**2+2*x-1,deep=True)\n\nsmp.solveset(x**2+2*x-1)\nsmp.factor(x**2+2*x-1, domain=\"RR\")\n\nsmp.Poly(x**2+2*x-1).all_roots()\n\n[-sqrt(2) - 1, -1 + sqrt(2)]\n\n\n\n\nLímites, derivadas e integrales\nCon sympy podemos resolver analíticamente es decir, de forma simbólica (a diferencia de los métodos numéricos que estuvimos viendo hasta ahora) algunas de las operaciones mas usuales del cálculo.\nsi tenemos lo siguiente\n\\[\n\\lim_{x \\to \\infty} \\frac{1}{x}\n\\]\n\nLímites\n\nx = smp.symbols('x')\n\nsmp.limit(1/x,x,smp.oo)\n\n\\(\\displaystyle 0\\)\n\n\n\nsmp.limit(1/x,x,0,dir='-')\n\n\\(\\displaystyle -\\infty\\)\n\n\n\n\nDerivadas\n\nf = x**2\nsmp.diff(f)\n\n\\(\\displaystyle 2 x\\)\n\n\n\ng = x**3 + 2*x*y\nsmp.diff(g,y)\n\n\\(\\displaystyle 2 x\\)\n\n\nPodemos hacer derivadas de forma abstracta tambien, suponamos que tenemos una función compuesta, \\[\n\\frac{\\partial}{dx} f(x+g(x))\n\\]\n\nf, g = smp.symbols('f g', cls= smp.Function)\ng = g(x)\nf=f(x+g)\n\n\nf\n\n\\(\\displaystyle f{\\left(x + g{\\left(x \\right)} \\right)}\\)\n\n\n\nsmp.diff(f,x)\n\n\\(\\displaystyle \\left(\\frac{d}{d x} g{\\left(x \\right)} + 1\\right) \\left. \\frac{d}{d \\xi_{1}} f{\\left(\\xi_{1} \\right)} \\right|_{\\substack{ \\xi_{1}=x + g{\\left(x \\right)} }}\\)\n\n\n\n\nIntegrales\nSympy puede determinar de antemano si una integral tiene o no una solución analítica conocida.\nSi tenemos una función por ejemplo\n\\[\n\\int    \\frac{\\cos(x)}{\\sin(x)}\n\\]\n\nsmp.integrate(smp.csc(x),x)\n\n\\(\\displaystyle \\frac{\\log{\\left(\\cos{\\left(x \\right)} - 1 \\right)}}{2} - \\frac{\\log{\\left(\\cos{\\left(x \\right)} + 1 \\right)}}{2}\\)\n\n\n\n\n\nConvertir a numpy para usar como función numérica\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nsolu = smp.lambdify(x, smp.integrate(smp.sin(x),x),'numpy')\nt = np.linspace(-3,3,1000)\nplt.plot(t,solu(t))\nsolu(2)\n\n0.4161468365471424\n\n\n\n\n\n\n\n\n\n\n\nIntegrales definidas\n\\[\n\\int_{0}^{\\ln(4)} \\frac{e^xdt}{\\sqrt {e^{2x}+9}}\n\\]\n\nsmp.exp(x) / smp.sqrt(smp.exp(2*x)+9)\n\n\\(\\displaystyle \\frac{e^{x}}{\\sqrt{e^{2 x} + 9}}\\)\n\n\n\nsmp.integrate(smp.exp(x) / smp.sqrt(smp.exp(2*x)+9),(x,0,smp.log(4)))\n\n\\(\\displaystyle - \\operatorname{asinh}{\\left(\\frac{1}{3} \\right)} + \\operatorname{asinh}{\\left(\\frac{4}{3} \\right)}\\)\n\n\n\n\nIntegrales impropias\n\\[\n\\int_{0}^{\\infty} \\frac{16 atan(x)}{1+x^2}\n\\]\n\nsmp.integrate(16*smp.atan(x) / (1+x**2),(x,0,smp.oo))\n\n\\(\\displaystyle 2 \\pi^{2}\\)",
+    "text": "Scipy\nEl módulo Scipy es una colección de herramientas para el cálculo científico de amplio espectro. veremos algunas de sus posibilidades\n\nAjuste de curvas\nNos centraremos en unas pocas funciones de su vasto arsenal: aquellas que nos permiten obtener la expresión analítica que más se ajusta a un conjunto de datos discretos.\nEs de suma importancia a la hora de ajustar los datos de una curva, tener una idea del modelo físico al cual queremos ajustar nuestros datos. Es decir, la hipótesis teórica que el experimento debe validar es un a-priori que la experimentación validará (o no) y somos nosotros los experimentadores quienes debemos proveer el modelo al cual ajustar.\nEn términos matemáticos lo que optimize hace es es minimizar una función del tipo:\n\\[\\sum_i (f(x_i,\\beta) - y_i)^2\\]\nen donde \\(\\beta\\) son los parámetros que podemos variar, y \\(x_i\\) y \\(y_i\\) conforman los pares de valores obtenidos experimentalmente (suponemos el caso de una variable de entrada y una de salida por simplicidad en la notación)\nEl modulo a usar es optimize de la libreria scipy por lo que para importarlo haremos\nfrom scipy import optmize as op\no alternativamente:\nimport scipy.optimize as sp\n\nEjemplo\nVamos a crear unos datos a partir del modelo teórico de una caída libre sin rozamiento. Debajo vemos como se filtra un array y para obtener los valores de altura mayores a cero y luego “rebanamos” el array t para que tenga la misma cantidad de elementos que el array de alturas, y luego hacemos un gráfico de dispersión (scatter) como si los datos hubieran sido obtenidos desde un experimento. Está claro que estos datos van a ajustar “perfecto” al modelo teórico ya que lso datos fueron creados a paritr de éste.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10\ny0 = y[y &gt; 0]\nfig, ax = plt.subplots()\nfig.set_size_inches(12,5)\nax = ax.scatter(t[:len(y0)],y0)\n\n\n\n\n\n\n\n\nPara ver más sobre como filtrar o rebanar un array pueden consultar acá o acá\ncon nuestras habilidades de pandas, construyamos un archivo ficticio en base a estos datos, para luego “leerlo” y a partir de ahí usar el ajuste de curvas. Este paso no es necsario, ya que podemos usar los datos ya disponibles en los arrays, pero no viene mal la práctica\n\nimport pandas as pd\n\ndf0 = pd.DataFrame([t[:len(y0)],y0])\n# este array tiene dos filas y N columnas por lo que el dataframe no nos sirve\ndf = pd.DataFrame(np.array([t[:len(y0)],y0]).T, columns=['t','y'])\n# si transponemos los datos queda en la forma correta y podemos agregar los nombres\n# de los ejes\n\ndf.head() # para mirar los primeros datos\ndf.tail() # para mirar los ultimos datos\n\ndf.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv',index=False)\n# la ruta para que funcione debe ser la que se haya montado en tu sesión de colab\n# index=False hace que no exportemos la columna de los índices que genera pandas\n\n\n# otra opción para crear el dataframe es\n# pasra como índices los nombres de las columnas y\n# transponer el dataframe una vez creado\narr = np.array([t[:len(y0)],y0])\ndfa = pd.DataFrame(arr,index=['t','y']).T\n\ndfa.head()\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n10.000000\n\n\n1\n0.015\n9.998897\n\n\n2\n0.030\n9.995590\n\n\n3\n0.045\n9.990077\n\n\n4\n0.060\n9.982360\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv')\n\nTenemos que crear una función que contega la información del modelo. Como primer parámetro debe contener la variable dependiente y luego los parámetros\n\ndef opti(x,a,b):\n  \"\"\"\n  x: variable independiente\n  a: parámetro de la aceleración\n  b: parámetro de la altura inicial\n  \"\"\"\n  return -0.5*a*x**2+b\n\n\nfrom scipy import optimize as op\n\n\nparam_a, cov = op.curve_fit(opti,datos['t'],datos['y'])\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.8 m/s/s \n altura inicial 10.0 m\n\n\nPodemos hacer un gráfico de los “datos” contra la curva con los parámetros obtenidos del ajuste\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(datos['t'],datos['y'],label='datos',lw=0.1)\nax.plot(datos['t'],opti(datos['t'],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\n\n\n\n\n\n\n\nSi quiséramos tener un caso que se vea mas “real” podemos hacer que los datos generados tengan un poco de “ruido”\n\nruido = np.random.randint(-1,2)*np.random.rand()\n# agregamos un número aleatorio entre -1 y 1\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10 +ruido\ny0 = y[y &gt; 0]\n#fig, ax = plt.subplots()\n#fig.set_size_inches(12,5)\n#ax = ax.scatter(t[:len(y0)],y0)\n\nparam_a, cov = op.curve_fit(opti,t[:len(y0)],y0)\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(t[:len(y0)],y0,label='datos',lw=0.1)\nax.plot(t[:len(y0)],opti(t[:len(y0)],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.800000000000002 m/s/s \n altura inicial 9.559865513942757 m\n\n\n\n\n\n\n\n\n\nSi hacemos una gráfica de colores con la matriz de covarianza obtenemos una idea del “error” de cada parámetro. La interpretación de esta matriz escapa a lo que podemos ver en esta materia. La idea es que es una matriz cuadrada que relaciona todos los parámetros a los que ajustamos entre si. La diagonal es una medida del error de un parámetro específico las otras celdas son entre un parámetro y otro: es decir, la diagonal nos da una idea del error en un parámetro mientras que el resto nos indica como se influyen entre si los parámetros.\n\nprint(np.diag(cov))\n\n[9.78127213e-32 1.71503142e-32]\n\n\n\nprint(cov)\n\n[[9.78127213e-32 3.02608105e-32]\n [3.02608105e-32 1.71503142e-32]]\n\n\nen nuestro caso los errores son muy pequeños porque los datos son generados a partir de un modelo teórico.\n\nplt.imshow(np.log(np.abs(cov)))\nplt.colorbar()\n\n\n\n\n\n\n\n\n\n\n\nConstantes físicas\nScipy también ofece a mano las constantes físicas mas usuales para que podamos usarla en nuestros cálculos.\n\nfrom scipy import constants\n\n\nprint(constants.Boltzmann)\n\n1.380649e-23\n\n\n\nconstants? # para ver la ayuda el listado de constantes disponibles\n\n\ng = constants.g\nprint(g)\n\n9.80665\n\n\n\nm_e = constants.m_e\nprint(m_e)\n\n9.1093837015e-31\n\n\n\nconstants.unit('electron mass') # ver las unidades\n\n'kg'\n\n\n\nprint(constants.yotta) # acceder a prefijos\n\n1e+24\n\n\n\nk = constants.kilo\n\nprint(10*k)\n\n10000.0\n\n\n\nconstants.gram # Kg / g\n\n0.001\n\n\n\nprint(constants.kilogram_force) # Newtons / Kgf\nprint(constants.kgf)\n\n9.80665\n9.80665",
     "crumbs": [
       "Apuntes",
-      "08 Sympy"
+      "07 Scipy"
+    ]
+  },
+  {
+    "objectID": "Apuntes/05 Matplotlib.html",
+    "href": "Apuntes/05 Matplotlib.html",
+    "title": "05 Matpolitlib",
+    "section": "",
+    "text": "Matplotlib\nEs uno de los módulos mas usados para realizar gráficos. Posee dos enfoques diferentes, uno mas lineal y otro orientado a objetos. El primero posee una sintaxis similar a MATLAB y es mas adecuado para realizar gráficos en poco tiempo y con poca personalización, mientras que el segundo permite una mayor personalización de la presentación y manipulación de los datos.\n\nInterfaz tipo MATLAB\nComo todo módulo que querramos usar debemos importarlo al espacio de trabajo usando la palabra import. En este caso importaremos el sub-módulo matplotlib.pytploty lo llamaremos plt. Usaremos la función plot con una serie de puntos para ver que sucede\n\nimport matplotlib.pyplot as plt\n\nplt.plot([-1, -4.5, 16, 23, 78, 22, 3])\nplt.show()\n\n\n\n\n\n\n\n\nSi cambiamos algunos parámetros de la función plot podemos obtener lo siguiente\n\nplt.plot([-1, -4.5, 16, 23, 78, 22, 3], \"ob\")\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.plot([1, 2, 3, 4], 'o-r')\nplt.ylabel('unos números')\nplt.show()\n\n\n\n\n\n\n\n\nLos ejes pueden nombrarse (incluso usar LaTex dentro de ellos)\n\ndias = range(1, 9)\ntemperatura = [25.6, 24.1, 26.7, 28.3, 27.5, 30.5, 32.8, 33.1]\n\nfig, ax = plt.subplots()\nax.plot(dias, temperatura)\nax.set(xlabel='Dia',\n       ylabel='Temperatura',\n       title='Gráfico de temperatura y una fórmula cualquiera $\\\\frac{1}{2}x^2$')\nplt.show()\n\n\n\n\n\n\n\n\nLa personalización posible es total, desde la tipografía pasando por el grosor y tipo de línea, etc. No ahondaremos en esto más allad de lo necesario para la claridad de los gráficos que hagamos.\n\n\nInterfaz orientada a objetos\nEn la interfaz orientada a objetos (no importa si no entendés que significa esto) la función pyplot se llama una sola vez, y luego se usa la estructura que se muestra debajo que permite un mayor grado de personalización y reutilización de los gráficos.\n\nfig, ax = plt.subplots()\n\nEn el apunte dedicado a Matplotlib, hay mas detalles sobre ésta sintaxis y sus posibilidades.\nSe puede consultar más acerca de Matplotlib en esta web y en el sitio oficial de matplotlib. También tienen un apunte dedicado a Matplotlib con ejercicios en espacio de google de la materia.\n\n\n\nScipy\nEl módulo Scipy es una colección de herramientas para el cálculo científico de amplio espectro. veremos algunas de sus posibilidades\n\nAjuste de curvas\nNos centraremos en unas pocas funciones de su vasto arsenal: aquellas que nos permiten obtener la expresión analítica que más se ajusta a un conjunto de datos discretos.\nEs de suma importancia a la hora de ajustar los datos de una curva, tener una idea del modelo físico al cual queremos ajustar nuestros datos. Es decir, la hipótesis teórica que el experimento debe validar es un a-priori que la experimentación validará (o no) y somos nosotros los experimentadores quienes debemos proveer el modelo al cual ajustar.\nEn términos matemáticos lo que optimize hace es es minimizar una función del tipo:\n\\[\\sum_i (f(x_i,\\beta) - y_i)^2\\]\nen donde \\(\\beta\\) son los parámetros que podemos variar, y \\(x_i\\) y \\(y_i\\) conforman los pares de valores obtenidos experimentalmente (suponemos el caso de una variable de entrada y una de salida por simplicidad en la notación)\nEl modulo a usar es optimize de la libreria scipy por lo que para importarlo haremos\nfrom scipy import optmize as op\no alternativamente:\nimport scipy.optimize as sp\n\nEjemplo\nVamos a crear unos datos a partir del modelo teórico de una caída libre sin rozamiento. Debajo vemos como se filtra un array y para obtener los valores de altura mayores a cero y luego “rebanamos” el array t para que tenga la misma cantidad de elementos que el array de alturas, y luego hacemos un gráfico de dispersión (scatter) como si los datos hubieran sido obtenidos desde un experimento. Está claro que estos datos van a ajustar “perfecto” al modelo teórico ya que lso datos fueron creados a paritr de éste.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10\ny0 = y[y &gt; 0]\nfig, ax = plt.subplots()\nfig.set_size_inches(12,5)\nax = ax.scatter(t[:len(y0)],y0)\n\n\n\n\n\n\n\n\nPara ver más sobre como filtrar o rebanar un array pueden consultar acá o acá\ncon nuestras habilidades de pandas, construyamos un archivo ficticio en base a estos datos, para luego “leerlo” y a partir de ahí usar el ajuste de curvas. Este paso no es necsario, ya que podemos usar los datos ya disponibles en los arrays, pero no viene mal la práctica\n\nimport pandas as pd\n\ndf0 = pd.DataFrame([t[:len(y0)],y0])\n# este array tiene dos filas y N columnas por lo que el dataframe no nos sirve\ndf = pd.DataFrame(np.array([t[:len(y0)],y0]).T, columns=['t','y'])\n# si transponemos los datos queda en la forma correta y podemos agregar los nombres\n# de los ejes\n\ndf.head() # para mirar los primeros datos\ndf.tail() # para mirar los ultimos datos\n\ndf.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv',index=False)\n# la ruta para que funcione debe ser la que se haya montado en tu sesión de colab\n# index=False hace que no exportemos la columna de los índices que genera pandas\n\n\n# otra opción para crear el dataframe es\n# pasra como índices los nombres de las columnas y\n# transponer el dataframe una vez creado\narr = np.array([t[:len(y0)],y0])\ndfa = pd.DataFrame(arr,index=['t','y']).T\n\ndfa.head()\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n10.000000\n\n\n1\n0.015\n9.998897\n\n\n2\n0.030\n9.995590\n\n\n3\n0.045\n9.990077\n\n\n4\n0.060\n9.982360\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv')\n\nTenemos que crear una función que contega la información del modelo. Como primer parámetro debe contener la variable dependiente y luego los parámetros\n\ndef opti(x,a,b):\n  \"\"\"\n  x: variable independiente\n  a: parámetro de la aceleración\n  b: parámetro de la altura inicial\n  \"\"\"\n  return -0.5*a*x**2+b\n\n\nfrom scipy import optimize as op\n\n\nparam_a, cov = op.curve_fit(opti,datos['t'],datos['y'])\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.8 m/s/s \n altura inicial 10.0 m\n\n\nPodemos hacer un gráfico de los “datos” contra la curva con los parámetros obtenidos del ajuste\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(datos['t'],datos['y'],label='datos',lw=0.1)\nax.plot(datos['t'],opti(datos['t'],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\n\n\n\n\n\n\n\nSi quiséramos tener un caso que se vea mas “real” podemos hacer que los datos generados tengan un poco de “ruido”\n\nruido = np.random.randint(-1,2)*np.random.rand()\n# agregamos un número aleatorio entre -1 y 1\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10 +ruido\ny0 = y[y &gt; 0]\n#fig, ax = plt.subplots()\n#fig.set_size_inches(12,5)\n#ax = ax.scatter(t[:len(y0)],y0)\n\nparam_a, cov = op.curve_fit(opti,t[:len(y0)],y0)\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(t[:len(y0)],y0,label='datos',lw=0.1)\nax.plot(t[:len(y0)],opti(t[:len(y0)],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.800000000000002 m/s/s \n altura inicial 9.559865513942757 m\n\n\n\n\n\n\n\n\n\nSi hacemos una gráfica de colores con la matriz de covarianza obtenemos una idea del “error” de cada parámetro. La interpretación de esta matriz escapa a lo que podemos ver en esta materia. La idea es que es una matriz cuadrada que relaciona todos los parámetros a los que ajustamos entre si. La diagonal es una medida del error de un parámetro específico las otras celdas son entre un parámetro y otro: es decir, la diagonal nos da una idea del error en un parámetro mientras que el resto nos indica como se influyen entre si los parámetros.\n\nprint(np.diag(cov))\n\n[9.78127213e-32 1.71503142e-32]\n\n\n\nprint(cov)\n\n[[9.78127213e-32 3.02608105e-32]\n [3.02608105e-32 1.71503142e-32]]\n\n\nen nuestro caso los errores son muy pequeños porque los datos son generados a partir de un modelo teórico.\n\nplt.imshow(np.log(np.abs(cov)))\nplt.colorbar()\n\n\n\n\n\n\n\n\n\n\n\nConstantes físicas\nScipy también ofece a mano las constantes físicas mas usuales para que podamos usarla en nuestros cálculos.\n\nfrom scipy import constants\n\n\nprint(constants.Boltzmann)\n\n1.380649e-23\n\n\n\nconstants? # para ver la ayuda el listado de constantes disponibles\n\n\ng = constants.g\nprint(g)\n\n9.80665\n\n\n\nm_e = constants.m_e\nprint(m_e)\n\n9.1093837015e-31\n\n\n\nconstants.unit('electron mass') # ver las unidades\n\n'kg'\n\n\n\nprint(constants.yotta) # acceder a prefijos\n\n1e+24\n\n\n\nk = constants.kilo\n\nprint(10*k)\n\n10000.0\n\n\n\nconstants.gram # Kg / g\n\n0.001\n\n\n\nprint(constants.kilogram_force) # Newtons / Kgf\nprint(constants.kgf)\n\n9.80665\n9.80665",
+    "crumbs": [
+      "Apuntes",
+      "05 Matpolitlib"
+    ]
+  },
+  {
+    "objectID": "Apuntes/03 Numpy.html",
+    "href": "Apuntes/03 Numpy.html",
+    "title": "03 Numpy",
+    "section": "",
+    "text": "NumPy\nNumPy es el módulo más usado para cálculo científico en Python\n\nimport numpy as np\n\nEl objeto principal de Numpy es un array homogéneo multidimensional. Básicamente se trata de una tabla de elementos (generalmente números) todos del mismo tipo (ésta es una diferencia en cuantoa las listas, que permitían tipos mezclados) que se encuentran indizados (indexados). Las dimensiones del array en Numpy se denominan ejes (axes).\nLa clase base del array es ndarray (lo que Python nos devuelve si usamos la función type sobre un array.\nLos atributos principales de un array son:\n\nndarray.ndim: la cantidad de ejes\nndarray.shape: La “forma” del array, es decir, sus dimensiones. Es una n-upla de enteros que nos dice la dimensión del array en cada eje. Por ejemplo, para una matriz de n filas y m columnas shape será (n,m) (existiendo un sólo eje o axis). La longitud de la forma shape será la cantidad de ejes que tengamos, es decir ndim. Podríamos tener en un mismo array varias matrices una en cada eje.\nndarray.size: Cantidad de elementos en el array.\nndarray.dtype: El tipo de datos que contiene el array.\nndarray.itemsize: El tamaño (en bytes) de los elementos del array\n\n\na = np.arange(15) #array de numeros 0 a 14\na\n\n\na.dtype\n\n\nprint(a)\n\n\nprint(a.shape)\n\n\nprint(a.ndim)\n\n\nprint(a.dtype.name)\n\n\nprint(a.itemsize)\n\n\nprint(a.size)\n\n\nprint(type(a))\n\n\nCreando un array\nSe puede crear un array desde una lista o tupla de Python al usar la función array. El tipo de array resultante se decude de los elementos de la lista.\nUn error común es pasar directamente los valores del array a la función,\na = np.array(1,2,3,4)   # MAL\na = np.array([1,2,3,4]) # BIEN\na = np.array((1,2,3,4))  # BIEN\n\nb = np.array([6, 7, 8])\nprint(b)\n\n\nprint(type(b))\n\narray también puede transformar conjuntos de tuplas o secuencias de secuencias en arreglos n-dimensionales. Por ejemplo:\n\nc = np.array([(1.5, 2 ,3), (4, 5, 6), (7.1, 7.2, 7.3)])\nprint(c)\n\n\nprint(c.shape)\n\nLa función zeros crea un array de ceros, la función ones crea un array de unos y la función random.rand crea un array de valores float aleatorios en el intervalo [0,1] mientras que la función empty crea un array cuyo contenido depende de lo que haya en memoria (sinceramente nunca usé esta función) con el tipo float64.\nExisten otras funciones como zeros_like que crea arrays del tamaño de otro objeto, útil cuando queremos que dos arrays tengan el mismo tamaño.\n\nnp.zeros((3,4))\n\n\ntest = np.ones((2,3,4), dtype=np.int16)\nprint(test)\n\n\nnp.random.rand(3,2)\nB = np.random.rand(3,2)\n\n\nnp.empty((2,3)) # uninitialized, output may vary\n\n\nC =np.zeros_like(B)\nnp.size(C)\nprint(C)\n\n[[0. 0.]\n [0. 0.]\n [0. 0.]]\n\n\nNumPy provee algunas funciones para crear arrays de tamaño o paso predefinido. La función arange crea arrays de la siguiente manera\n\nnp.arange( 10, 30, 5 ) # array de 10 a 30 con un paso de 5 (de 5 en cinco)\n\narray([10, 15, 20, 25])\n\n\nOtra función es linspace que hace algo similar\n\nnp.linspace(0,10,20) # inicio, fin, cantidad de elementos\n\narray([ 0.        ,  0.52631579,  1.05263158,  1.57894737,  2.10526316,\n        2.63157895,  3.15789474,  3.68421053,  4.21052632,  4.73684211,\n        5.26315789,  5.78947368,  6.31578947,  6.84210526,  7.36842105,\n        7.89473684,  8.42105263,  8.94736842,  9.47368421, 10.        ])\n\n\n\n\nManipulación de arrays\nLas funciones típicas son: - ravel() aplana el array - reshape() cambia la forma - transpose() lo transpone\n\nexample = np.random.rand(4,4)\nprint(example)\n\n[[0.76567456 0.89133468 0.24932026 0.68175576]\n [0.28769869 0.37903078 0.21482535 0.10181396]\n [0.66248563 0.22776659 0.06954442 0.65318739]\n [0.97281025 0.51268667 0.84836693 0.600809  ]]\n\n\n\nexample*10\n\narray([[7.65674557, 8.91334678, 2.49320258, 6.81755759],\n       [2.87698686, 3.79030783, 2.14825349, 1.01813956],\n       [6.62485635, 2.27766588, 0.6954442 , 6.53187385],\n       [9.7281025 , 5.12686673, 8.48366935, 6.00809002]])\n\n\n\nexample_flat = example.ravel()  # devuelve el array, \"aplanado\"\nprint(example_flat)\n\n[0.76567456 0.89133468 0.24932026 0.68175576 0.28769869 0.37903078\n 0.21482535 0.10181396 0.66248563 0.22776659 0.06954442 0.65318739\n 0.97281025 0.51268667 0.84836693 0.600809  ]\n\n\n\nexample_flat.reshape(2,8) # devuelve el array pero como una matriz de 2x8\n\narray([[0.76567456, 0.89133468, 0.24932026, 0.68175576, 0.28769869,\n        0.37903078, 0.21482535, 0.10181396],\n       [0.66248563, 0.22776659, 0.06954442, 0.65318739, 0.97281025,\n        0.51268667, 0.84836693, 0.600809  ]])\n\n\n\nexample_flat.reshape(4,4) # devuelve el array a su forma original\n\narray([[0.76567456, 0.89133468, 0.24932026, 0.68175576],\n       [0.28769869, 0.37903078, 0.21482535, 0.10181396],\n       [0.66248563, 0.22776659, 0.06954442, 0.65318739],\n       [0.97281025, 0.51268667, 0.84836693, 0.600809  ]])\n\n\n\ntest = np.random.rand(2,3,6)\nprint(test)\n\n[[[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923]\n  [0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652]\n  [0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936]]\n\n [[0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269]\n  [0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593]\n  [0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]]]\n\n\n\nprint(test.ravel())\n\n[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923\n 0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652\n 0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936\n 0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269\n 0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593\n 0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]\n\n\n\nprint(example.transpose())\n\n[[0.76567456 0.28769869 0.66248563 0.97281025]\n [0.89133468 0.37903078 0.22776659 0.51268667]\n [0.24932026 0.21482535 0.06954442 0.84836693]\n [0.68175576 0.10181396 0.65318739 0.600809  ]]\n\n\nBuscar las funciones que permiten en numpy calcular:\n\nel valor medio\nla desviación estándar\nLa sumatoria de un array\nEl valor máximo de un array\nEl valor mínimo de un array",
+    "crumbs": [
+      "Apuntes",
+      "03 Numpy"
+    ]
+  },
+  {
+    "objectID": "Apuntes/01 Python intro 101 (2024).html",
+    "href": "Apuntes/01 Python intro 101 (2024).html",
+    "title": "01 Intro a Python 2024",
+    "section": "",
+    "text": "Este documento es una adaptación de otro existente. Compilamos algunos recursos útiles para la materia\nManual de Python en español\nBibliografía de la materia\n\n\n\n\nNuméricas:\n\nint, float, long, complex\n\nstring\nbooleanas\n\nTrue / False\n\n\nSe resumen en la siguiente tabla\n**\n\nPython Scalar Types\n\n**\n\n\n\n\n\n\n\n\nType\nExample\nDescription\n\n\n\n\nstr\nx = 'abc'\nString: caracteres de texto\n\n\nint\nx = 1\nintegers (i.e., números enteros)\n\n\nfloat\nx = 1.0\nfloating-point numbers (i.e., números reales)\n\n\ncomplex\nx = 1 + 2j\nnúmeros complejos\n\n\nbool\nx = True\nBooleano: Verdadero/Falso\n\n\nNoneType\nx = None\nObjeto para designar el valor nulo\n\n\n\nSe usa la función type() para conocer el tipo de una variable\n\n\nBueno, las fracciones no son representaciones “típicas” en los lenguajes de programación, y en python, debemos usar los módulos específicos para operar con ellas. Más información acá. Veremos más adelante como trabjar con fracciones.\n\n\n# String\nc = 'hello'\nprint(type(c))\n\n\n# Integer\na = 1\nprint(type(a))\n\n\n# Float\nb = 1.0\nprint(type(b))\n\n\n# Boolean\nd = True\nprint(type(d))\n\n\n# None\ne = None\nprint(type(e))\n\n\n# Cast integer to string\nprint(type(str(a)))\n\n\n\n\n\n\nLos operadores matemáticos son diferentes en las cadenas de teto, por ejemplo el sigo + se usa para unir cadenas\nRepeticiones: Se usa *n para repetir una cadena n veces\n\n# Asignar y combinar cadenas\na = 'Hello'\nb = 'World'\nprint(a + ' ' + b)\n\n\n# f-strings: reemplazarvalores de variables en cadenas\nfirstname = 'Beto'\nprint(f'Me llamo {firstname}')\n\n\n# Combininar f-strings\nfirstname = 'Beto'\nlastname = 'Velez'\n\nprint(f'My name is {firstname} {lastname}')\n\n\n# Repetir una cadena\nprint(str(a)*5)\n\n\n# Repetir un cadena con espacios\nprint(str(a+' ')*5)\n\n\n\n\n\n\n+, -, *, y /\nExponenciación **\nModulo % (Resto)\n\n\n# Adición\na = 2 + 7\nprint(f'a = {a}')\n\n\n# Sustracción\nb = a - 5\nprint(f'b = a-5 = {a}-5 = {b}')\n\n\n# Multiplicación\nprint(f'b*2 = {b}*2 = {b*2}')\n\n\n# División\nprint(f'a/3 = {a}/3 = {a/3}')\n\n\n# Exponenciación\nprint(f'b^2 = b**2 = {b}**2 = {b**2}')\n\n\n# Modulo\nprint('(Modulo de vuelve el resto luego de dividir entre dos números)')\nprint(f'el resto de  b/9 = resto de {b}/9 = {b%9}')\n\n\n\n\n\nHacen una comparación y devuelven un booleano (verdadero o falso)\nx == y # x es igual a y\nx != y # x no es igual a y\nx &gt; y # x es mayor que y\nx &lt; y # x es menor que y\nx &gt;= y # x es mayor o igual que y\nx &lt;= y # x es menor o igual que y\n\n# En cadenas de texto\na = 'hola'\nb = 'que tal'\nc = 'Hola'\nprint('a==b: ' + str(a==b))\nprint('a==c: ' + str(a==c))\nprint('a!=b: ' + str(a!=b))\nprint()\n\n\n# En datos numéricos\nd = 5\ne = 8\nprint('d &lt; e: ' + str(d &lt; e))\nprint('d &gt;= e: ' + str(d &gt;= e))",
+    "crumbs": [
+      "Apuntes",
+      "01 Intro a Python 2024"
+    ]
+  },
+  {
+    "objectID": "Apuntes/01 Python intro 101 (2024).html#tipos-de-variables",
+    "href": "Apuntes/01 Python intro 101 (2024).html#tipos-de-variables",
+    "title": "01 Intro a Python 2024",
+    "section": "",
+    "text": "Numéricas:\n\nint, float, long, complex\n\nstring\nbooleanas\n\nTrue / False\n\n\nSe resumen en la siguiente tabla\n**\n\nPython Scalar Types\n\n**\n\n\n\n\n\n\n\n\nType\nExample\nDescription\n\n\n\n\nstr\nx = 'abc'\nString: caracteres de texto\n\n\nint\nx = 1\nintegers (i.e., números enteros)\n\n\nfloat\nx = 1.0\nfloating-point numbers (i.e., números reales)\n\n\ncomplex\nx = 1 + 2j\nnúmeros complejos\n\n\nbool\nx = True\nBooleano: Verdadero/Falso\n\n\nNoneType\nx = None\nObjeto para designar el valor nulo\n\n\n\nSe usa la función type() para conocer el tipo de una variable\n\n\nBueno, las fracciones no son representaciones “típicas” en los lenguajes de programación, y en python, debemos usar los módulos específicos para operar con ellas. Más información acá. Veremos más adelante como trabjar con fracciones.\n\n\n# String\nc = 'hello'\nprint(type(c))\n\n\n# Integer\na = 1\nprint(type(a))\n\n\n# Float\nb = 1.0\nprint(type(b))\n\n\n# Boolean\nd = True\nprint(type(d))\n\n\n# None\ne = None\nprint(type(e))\n\n\n# Cast integer to string\nprint(type(str(a)))",
+    "crumbs": [
+      "Apuntes",
+      "01 Intro a Python 2024"
+    ]
+  },
+  {
+    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-de-cadenas-de-texto",
+    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-de-cadenas-de-texto",
+    "title": "01 Intro a Python 2024",
+    "section": "",
+    "text": "Los operadores matemáticos son diferentes en las cadenas de teto, por ejemplo el sigo + se usa para unir cadenas\nRepeticiones: Se usa *n para repetir una cadena n veces\n\n# Asignar y combinar cadenas\na = 'Hello'\nb = 'World'\nprint(a + ' ' + b)\n\n\n# f-strings: reemplazarvalores de variables en cadenas\nfirstname = 'Beto'\nprint(f'Me llamo {firstname}')\n\n\n# Combininar f-strings\nfirstname = 'Beto'\nlastname = 'Velez'\n\nprint(f'My name is {firstname} {lastname}')\n\n\n# Repetir una cadena\nprint(str(a)*5)\n\n\n# Repetir un cadena con espacios\nprint(str(a+' ')*5)",
+    "crumbs": [
+      "Apuntes",
+      "01 Intro a Python 2024"
+    ]
+  },
+  {
+    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-matemáticos",
+    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-matemáticos",
+    "title": "01 Intro a Python 2024",
+    "section": "",
+    "text": "+, -, *, y /\nExponenciación **\nModulo % (Resto)\n\n\n# Adición\na = 2 + 7\nprint(f'a = {a}')\n\n\n# Sustracción\nb = a - 5\nprint(f'b = a-5 = {a}-5 = {b}')\n\n\n# Multiplicación\nprint(f'b*2 = {b}*2 = {b*2}')\n\n\n# División\nprint(f'a/3 = {a}/3 = {a/3}')\n\n\n# Exponenciación\nprint(f'b^2 = b**2 = {b}**2 = {b**2}')\n\n\n# Modulo\nprint('(Modulo de vuelve el resto luego de dividir entre dos números)')\nprint(f'el resto de  b/9 = resto de {b}/9 = {b%9}')",
+    "crumbs": [
+      "Apuntes",
+      "01 Intro a Python 2024"
+    ]
+  },
+  {
+    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-lógicos",
+    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-lógicos",
+    "title": "01 Intro a Python 2024",
+    "section": "",
+    "text": "Hacen una comparación y devuelven un booleano (verdadero o falso)\nx == y # x es igual a y\nx != y # x no es igual a y\nx &gt; y # x es mayor que y\nx &lt; y # x es menor que y\nx &gt;= y # x es mayor o igual que y\nx &lt;= y # x es menor o igual que y\n\n# En cadenas de texto\na = 'hola'\nb = 'que tal'\nc = 'Hola'\nprint('a==b: ' + str(a==b))\nprint('a==c: ' + str(a==c))\nprint('a!=b: ' + str(a!=b))\nprint()\n\n\n# En datos numéricos\nd = 5\ne = 8\nprint('d &lt; e: ' + str(d &lt; e))\nprint('d &gt;= e: ' + str(d &gt;= e))",
+    "crumbs": [
+      "Apuntes",
+      "01 Intro a Python 2024"
+    ]
+  },
+  {
+    "objectID": "00 apuntes.html",
+    "href": "00 apuntes.html",
+    "title": "Apuntes",
+    "section": "",
+    "text": "01 Intro a Python 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n02 Contenedores y bucles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n03 Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n04 Módulos: Pandas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n05 Matpolitlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n06 Matplotlib (más)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n07 Scipy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n08 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "00 practicas.html",
+    "href": "00 practicas.html",
+    "title": "Prácticas",
+    "section": "",
+    "text": "Primer parcial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 01 Variables, entradas y salidas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 02 Iteraciones\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 03 Arrays y Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 04 Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 06 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "Apuntes/02 Contenedores y loops.html#contenedores-en-python",
+    "href": "Apuntes/02 Contenedores y loops.html#contenedores-en-python",
+    "title": "02 Contenedores y bucles",
+    "section": "Contenedores en Python",
+    "text": "Contenedores en Python\nLos datos en Python se almacenan en aluna de estas cuato opciones - list (lista) - dict (diccionario) - set (conjunto) - tuple (tupla)\n\nListas\nUna lista es una arreglo mutable. Lo que quiere decir que podemos redefinir y alterar sus valores - Cada valor en la lista es un elemento o item - Los elementos pueden ser cualquier objeto - Las listas pueden contener objetos de diferente tipo\n\nUna lista vaciía se define como [] o como list()\n\nl = [1,2,3]\n\nLos elementos de una lista estan indizados o indexados (contando desde 0)\n\nl[0]\n\nLos elemnentos pueden ser listas en sí mismas\n\nlista_anidada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\nLas listas pueden ser “rebanadas”\n\nl[inicio:fin:orientación]\n\nLas listas tienen algunes métodos que son útiles\na.insert(index,new element)\na.append(element to add at end)\nlen(a)\n\n\nlist_a = [1,2,3]\nprint(list_a)\n\n[1, 2, 3]\n\n\n\nlist_of_strings = ['hola', 'chau', 'buenas tardes']\nprint(list_of_strings)\n\n['hola', 'chau', 'buenas tardes']\n\n\n\n# Indexando y recortando\nlist_b = ['lista','de','cosas']\nprint(list_b[0])\nprint(list_b[1:3])\nprint(list_b[-1])\n\nlista\n['de', 'cosas']\ncosas\n\n\n\nlist = [1,2,3,4,5]\nlist[0::2] # saltando de dos en dos\n\n[1, 3, 5]\n\n\n\n# Métodos de las listas (insert)\nlist_b.insert(2,'python')\nprint(list_b)\n\n['lista', 'de', 'python', 'cosas']\n\n\n\n# Métodos de las listas (append)\nlist_b.append('.')\nprint(list_b)\n\n['lista', 'de', 'python', 'cosas', '.']\n\n\n\n# Métodos de listas aplicados a otros objetivos (cadenas de texto)\nexample_string = 'Computación 2 266 - Instituto Nacional Superior del Profesorado Técnico'\nprint(example_string)\nprint(example_string.upper())\n\nComputación 2 266 - Instituto Nacional Superior del Profesorado Técnico\nCOMPUTACIÓN 2 266 - INSTITUTO NACIONAL SUPERIOR DEL PROFESORADO TÉCNICO\n\n\n\nTodos los métodos de las listas\nPodemos tener a mano una lista de los métodos mas usuales para las listas\n\n\n\n\n\n\n\nMétodo\nDescripción\n\n\n\n\nappend()\nAgrega elemento al final de la lista\n\n\nclear()\nElimina los elementos de la lista\n\n\ncopy()\ndevuelve una copia de la lista\n\n\ncount()\nDevuelve la cantidad de elementos que tienen determinado valor\n\n\nextend()\nAgrega los elementos (o cualquier iterable) al final de la lista\n\n\nindex()\nDevuele el índice (posición) del elemento que tiene determinado valor\n\n\ninsert()\nAgrega a la lista en la posición especificada\n\n\npop()\nEliminar el elemento en la posición especificada\n\n\nremove()\nRemueve el elemento con el valor especificado\n\n\nreverse()\nDa la lista invertida\n\n\nsort()\nOrdena la lista\n\n\n\nSe puede consultar mas sobre como rebanar una lista acá\n\n\n\nDiccionarios\n\nUn diccionario (dict) es un mapeo entre un conjunto de índices (keys) y otro de valores (values)\nCada objeto de un diccionario es un par índice-valor (key-value)\nLas claves pueden ser cualquier tipo de dato\nLos diccionarios no tienen un orden prestablecido\n\n\n# Diccionarios: se escriben entre llaves\neng2sp = {}\neng2sp['one'] = 'uno' # la clave 'one' tiene como valor 'uno'\nprint(eng2sp)\n\n\neng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}\nprint(eng2sp)\n\n\n# Accediendo a claves y valores\nprint(eng2sp.keys())\nprint(eng2sp.values())",
+    "crumbs": [
+      "Apuntes",
+      "02 Contenedores y bucles"
+    ]
+  },
+  {
+    "objectID": "Apuntes/02 Contenedores y loops.html#funciones",
+    "href": "Apuntes/02 Contenedores y loops.html#funciones",
+    "title": "02 Contenedores y bucles",
+    "section": "Funciones",
+    "text": "Funciones\nUna función es una secuencia de instrucciones que ejecuta un cálculo o acción al invocarla por su nombre y, opcionalmente al proveerle los argumentos necesarios. Para crear una función, usamos la palabbra reservarda def y a continuación el nombre de la función, segudia de los argumentos entre paréntesis\n\ndef poner_en_mayuscula(texto):\n    \"\"\"\n    Esta función pone en mayúsculas el\n    texto que se ingresa\n    \"\"\"\n    return (texto.upper())\n\n\nEntre paréntesis están los argumentos.\nSe puede decir que una función “toma” un argumento y “devuelve” un resultado.\nAl resultado se lo suele llamar valor de retorno.\n\nLa primera línea de la función se la llama encabezado (header) y a las restantes el cuerpo (body).\nEl ebcabezado va encerrado entre comillas y el cuerpo tiene que estar indentado. La indentación común es de 4 espacios y un error común es que el software que se usa confunda tabulaciones con indentación. Apretar la tecla tab, si el software está bien configurado, debería hacer los 4 espacios y no una tabulación. Esto parece una aclaración contradictoria y poco relevante, pero como se dijo más arriba, es una fuente común de errores en la ejecución de código: si hay tabulaciones en donde deberían estar los 4 espacios de la indentación, el código no se ejecuta.\nEl cuerpo de una función termina cuando se vuelve al nivel anterior de indentación.\n\nstring = \"Python es fácil de usar\"\nstring_upper = string.upper()\nprint(string_upper)\n\n\nponer_en_mayuscula(string)\n\nPara consultar más acerca de funciones, pueden visitar la ayuda de Python oficial",
+    "crumbs": [
+      "Apuntes",
+      "02 Contenedores y bucles"
+    ]
+  },
+  {
+    "objectID": "Apuntes/04 Pandas y Manejo de archivos.html",
+    "href": "Apuntes/04 Pandas y Manejo de archivos.html",
+    "title": "04 Módulos: Pandas",
+    "section": "",
+    "text": "Pandas (interacción con archivos csv, txt, tsv)\nEl módulo pandas es una herramienta que permite trabajar con datos estructurados en archivos de texto. Dentro de los formatos de archivos de texto más usuales tenemos las extensiones csv,tsv y txt, en donde se tienen valores separados por coma, valores separados por tabulaciones y valores sin una separación específica respectivamente. De todas maneras la extensión del archivo no resulta conclucyente para comprender como están estructurados los datos, por lo que siempre se aconseja “mirar” el archivo antes de usarlo.\nA la hora de recojer y producir datos, debemos informar a la herramienta que utilicemos cómo están estructurados los mismos, ya sea que estén separados por espacios, tabulaciones, comas, punto y coma o cualquier otro delimitador válido según el formato. Los errores más comunes cuando no se obtienen los resultados esperados suelen surgir por una mala interpretación de cómo están organizados los datos al momento de leerlos o escribirlos para su uso.\nPara poder usar la librería pandas debemos importarla como hacemos con cualquier otra\nimport pandas as pd\nVeamos lo básico de pandas antes de leer datos desde un archivo.\nLos datos en pandas se estructuran a partir de dos elementos básicos: series y dataframes que podemos pensar como vectores columna y matrices (o tablas) respetivamene.\nVeamos algunos ejemplos\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series([1, 3, 5, np.nan, 6, 8])\ns\n\n0    1.0\n1    3.0\n2    5.0\n3    NaN\n4    6.0\n5    8.0\ndtype: float64\n\n\nComo vemos, el vector esta indexado al estilo python iniciándose en cero para el primer elemento.\nUn dataframe se puede crear a partir de varias series puestas una a continuación de otra, o desde datos que ya estén tabulados. En ese caso, cada columna será entonces una serie.\nLas columnas pueden nombrarse o leerse desde un archivo en caso de que estemos leyendo los datos.\nTambién es posible reemplazar el índice por por otros datos tales como fechas, horas, etc. incluso es posible eliminar el índice del dataframe.\n\ndf = pd.DataFrame(np.random.rand(6,4),columns=list(\"ABCD\"))\ndf\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.939572\n0.020516\n0.316436\n0.950839\n\n\n1\n0.854842\n0.920414\n0.522787\n0.442223\n\n\n2\n0.549076\n0.931013\n0.455005\n0.761476\n\n\n3\n0.537629\n0.419205\n0.610875\n0.519158\n\n\n4\n0.943395\n0.288553\n0.756474\n0.548668\n\n\n5\n0.130206\n0.273528\n0.043156\n0.426248\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nPodemos acceder a las series por separados referenciando al dataframe con una sintaxis similar a la listas.\n\nA = df[\"A\"]\nprint(A)\nprint(A[0])\nprint(df[\"A\"][1])\n\n0    0.939572\n1    0.854842\n2    0.549076\n3    0.537629\n4    0.943395\n5    0.130206\nName: A, dtype: float64\n0.9395717793890014\n0.8548420412912521\n\n\nLas series se pueden convertir en arrays de numpy haciendo lo siguiente:\n\nca = df['A'].to_numpy()\n\ntype(ca)\n\nnumpy.ndarray\n\n\n\nLeer archivos desde pandas\nPara leer archivos nos vamos a restringir al formato csv que aunque su nombre indique que los valores están separados por comas, en verdad, admite todo un zoológico de posibles caracteres para separar los datos.\npara hacerlo usamos la función read_csv cuya ayuda se pude consultar tanto usando la ayuda en línea de colab como la propia de pandas.\n\npd.read_csv? # si ejecutamos esta línea nos muestra la ayda de esta función\n\nAntes de poder usar un archivo debemos poder importarlo:\n\nSubiéndolo manualmente a la sesión de colab\nMontando la unidad de drive y leyéndolo desde nuestra unidad de google drive.\n\nEn el primer caso debemos ir a archivos (la carpetita en la barra izquierda) y luego seleccionar subir al almacenamiento de la sesión\nEn el segundo caso, debemos ir a archivos (la carpetita en la barra izquierda) y tocar en la carpetita con el logotipo de drive (montar drive)\nVoy a seguir la segunda opción ya que la considero más flexible. Debemos seguir los pasos de los cuadros de diálogo que aparecen y luego podremos acceder a nuestros archivos una vez que veamos el texto: mounted at seguido de la ruta en la cual estará nuestro disco que por defecto se llama MyDrive\n\nimport pandas as pd\n\n\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\nMounted at /content/drive\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Guías de ejercicios/fallingtennisball02.d',names=['t','y'],delim_whitespace=True)\n\n\ndatos.head() # los pimeros datos del archivo\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n1.600000\n\n\n1\n0.001\n1.599995\n\n\n2\n0.002\n1.599980\n\n\n3\n0.003\n1.599956\n\n\n4\n0.004\n1.599921\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos.tail() # los últimos\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n2495\n2.495\n0.048161\n\n\n2496\n2.496\n0.046128\n\n\n2497\n2.497\n0.044086\n\n\n2498\n2.498\n0.042033\n\n\n2499\n2.499\n0.039971\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\n\nax = plt.plot(datos['t'],datos['y'])\n\n\n\n\n\n\n\n\n\ndatos0 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv')\n# leo este archivo tal como está no obtengo algo coherente\ndatos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',\";\")\n# si le digo que el separador es punto y coma lo lee como corresponde y asigna los combres de las columnas\n# automáticamente junto con los índices\ndatos2\n\nFutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only.\n  datos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',\";\")\n\n\n\n\n  \n    \n      \n\n\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\n0\n0,63\n0,38\n0,7\n\n\n1\n0,55\n0,64\n0,68\n\n\n2\n0,87\n0,77\n0,4\n\n\n3\n0,29\n0,24\n0,48\n\n\n4\n0,4\n0,59\n0,92\n\n\n5\n0,4\n0,11\n0,11\n\n\n6\n0,11\n0,46\n0,11\n\n\n7\n0,22\n0,8\n0,74\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos2\n\n\n\n  \n    \n      \n\n\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\n0\n0,63\n0,38\n0,7\n\n\n1\n0,55\n0,64\n0,68\n\n\n2\n0,87\n0,77\n0,4\n\n\n3\n0,29\n0,24\n0,48\n\n\n4\n0,4\n0,59\n0,92\n\n\n5\n0,4\n0,11\n0,11\n\n\n6\n0,11\n0,46\n0,11\n\n\n7\n0,22\n0,8\n0,74\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nEl dataframe se creó, pero es probable que aunque se vean “bien” los datos numéricos no tengan formato de número siendo que por defecto, pandas espera que el separador decimal sea un punto y no una coma, comprobémoslo\n\ntype(datos2['col1'][0])\n\nstr\n\n\nPara evitar esto, debemos usar el parametro decimal\n\ndatos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',decimal=\",\",sep=\";\")\n\n\npd.read_csv()\n\n\ntype(datos2['col1'][0])\n\nnumpy.float64\n\n\n\n\nGuardar archivos desde pandas\nAsí como leimos usando read_csv vamos a escribir usando to_csv. Pueden consultar la ayuda en linea\n\ndf2 = pd.DataFrame(np.random.rand(6,4),columns=list(\"ABCD\")) # creamos unos datos\n\ndf2\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.775030\n0.988084\n0.367277\n0.276403\n\n\n1\n0.771687\n0.038954\n0.919758\n0.313229\n\n\n2\n0.152389\n0.196890\n0.962008\n0.135760\n\n\n3\n0.480900\n0.197571\n0.535731\n0.200981\n\n\n4\n0.028456\n0.522056\n0.664155\n0.386979\n\n\n5\n0.288341\n0.175502\n0.465928\n0.341162\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndf2.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.csv',index=False,encoding='utf-8')\n# index = False elimina la columna de los índices\n# encoding = 'utf-8' es la codificación estándar\n# https://es.wikipedia.org/wiki/UTF-8\n\n\ndf3 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.csv')\n\ndf3\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.775030\n0.988084\n0.367277\n0.276403\n\n\n1\n0.771687\n0.038954\n0.919758\n0.313229\n\n\n2\n0.152389\n0.196890\n0.962008\n0.135760\n\n\n3\n0.480900\n0.197571\n0.535731\n0.200981\n\n\n4\n0.028456\n0.522056\n0.664155\n0.386979\n\n\n5\n0.288341\n0.175502\n0.465928\n0.341162\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nTambién podemos exportar a formato excel usando la función to_excel. Para más información consultar la ayuda en línea\n\ndf2.to_excel('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.xlsx')",
+    "crumbs": [
+      "Apuntes",
+      "04 Módulos: Pandas"
     ]
   },
   {
@@ -478,376 +602,241 @@
     ]
   },
   {
-    "objectID": "Apuntes/04 Pandas y Manejo de archivos.html",
-    "href": "Apuntes/04 Pandas y Manejo de archivos.html",
-    "title": "04 Módulos: Pandas",
+    "objectID": "Apuntes/08 Sympy.html",
+    "href": "Apuntes/08 Sympy.html",
+    "title": "08 Sympy",
     "section": "",
-    "text": "Pandas (interacción con archivos csv, txt, tsv)\nEl módulo pandas es una herramienta que permite trabajar con datos estructurados en archivos de texto. Dentro de los formatos de archivos de texto más usuales tenemos las extensiones csv,tsv y txt, en donde se tienen valores separados por coma, valores separados por tabulaciones y valores sin una separación específica respectivamente. De todas maneras la extensión del archivo no resulta conclucyente para comprender como están estructurados los datos, por lo que siempre se aconseja “mirar” el archivo antes de usarlo.\nA la hora de recojer y producir datos, debemos informar a la herramienta que utilicemos cómo están estructurados los mismos, ya sea que estén separados por espacios, tabulaciones, comas, punto y coma o cualquier otro delimitador válido según el formato. Los errores más comunes cuando no se obtienen los resultados esperados suelen surgir por una mala interpretación de cómo están organizados los datos al momento de leerlos o escribirlos para su uso.\nPara poder usar la librería pandas debemos importarla como hacemos con cualquier otra\nimport pandas as pd\nVeamos lo básico de pandas antes de leer datos desde un archivo.\nLos datos en pandas se estructuran a partir de dos elementos básicos: series y dataframes que podemos pensar como vectores columna y matrices (o tablas) respetivamene.\nVeamos algunos ejemplos\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series([1, 3, 5, np.nan, 6, 8])\ns\n\n0    1.0\n1    3.0\n2    5.0\n3    NaN\n4    6.0\n5    8.0\ndtype: float64\n\n\nComo vemos, el vector esta indexado al estilo python iniciándose en cero para el primer elemento.\nUn dataframe se puede crear a partir de varias series puestas una a continuación de otra, o desde datos que ya estén tabulados. En ese caso, cada columna será entonces una serie.\nLas columnas pueden nombrarse o leerse desde un archivo en caso de que estemos leyendo los datos.\nTambién es posible reemplazar el índice por por otros datos tales como fechas, horas, etc. incluso es posible eliminar el índice del dataframe.\n\ndf = pd.DataFrame(np.random.rand(6,4),columns=list(\"ABCD\"))\ndf\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.939572\n0.020516\n0.316436\n0.950839\n\n\n1\n0.854842\n0.920414\n0.522787\n0.442223\n\n\n2\n0.549076\n0.931013\n0.455005\n0.761476\n\n\n3\n0.537629\n0.419205\n0.610875\n0.519158\n\n\n4\n0.943395\n0.288553\n0.756474\n0.548668\n\n\n5\n0.130206\n0.273528\n0.043156\n0.426248\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nPodemos acceder a las series por separados referenciando al dataframe con una sintaxis similar a la listas.\n\nA = df[\"A\"]\nprint(A)\nprint(A[0])\nprint(df[\"A\"][1])\n\n0    0.939572\n1    0.854842\n2    0.549076\n3    0.537629\n4    0.943395\n5    0.130206\nName: A, dtype: float64\n0.9395717793890014\n0.8548420412912521\n\n\nLas series se pueden convertir en arrays de numpy haciendo lo siguiente:\n\nca = df['A'].to_numpy()\n\ntype(ca)\n\nnumpy.ndarray\n\n\n\nLeer archivos desde pandas\nPara leer archivos nos vamos a restringir al formato csv que aunque su nombre indique que los valores están separados por comas, en verdad, admite todo un zoológico de posibles caracteres para separar los datos.\npara hacerlo usamos la función read_csv cuya ayuda se pude consultar tanto usando la ayuda en línea de colab como la propia de pandas.\n\npd.read_csv? # si ejecutamos esta línea nos muestra la ayda de esta función\n\nAntes de poder usar un archivo debemos poder importarlo:\n\nSubiéndolo manualmente a la sesión de colab\nMontando la unidad de drive y leyéndolo desde nuestra unidad de google drive.\n\nEn el primer caso debemos ir a archivos (la carpetita en la barra izquierda) y luego seleccionar subir al almacenamiento de la sesión\nEn el segundo caso, debemos ir a archivos (la carpetita en la barra izquierda) y tocar en la carpetita con el logotipo de drive (montar drive)\nVoy a seguir la segunda opción ya que la considero más flexible. Debemos seguir los pasos de los cuadros de diálogo que aparecen y luego podremos acceder a nuestros archivos una vez que veamos el texto: mounted at seguido de la ruta en la cual estará nuestro disco que por defecto se llama MyDrive\n\nimport pandas as pd\n\n\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\nMounted at /content/drive\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Guías de ejercicios/fallingtennisball02.d',names=['t','y'],delim_whitespace=True)\n\n\ndatos.head() # los pimeros datos del archivo\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n1.600000\n\n\n1\n0.001\n1.599995\n\n\n2\n0.002\n1.599980\n\n\n3\n0.003\n1.599956\n\n\n4\n0.004\n1.599921\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos.tail() # los últimos\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n2495\n2.495\n0.048161\n\n\n2496\n2.496\n0.046128\n\n\n2497\n2.497\n0.044086\n\n\n2498\n2.498\n0.042033\n\n\n2499\n2.499\n0.039971\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\n\nax = plt.plot(datos['t'],datos['y'])\n\n\n\n\n\n\n\n\n\ndatos0 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv')\n# leo este archivo tal como está no obtengo algo coherente\ndatos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',\";\")\n# si le digo que el separador es punto y coma lo lee como corresponde y asigna los combres de las columnas\n# automáticamente junto con los índices\ndatos2\n\nFutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only.\n  datos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',\";\")\n\n\n\n\n  \n    \n      \n\n\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\n0\n0,63\n0,38\n0,7\n\n\n1\n0,55\n0,64\n0,68\n\n\n2\n0,87\n0,77\n0,4\n\n\n3\n0,29\n0,24\n0,48\n\n\n4\n0,4\n0,59\n0,92\n\n\n5\n0,4\n0,11\n0,11\n\n\n6\n0,11\n0,46\n0,11\n\n\n7\n0,22\n0,8\n0,74\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos2\n\n\n\n  \n    \n      \n\n\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\n0\n0,63\n0,38\n0,7\n\n\n1\n0,55\n0,64\n0,68\n\n\n2\n0,87\n0,77\n0,4\n\n\n3\n0,29\n0,24\n0,48\n\n\n4\n0,4\n0,59\n0,92\n\n\n5\n0,4\n0,11\n0,11\n\n\n6\n0,11\n0,46\n0,11\n\n\n7\n0,22\n0,8\n0,74\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nEl dataframe se creó, pero es probable que aunque se vean “bien” los datos numéricos no tengan formato de número siendo que por defecto, pandas espera que el separador decimal sea un punto y no una coma, comprobémoslo\n\ntype(datos2['col1'][0])\n\nstr\n\n\nPara evitar esto, debemos usar el parametro decimal\n\ndatos2 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo.csv',decimal=\",\",sep=\";\")\n\n\npd.read_csv()\n\n\ntype(datos2['col1'][0])\n\nnumpy.float64\n\n\n\n\nGuardar archivos desde pandas\nAsí como leimos usando read_csv vamos a escribir usando to_csv. Pueden consultar la ayuda en linea\n\ndf2 = pd.DataFrame(np.random.rand(6,4),columns=list(\"ABCD\")) # creamos unos datos\n\ndf2\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.775030\n0.988084\n0.367277\n0.276403\n\n\n1\n0.771687\n0.038954\n0.919758\n0.313229\n\n\n2\n0.152389\n0.196890\n0.962008\n0.135760\n\n\n3\n0.480900\n0.197571\n0.535731\n0.200981\n\n\n4\n0.028456\n0.522056\n0.664155\n0.386979\n\n\n5\n0.288341\n0.175502\n0.465928\n0.341162\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndf2.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.csv',index=False,encoding='utf-8')\n# index = False elimina la columna de los índices\n# encoding = 'utf-8' es la codificación estándar\n# https://es.wikipedia.org/wiki/UTF-8\n\n\ndf3 = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.csv')\n\ndf3\n\n\n\n  \n    \n      \n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n0\n0.775030\n0.988084\n0.367277\n0.276403\n\n\n1\n0.771687\n0.038954\n0.919758\n0.313229\n\n\n2\n0.152389\n0.196890\n0.962008\n0.135760\n\n\n3\n0.480900\n0.197571\n0.535731\n0.200981\n\n\n4\n0.028456\n0.522056\n0.664155\n0.386979\n\n\n5\n0.288341\n0.175502\n0.465928\n0.341162\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\nTambién podemos exportar a formato excel usando la función to_excel. Para más información consultar la ayuda en línea\n\ndf2.to_excel('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ejemplo2.xlsx')",
+    "text": "Sympy\nEl módulo Sympy permite hace cálculo matemático simbólico, del que hacemos en lápiz y papel, pero usando una computadora.\nPara usarlo debemos importar el módulo, como hacemos con todos los otros. Como los nombres de las funciones matemáticas suelen coincidir entre módulos, por ejemplo, la funcion sin (seno) existe tanto en numpy como en sympy, por lo que se recomienda usar un alias para el módulo.\n\nimport sympy as smp\n\n\nVariables y símbolos\nEn sympy, nuestras variables tradicionales convien con los llamos symbols que son los objetos que sympy usa para calcular. Veamos un ejemplo:\n\nx,y,z = smp.symbols('x y z')\n# a la izquierda variables de python\n# a la derecha los objeto symbol de sympy cuyos nombres aparecen en las expresiones\nf = x+y+z\nf.subs([(x,0),(y,1),(z,6)])\n\n\\(\\displaystyle 7\\)\n\n\n\n1/x\n# x en esta línea es la variable de python, pero lo que imprime sympy\n# es la letra que definimos dentro de la función symbols\n\n\\(\\displaystyle \\frac{1}{x}\\)\n\n\n\ny = smp.symbols('m')\n1/y\n\n\\(\\displaystyle \\frac{1}{m}\\)\n\n\nEsta evaluación en ocasiones es mejor si usamosevalf (si consultamos la ayuda de subs veremos por que´)\n\n(1/x).evalf(subs={x: 3.0}, n=21)\nLos resultados obtenidos usando subs, si bien parecen los que se obtendrían de una expresión en python directo, o de numpy, suelen ser mas bien lentos, pero cobran utilidad no cuando solo se desea remplazar algunos valores o hacer una gráfica (veremos más adelante como ir y volver desde el mundo simbólico de sympy al numérico de numpy o matplotlib) sino hacer operaciones de cálculo con ellas.\nConviene siempre que se sepa e dominio de una variable especificarlo, para que sympy no intentente encontrar soluciones que no no nos sirven. Si las variables son reales, no nos interesan soluciones complejas, por ejemplo.\n\na = smp.symbols('a0',real=True )\nb = smp.symbols('b0',integer=True )\nc = smp.symbols('b0',integer=True, possitive=True )\n\n\n\nÁlgebra elemental\nCon sympy podemos encontrar soluciones a ecuaciones, factorizar, expandir términos, etc.\npoly ayuda\n\nsmp.factor(x**2+2*x-1)\nsmp.roots(x**2+2*x-1)\nsmp.factor(x**2+2*x-1,deep=True)\n\nsmp.solveset(x**2+2*x-1)\nsmp.factor(x**2+2*x-1, domain=\"RR\")\n\nsmp.Poly(x**2+2*x-1).all_roots()\n\n[-sqrt(2) - 1, -1 + sqrt(2)]\n\n\n\n\nLímites, derivadas e integrales\nCon sympy podemos resolver analíticamente es decir, de forma simbólica (a diferencia de los métodos numéricos que estuvimos viendo hasta ahora) algunas de las operaciones mas usuales del cálculo.\nsi tenemos lo siguiente\n\\[\n\\lim_{x \\to \\infty} \\frac{1}{x}\n\\]\n\nLímites\n\nx = smp.symbols('x')\n\nsmp.limit(1/x,x,smp.oo)\n\n\\(\\displaystyle 0\\)\n\n\n\nsmp.limit(1/x,x,0,dir='-')\n\n\\(\\displaystyle -\\infty\\)\n\n\n\n\nDerivadas\n\nf = x**2\nsmp.diff(f)\n\n\\(\\displaystyle 2 x\\)\n\n\n\ng = x**3 + 2*x*y\nsmp.diff(g,y)\n\n\\(\\displaystyle 2 x\\)\n\n\nPodemos hacer derivadas de forma abstracta tambien, suponamos que tenemos una función compuesta, \\[\n\\frac{\\partial}{dx} f(x+g(x))\n\\]\n\nf, g = smp.symbols('f g', cls= smp.Function)\ng = g(x)\nf=f(x+g)\n\n\nf\n\n\\(\\displaystyle f{\\left(x + g{\\left(x \\right)} \\right)}\\)\n\n\n\nsmp.diff(f,x)\n\n\\(\\displaystyle \\left(\\frac{d}{d x} g{\\left(x \\right)} + 1\\right) \\left. \\frac{d}{d \\xi_{1}} f{\\left(\\xi_{1} \\right)} \\right|_{\\substack{ \\xi_{1}=x + g{\\left(x \\right)} }}\\)\n\n\n\n\nIntegrales\nSympy puede determinar de antemano si una integral tiene o no una solución analítica conocida.\nSi tenemos una función por ejemplo\n\\[\n\\int    \\frac{\\cos(x)}{\\sin(x)}\n\\]\n\nsmp.integrate(smp.csc(x),x)\n\n\\(\\displaystyle \\frac{\\log{\\left(\\cos{\\left(x \\right)} - 1 \\right)}}{2} - \\frac{\\log{\\left(\\cos{\\left(x \\right)} + 1 \\right)}}{2}\\)\n\n\n\n\n\nConvertir a numpy para usar como función numérica\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nsolu = smp.lambdify(x, smp.integrate(smp.sin(x),x),'numpy')\nt = np.linspace(-3,3,1000)\nplt.plot(t,solu(t))\nsolu(2)\n\n0.4161468365471424\n\n\n\n\n\n\n\n\n\n\n\nIntegrales definidas\n\\[\n\\int_{0}^{\\ln(4)} \\frac{e^xdt}{\\sqrt {e^{2x}+9}}\n\\]\n\nsmp.exp(x) / smp.sqrt(smp.exp(2*x)+9)\n\n\\(\\displaystyle \\frac{e^{x}}{\\sqrt{e^{2 x} + 9}}\\)\n\n\n\nsmp.integrate(smp.exp(x) / smp.sqrt(smp.exp(2*x)+9),(x,0,smp.log(4)))\n\n\\(\\displaystyle - \\operatorname{asinh}{\\left(\\frac{1}{3} \\right)} + \\operatorname{asinh}{\\left(\\frac{4}{3} \\right)}\\)\n\n\n\n\nIntegrales impropias\n\\[\n\\int_{0}^{\\infty} \\frac{16 atan(x)}{1+x^2}\n\\]\n\nsmp.integrate(16*smp.atan(x) / (1+x**2),(x,0,smp.oo))\n\n\\(\\displaystyle 2 \\pi^{2}\\)",
     "crumbs": [
       "Apuntes",
-      "04 Módulos: Pandas"
+      "08 Sympy"
     ]
   },
   {
-    "objectID": "Apuntes/02 Contenedores y loops.html#contenedores-en-python",
-    "href": "Apuntes/02 Contenedores y loops.html#contenedores-en-python",
-    "title": "02 Contenedores y bucles",
-    "section": "Contenedores en Python",
-    "text": "Contenedores en Python\nLos datos en Python se almacenan en aluna de estas cuato opciones - list (lista) - dict (diccionario) - set (conjunto) - tuple (tupla)\n\nListas\nUna lista es una arreglo mutable. Lo que quiere decir que podemos redefinir y alterar sus valores - Cada valor en la lista es un elemento o item - Los elementos pueden ser cualquier objeto - Las listas pueden contener objetos de diferente tipo\n\nUna lista vaciía se define como [] o como list()\n\nl = [1,2,3]\n\nLos elementos de una lista estan indizados o indexados (contando desde 0)\n\nl[0]\n\nLos elemnentos pueden ser listas en sí mismas\n\nlista_anidada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\nLas listas pueden ser “rebanadas”\n\nl[inicio:fin:orientación]\n\nLas listas tienen algunes métodos que son útiles\na.insert(index,new element)\na.append(element to add at end)\nlen(a)\n\n\nlist_a = [1,2,3]\nprint(list_a)\n\n[1, 2, 3]\n\n\n\nlist_of_strings = ['hola', 'chau', 'buenas tardes']\nprint(list_of_strings)\n\n['hola', 'chau', 'buenas tardes']\n\n\n\n# Indexando y recortando\nlist_b = ['lista','de','cosas']\nprint(list_b[0])\nprint(list_b[1:3])\nprint(list_b[-1])\n\nlista\n['de', 'cosas']\ncosas\n\n\n\nlist = [1,2,3,4,5]\nlist[0::2] # saltando de dos en dos\n\n[1, 3, 5]\n\n\n\n# Métodos de las listas (insert)\nlist_b.insert(2,'python')\nprint(list_b)\n\n['lista', 'de', 'python', 'cosas']\n\n\n\n# Métodos de las listas (append)\nlist_b.append('.')\nprint(list_b)\n\n['lista', 'de', 'python', 'cosas', '.']\n\n\n\n# Métodos de listas aplicados a otros objetivos (cadenas de texto)\nexample_string = 'Computación 2 266 - Instituto Nacional Superior del Profesorado Técnico'\nprint(example_string)\nprint(example_string.upper())\n\nComputación 2 266 - Instituto Nacional Superior del Profesorado Técnico\nCOMPUTACIÓN 2 266 - INSTITUTO NACIONAL SUPERIOR DEL PROFESORADO TÉCNICO\n\n\n\nTodos los métodos de las listas\nPodemos tener a mano una lista de los métodos mas usuales para las listas\n\n\n\n\n\n\n\nMétodo\nDescripción\n\n\n\n\nappend()\nAgrega elemento al final de la lista\n\n\nclear()\nElimina los elementos de la lista\n\n\ncopy()\ndevuelve una copia de la lista\n\n\ncount()\nDevuelve la cantidad de elementos que tienen determinado valor\n\n\nextend()\nAgrega los elementos (o cualquier iterable) al final de la lista\n\n\nindex()\nDevuele el índice (posición) del elemento que tiene determinado valor\n\n\ninsert()\nAgrega a la lista en la posición especificada\n\n\npop()\nEliminar el elemento en la posición especificada\n\n\nremove()\nRemueve el elemento con el valor especificado\n\n\nreverse()\nDa la lista invertida\n\n\nsort()\nOrdena la lista\n\n\n\nSe puede consultar mas sobre como rebanar una lista acá\n\n\n\nDiccionarios\n\nUn diccionario (dict) es un mapeo entre un conjunto de índices (keys) y otro de valores (values)\nCada objeto de un diccionario es un par índice-valor (key-value)\nLas claves pueden ser cualquier tipo de dato\nLos diccionarios no tienen un orden prestablecido\n\n\n# Diccionarios: se escriben entre llaves\neng2sp = {}\neng2sp['one'] = 'uno' # la clave 'one' tiene como valor 'uno'\nprint(eng2sp)\n\n\neng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}\nprint(eng2sp)\n\n\n# Accediendo a claves y valores\nprint(eng2sp.keys())\nprint(eng2sp.values())",
-    "crumbs": [
-      "Apuntes",
-      "02 Contenedores y bucles"
-    ]
-  },
-  {
-    "objectID": "Apuntes/02 Contenedores y loops.html#funciones",
-    "href": "Apuntes/02 Contenedores y loops.html#funciones",
-    "title": "02 Contenedores y bucles",
-    "section": "Funciones",
-    "text": "Funciones\nUna función es una secuencia de instrucciones que ejecuta un cálculo o acción al invocarla por su nombre y, opcionalmente al proveerle los argumentos necesarios. Para crear una función, usamos la palabbra reservarda def y a continuación el nombre de la función, segudia de los argumentos entre paréntesis\n\ndef poner_en_mayuscula(texto):\n    \"\"\"\n    Esta función pone en mayúsculas el\n    texto que se ingresa\n    \"\"\"\n    return (texto.upper())\n\n\nEntre paréntesis están los argumentos.\nSe puede decir que una función “toma” un argumento y “devuelve” un resultado.\nAl resultado se lo suele llamar valor de retorno.\n\nLa primera línea de la función se la llama encabezado (header) y a las restantes el cuerpo (body).\nEl ebcabezado va encerrado entre comillas y el cuerpo tiene que estar indentado. La indentación común es de 4 espacios y un error común es que el software que se usa confunda tabulaciones con indentación. Apretar la tecla tab, si el software está bien configurado, debería hacer los 4 espacios y no una tabulación. Esto parece una aclaración contradictoria y poco relevante, pero como se dijo más arriba, es una fuente común de errores en la ejecución de código: si hay tabulaciones en donde deberían estar los 4 espacios de la indentación, el código no se ejecuta.\nEl cuerpo de una función termina cuando se vuelve al nivel anterior de indentación.\n\nstring = \"Python es fácil de usar\"\nstring_upper = string.upper()\nprint(string_upper)\n\n\nponer_en_mayuscula(string)\n\nPara consultar más acerca de funciones, pueden visitar la ayuda de Python oficial",
-    "crumbs": [
-      "Apuntes",
-      "02 Contenedores y bucles"
-    ]
-  },
-  {
-    "objectID": "00 practicas.html",
-    "href": "00 practicas.html",
-    "title": "Prácticas",
-    "section": "",
-    "text": "Primer parcial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 01 Variables, entradas y salidas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 02 Iteraciones\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 03 Arrays y Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 04 Matplotlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTP 06 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "00 apuntes.html",
-    "href": "00 apuntes.html",
-    "title": "Apuntes",
-    "section": "",
-    "text": "01 Intro a Python 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n02 Contenedores y bucles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n03 Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n04 Módulos: Pandas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n05 Matpolitlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n06 Matplotlib (más)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n07 Scipy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n08 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrimer parcial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "Apuntes/01 Python intro 101 (2024).html",
-    "href": "Apuntes/01 Python intro 101 (2024).html",
-    "title": "01 Intro a Python 2024",
-    "section": "",
-    "text": "Este documento es una adaptación de otro existente. Compilamos algunos recursos útiles para la materia\nManual de Python en español\nBibliografía de la materia\n\n\n\n\nNuméricas:\n\nint, float, long, complex\n\nstring\nbooleanas\n\nTrue / False\n\n\nSe resumen en la siguiente tabla\n**\n\nPython Scalar Types\n\n**\n\n\n\n\n\n\n\n\nType\nExample\nDescription\n\n\n\n\nstr\nx = 'abc'\nString: caracteres de texto\n\n\nint\nx = 1\nintegers (i.e., números enteros)\n\n\nfloat\nx = 1.0\nfloating-point numbers (i.e., números reales)\n\n\ncomplex\nx = 1 + 2j\nnúmeros complejos\n\n\nbool\nx = True\nBooleano: Verdadero/Falso\n\n\nNoneType\nx = None\nObjeto para designar el valor nulo\n\n\n\nSe usa la función type() para conocer el tipo de una variable\n\n\nBueno, las fracciones no son representaciones “típicas” en los lenguajes de programación, y en python, debemos usar los módulos específicos para operar con ellas. Más información acá. Veremos más adelante como trabjar con fracciones.\n\n\n# String\nc = 'hello'\nprint(type(c))\n\n\n# Integer\na = 1\nprint(type(a))\n\n\n# Float\nb = 1.0\nprint(type(b))\n\n\n# Boolean\nd = True\nprint(type(d))\n\n\n# None\ne = None\nprint(type(e))\n\n\n# Cast integer to string\nprint(type(str(a)))\n\n\n\n\n\n\nLos operadores matemáticos son diferentes en las cadenas de teto, por ejemplo el sigo + se usa para unir cadenas\nRepeticiones: Se usa *n para repetir una cadena n veces\n\n# Asignar y combinar cadenas\na = 'Hello'\nb = 'World'\nprint(a + ' ' + b)\n\n\n# f-strings: reemplazarvalores de variables en cadenas\nfirstname = 'Beto'\nprint(f'Me llamo {firstname}')\n\n\n# Combininar f-strings\nfirstname = 'Beto'\nlastname = 'Velez'\n\nprint(f'My name is {firstname} {lastname}')\n\n\n# Repetir una cadena\nprint(str(a)*5)\n\n\n# Repetir un cadena con espacios\nprint(str(a+' ')*5)\n\n\n\n\n\n\n+, -, *, y /\nExponenciación **\nModulo % (Resto)\n\n\n# Adición\na = 2 + 7\nprint(f'a = {a}')\n\n\n# Sustracción\nb = a - 5\nprint(f'b = a-5 = {a}-5 = {b}')\n\n\n# Multiplicación\nprint(f'b*2 = {b}*2 = {b*2}')\n\n\n# División\nprint(f'a/3 = {a}/3 = {a/3}')\n\n\n# Exponenciación\nprint(f'b^2 = b**2 = {b}**2 = {b**2}')\n\n\n# Modulo\nprint('(Modulo de vuelve el resto luego de dividir entre dos números)')\nprint(f'el resto de  b/9 = resto de {b}/9 = {b%9}')\n\n\n\n\n\nHacen una comparación y devuelven un booleano (verdadero o falso)\nx == y # x es igual a y\nx != y # x no es igual a y\nx &gt; y # x es mayor que y\nx &lt; y # x es menor que y\nx &gt;= y # x es mayor o igual que y\nx &lt;= y # x es menor o igual que y\n\n# En cadenas de texto\na = 'hola'\nb = 'que tal'\nc = 'Hola'\nprint('a==b: ' + str(a==b))\nprint('a==c: ' + str(a==c))\nprint('a!=b: ' + str(a!=b))\nprint()\n\n\n# En datos numéricos\nd = 5\ne = 8\nprint('d &lt; e: ' + str(d &lt; e))\nprint('d &gt;= e: ' + str(d &gt;= e))",
-    "crumbs": [
-      "Apuntes",
-      "01 Intro a Python 2024"
-    ]
-  },
-  {
-    "objectID": "Apuntes/01 Python intro 101 (2024).html#tipos-de-variables",
-    "href": "Apuntes/01 Python intro 101 (2024).html#tipos-de-variables",
-    "title": "01 Intro a Python 2024",
-    "section": "",
-    "text": "Numéricas:\n\nint, float, long, complex\n\nstring\nbooleanas\n\nTrue / False\n\n\nSe resumen en la siguiente tabla\n**\n\nPython Scalar Types\n\n**\n\n\n\n\n\n\n\n\nType\nExample\nDescription\n\n\n\n\nstr\nx = 'abc'\nString: caracteres de texto\n\n\nint\nx = 1\nintegers (i.e., números enteros)\n\n\nfloat\nx = 1.0\nfloating-point numbers (i.e., números reales)\n\n\ncomplex\nx = 1 + 2j\nnúmeros complejos\n\n\nbool\nx = True\nBooleano: Verdadero/Falso\n\n\nNoneType\nx = None\nObjeto para designar el valor nulo\n\n\n\nSe usa la función type() para conocer el tipo de una variable\n\n\nBueno, las fracciones no son representaciones “típicas” en los lenguajes de programación, y en python, debemos usar los módulos específicos para operar con ellas. Más información acá. Veremos más adelante como trabjar con fracciones.\n\n\n# String\nc = 'hello'\nprint(type(c))\n\n\n# Integer\na = 1\nprint(type(a))\n\n\n# Float\nb = 1.0\nprint(type(b))\n\n\n# Boolean\nd = True\nprint(type(d))\n\n\n# None\ne = None\nprint(type(e))\n\n\n# Cast integer to string\nprint(type(str(a)))",
-    "crumbs": [
-      "Apuntes",
-      "01 Intro a Python 2024"
-    ]
-  },
-  {
-    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-de-cadenas-de-texto",
-    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-de-cadenas-de-texto",
-    "title": "01 Intro a Python 2024",
-    "section": "",
-    "text": "Los operadores matemáticos son diferentes en las cadenas de teto, por ejemplo el sigo + se usa para unir cadenas\nRepeticiones: Se usa *n para repetir una cadena n veces\n\n# Asignar y combinar cadenas\na = 'Hello'\nb = 'World'\nprint(a + ' ' + b)\n\n\n# f-strings: reemplazarvalores de variables en cadenas\nfirstname = 'Beto'\nprint(f'Me llamo {firstname}')\n\n\n# Combininar f-strings\nfirstname = 'Beto'\nlastname = 'Velez'\n\nprint(f'My name is {firstname} {lastname}')\n\n\n# Repetir una cadena\nprint(str(a)*5)\n\n\n# Repetir un cadena con espacios\nprint(str(a+' ')*5)",
-    "crumbs": [
-      "Apuntes",
-      "01 Intro a Python 2024"
-    ]
-  },
-  {
-    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-matemáticos",
-    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-matemáticos",
-    "title": "01 Intro a Python 2024",
-    "section": "",
-    "text": "+, -, *, y /\nExponenciación **\nModulo % (Resto)\n\n\n# Adición\na = 2 + 7\nprint(f'a = {a}')\n\n\n# Sustracción\nb = a - 5\nprint(f'b = a-5 = {a}-5 = {b}')\n\n\n# Multiplicación\nprint(f'b*2 = {b}*2 = {b*2}')\n\n\n# División\nprint(f'a/3 = {a}/3 = {a/3}')\n\n\n# Exponenciación\nprint(f'b^2 = b**2 = {b}**2 = {b**2}')\n\n\n# Modulo\nprint('(Modulo de vuelve el resto luego de dividir entre dos números)')\nprint(f'el resto de  b/9 = resto de {b}/9 = {b%9}')",
-    "crumbs": [
-      "Apuntes",
-      "01 Intro a Python 2024"
-    ]
-  },
-  {
-    "objectID": "Apuntes/01 Python intro 101 (2024).html#operadores-lógicos",
-    "href": "Apuntes/01 Python intro 101 (2024).html#operadores-lógicos",
-    "title": "01 Intro a Python 2024",
-    "section": "",
-    "text": "Hacen una comparación y devuelven un booleano (verdadero o falso)\nx == y # x es igual a y\nx != y # x no es igual a y\nx &gt; y # x es mayor que y\nx &lt; y # x es menor que y\nx &gt;= y # x es mayor o igual que y\nx &lt;= y # x es menor o igual que y\n\n# En cadenas de texto\na = 'hola'\nb = 'que tal'\nc = 'Hola'\nprint('a==b: ' + str(a==b))\nprint('a==c: ' + str(a==c))\nprint('a!=b: ' + str(a!=b))\nprint()\n\n\n# En datos numéricos\nd = 5\ne = 8\nprint('d &lt; e: ' + str(d &lt; e))\nprint('d &gt;= e: ' + str(d &gt;= e))",
-    "crumbs": [
-      "Apuntes",
-      "01 Intro a Python 2024"
-    ]
-  },
-  {
-    "objectID": "Apuntes/03 Numpy.html",
-    "href": "Apuntes/03 Numpy.html",
-    "title": "03 Numpy",
-    "section": "",
-    "text": "NumPy\nNumPy es el módulo más usado para cálculo científico en Python\n\nimport numpy as np\n\nEl objeto principal de Numpy es un array homogéneo multidimensional. Básicamente se trata de una tabla de elementos (generalmente números) todos del mismo tipo (ésta es una diferencia en cuantoa las listas, que permitían tipos mezclados) que se encuentran indizados (indexados). Las dimensiones del array en Numpy se denominan ejes (axes).\nLa clase base del array es ndarray (lo que Python nos devuelve si usamos la función type sobre un array.\nLos atributos principales de un array son:\n\nndarray.ndim: la cantidad de ejes\nndarray.shape: La “forma” del array, es decir, sus dimensiones. Es una n-upla de enteros que nos dice la dimensión del array en cada eje. Por ejemplo, para una matriz de n filas y m columnas shape será (n,m) (existiendo un sólo eje o axis). La longitud de la forma shape será la cantidad de ejes que tengamos, es decir ndim. Podríamos tener en un mismo array varias matrices una en cada eje.\nndarray.size: Cantidad de elementos en el array.\nndarray.dtype: El tipo de datos que contiene el array.\nndarray.itemsize: El tamaño (en bytes) de los elementos del array\n\n\na = np.arange(15) #array de numeros 0 a 14\na\n\n\na.dtype\n\n\nprint(a)\n\n\nprint(a.shape)\n\n\nprint(a.ndim)\n\n\nprint(a.dtype.name)\n\n\nprint(a.itemsize)\n\n\nprint(a.size)\n\n\nprint(type(a))\n\n\nCreando un array\nSe puede crear un array desde una lista o tupla de Python al usar la función array. El tipo de array resultante se decude de los elementos de la lista.\nUn error común es pasar directamente los valores del array a la función,\na = np.array(1,2,3,4)   # MAL\na = np.array([1,2,3,4]) # BIEN\na = np.array((1,2,3,4))  # BIEN\n\nb = np.array([6, 7, 8])\nprint(b)\n\n\nprint(type(b))\n\narray también puede transformar conjuntos de tuplas o secuencias de secuencias en arreglos n-dimensionales. Por ejemplo:\n\nc = np.array([(1.5, 2 ,3), (4, 5, 6), (7.1, 7.2, 7.3)])\nprint(c)\n\n\nprint(c.shape)\n\nLa función zeros crea un array de ceros, la función ones crea un array de unos y la función random.rand crea un array de valores float aleatorios en el intervalo [0,1] mientras que la función empty crea un array cuyo contenido depende de lo que haya en memoria (sinceramente nunca usé esta función) con el tipo float64.\nExisten otras funciones como zeros_like que crea arrays del tamaño de otro objeto, útil cuando queremos que dos arrays tengan el mismo tamaño.\n\nnp.zeros((3,4))\n\n\ntest = np.ones((2,3,4), dtype=np.int16)\nprint(test)\n\n\nnp.random.rand(3,2)\nB = np.random.rand(3,2)\n\n\nnp.empty((2,3)) # uninitialized, output may vary\n\n\nC =np.zeros_like(B)\nnp.size(C)\nprint(C)\n\n[[0. 0.]\n [0. 0.]\n [0. 0.]]\n\n\nNumPy provee algunas funciones para crear arrays de tamaño o paso predefinido. La función arange crea arrays de la siguiente manera\n\nnp.arange( 10, 30, 5 ) # array de 10 a 30 con un paso de 5 (de 5 en cinco)\n\narray([10, 15, 20, 25])\n\n\nOtra función es linspace que hace algo similar\n\nnp.linspace(0,10,20) # inicio, fin, cantidad de elementos\n\narray([ 0.        ,  0.52631579,  1.05263158,  1.57894737,  2.10526316,\n        2.63157895,  3.15789474,  3.68421053,  4.21052632,  4.73684211,\n        5.26315789,  5.78947368,  6.31578947,  6.84210526,  7.36842105,\n        7.89473684,  8.42105263,  8.94736842,  9.47368421, 10.        ])\n\n\n\n\nManipulación de arrays\nLas funciones típicas son: - ravel() aplana el array - reshape() cambia la forma - transpose() lo transpone\n\nexample = np.random.rand(4,4)\nprint(example)\n\n[[0.76567456 0.89133468 0.24932026 0.68175576]\n [0.28769869 0.37903078 0.21482535 0.10181396]\n [0.66248563 0.22776659 0.06954442 0.65318739]\n [0.97281025 0.51268667 0.84836693 0.600809  ]]\n\n\n\nexample*10\n\narray([[7.65674557, 8.91334678, 2.49320258, 6.81755759],\n       [2.87698686, 3.79030783, 2.14825349, 1.01813956],\n       [6.62485635, 2.27766588, 0.6954442 , 6.53187385],\n       [9.7281025 , 5.12686673, 8.48366935, 6.00809002]])\n\n\n\nexample_flat = example.ravel()  # devuelve el array, \"aplanado\"\nprint(example_flat)\n\n[0.76567456 0.89133468 0.24932026 0.68175576 0.28769869 0.37903078\n 0.21482535 0.10181396 0.66248563 0.22776659 0.06954442 0.65318739\n 0.97281025 0.51268667 0.84836693 0.600809  ]\n\n\n\nexample_flat.reshape(2,8) # devuelve el array pero como una matriz de 2x8\n\narray([[0.76567456, 0.89133468, 0.24932026, 0.68175576, 0.28769869,\n        0.37903078, 0.21482535, 0.10181396],\n       [0.66248563, 0.22776659, 0.06954442, 0.65318739, 0.97281025,\n        0.51268667, 0.84836693, 0.600809  ]])\n\n\n\nexample_flat.reshape(4,4) # devuelve el array a su forma original\n\narray([[0.76567456, 0.89133468, 0.24932026, 0.68175576],\n       [0.28769869, 0.37903078, 0.21482535, 0.10181396],\n       [0.66248563, 0.22776659, 0.06954442, 0.65318739],\n       [0.97281025, 0.51268667, 0.84836693, 0.600809  ]])\n\n\n\ntest = np.random.rand(2,3,6)\nprint(test)\n\n[[[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923]\n  [0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652]\n  [0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936]]\n\n [[0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269]\n  [0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593]\n  [0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]]]\n\n\n\nprint(test.ravel())\n\n[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923\n 0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652\n 0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936\n 0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269\n 0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593\n 0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]\n\n\n\nprint(example.transpose())\n\n[[0.76567456 0.28769869 0.66248563 0.97281025]\n [0.89133468 0.37903078 0.22776659 0.51268667]\n [0.24932026 0.21482535 0.06954442 0.84836693]\n [0.68175576 0.10181396 0.65318739 0.600809  ]]\n\n\nBuscar las funciones que permiten en numpy calcular:\n\nel valor medio\nla desviación estándar\nLa sumatoria de un array\nEl valor máximo de un array\nEl valor mínimo de un array",
-    "crumbs": [
-      "Apuntes",
-      "03 Numpy"
-    ]
-  },
-  {
-    "objectID": "Apuntes/05 Matplotlib.html",
-    "href": "Apuntes/05 Matplotlib.html",
-    "title": "05 Matpolitlib",
-    "section": "",
-    "text": "Matplotlib\nEs uno de los módulos mas usados para realizar gráficos. Posee dos enfoques diferentes, uno mas lineal y otro orientado a objetos. El primero posee una sintaxis similar a MATLAB y es mas adecuado para realizar gráficos en poco tiempo y con poca personalización, mientras que el segundo permite una mayor personalización de la presentación y manipulación de los datos.\n\nInterfaz tipo MATLAB\nComo todo módulo que querramos usar debemos importarlo al espacio de trabajo usando la palabra import. En este caso importaremos el sub-módulo matplotlib.pytploty lo llamaremos plt. Usaremos la función plot con una serie de puntos para ver que sucede\n\nimport matplotlib.pyplot as plt\n\nplt.plot([-1, -4.5, 16, 23, 78, 22, 3])\nplt.show()\n\n\n\n\n\n\n\n\nSi cambiamos algunos parámetros de la función plot podemos obtener lo siguiente\n\nplt.plot([-1, -4.5, 16, 23, 78, 22, 3], \"ob\")\nplt.show()\n\n\n\n\n\n\n\n\n\nplt.plot([1, 2, 3, 4], 'o-r')\nplt.ylabel('unos números')\nplt.show()\n\n\n\n\n\n\n\n\nLos ejes pueden nombrarse (incluso usar LaTex dentro de ellos)\n\ndias = range(1, 9)\ntemperatura = [25.6, 24.1, 26.7, 28.3, 27.5, 30.5, 32.8, 33.1]\n\nfig, ax = plt.subplots()\nax.plot(dias, temperatura)\nax.set(xlabel='Dia',\n       ylabel='Temperatura',\n       title='Gráfico de temperatura y una fórmula cualquiera $\\\\frac{1}{2}x^2$')\nplt.show()\n\n\n\n\n\n\n\n\nLa personalización posible es total, desde la tipografía pasando por el grosor y tipo de línea, etc. No ahondaremos en esto más allad de lo necesario para la claridad de los gráficos que hagamos.\n\n\nInterfaz orientada a objetos\nEn la interfaz orientada a objetos (no importa si no entendés que significa esto) la función pyplot se llama una sola vez, y luego se usa la estructura que se muestra debajo que permite un mayor grado de personalización y reutilización de los gráficos.\n\nfig, ax = plt.subplots()\n\nEn el apunte dedicado a Matplotlib, hay mas detalles sobre ésta sintaxis y sus posibilidades.\nSe puede consultar más acerca de Matplotlib en esta web y en el sitio oficial de matplotlib. También tienen un apunte dedicado a Matplotlib con ejercicios en espacio de google de la materia.\n\n\n\nScipy\nEl módulo Scipy es una colección de herramientas para el cálculo científico de amplio espectro. veremos algunas de sus posibilidades\n\nAjuste de curvas\nNos centraremos en unas pocas funciones de su vasto arsenal: aquellas que nos permiten obtener la expresión analítica que más se ajusta a un conjunto de datos discretos.\nEs de suma importancia a la hora de ajustar los datos de una curva, tener una idea del modelo físico al cual queremos ajustar nuestros datos. Es decir, la hipótesis teórica que el experimento debe validar es un a-priori que la experimentación validará (o no) y somos nosotros los experimentadores quienes debemos proveer el modelo al cual ajustar.\nEn términos matemáticos lo que optimize hace es es minimizar una función del tipo:\n\\[\\sum_i (f(x_i,\\beta) - y_i)^2\\]\nen donde \\(\\beta\\) son los parámetros que podemos variar, y \\(x_i\\) y \\(y_i\\) conforman los pares de valores obtenidos experimentalmente (suponemos el caso de una variable de entrada y una de salida por simplicidad en la notación)\nEl modulo a usar es optimize de la libreria scipy por lo que para importarlo haremos\nfrom scipy import optmize as op\no alternativamente:\nimport scipy.optimize as sp\n\nEjemplo\nVamos a crear unos datos a partir del modelo teórico de una caída libre sin rozamiento. Debajo vemos como se filtra un array y para obtener los valores de altura mayores a cero y luego “rebanamos” el array t para que tenga la misma cantidad de elementos que el array de alturas, y luego hacemos un gráfico de dispersión (scatter) como si los datos hubieran sido obtenidos desde un experimento. Está claro que estos datos van a ajustar “perfecto” al modelo teórico ya que lso datos fueron creados a paritr de éste.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10\ny0 = y[y &gt; 0]\nfig, ax = plt.subplots()\nfig.set_size_inches(12,5)\nax = ax.scatter(t[:len(y0)],y0)\n\n\n\n\n\n\n\n\nPara ver más sobre como filtrar o rebanar un array pueden consultar acá o acá\ncon nuestras habilidades de pandas, construyamos un archivo ficticio en base a estos datos, para luego “leerlo” y a partir de ahí usar el ajuste de curvas. Este paso no es necsario, ya que podemos usar los datos ya disponibles en los arrays, pero no viene mal la práctica\n\nimport pandas as pd\n\ndf0 = pd.DataFrame([t[:len(y0)],y0])\n# este array tiene dos filas y N columnas por lo que el dataframe no nos sirve\ndf = pd.DataFrame(np.array([t[:len(y0)],y0]).T, columns=['t','y'])\n# si transponemos los datos queda en la forma correta y podemos agregar los nombres\n# de los ejes\n\ndf.head() # para mirar los primeros datos\ndf.tail() # para mirar los ultimos datos\n\ndf.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv',index=False)\n# la ruta para que funcione debe ser la que se haya montado en tu sesión de colab\n# index=False hace que no exportemos la columna de los índices que genera pandas\n\n\n# otra opción para crear el dataframe es\n# pasra como índices los nombres de las columnas y\n# transponer el dataframe una vez creado\narr = np.array([t[:len(y0)],y0])\ndfa = pd.DataFrame(arr,index=['t','y']).T\n\ndfa.head()\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n10.000000\n\n\n1\n0.015\n9.998897\n\n\n2\n0.030\n9.995590\n\n\n3\n0.045\n9.990077\n\n\n4\n0.060\n9.982360\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv')\n\nTenemos que crear una función que contega la información del modelo. Como primer parámetro debe contener la variable dependiente y luego los parámetros\n\ndef opti(x,a,b):\n  \"\"\"\n  x: variable independiente\n  a: parámetro de la aceleración\n  b: parámetro de la altura inicial\n  \"\"\"\n  return -0.5*a*x**2+b\n\n\nfrom scipy import optimize as op\n\n\nparam_a, cov = op.curve_fit(opti,datos['t'],datos['y'])\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.8 m/s/s \n altura inicial 10.0 m\n\n\nPodemos hacer un gráfico de los “datos” contra la curva con los parámetros obtenidos del ajuste\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(datos['t'],datos['y'],label='datos',lw=0.1)\nax.plot(datos['t'],opti(datos['t'],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\n\n\n\n\n\n\n\nSi quiséramos tener un caso que se vea mas “real” podemos hacer que los datos generados tengan un poco de “ruido”\n\nruido = np.random.randint(-1,2)*np.random.rand()\n# agregamos un número aleatorio entre -1 y 1\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10 +ruido\ny0 = y[y &gt; 0]\n#fig, ax = plt.subplots()\n#fig.set_size_inches(12,5)\n#ax = ax.scatter(t[:len(y0)],y0)\n\nparam_a, cov = op.curve_fit(opti,t[:len(y0)],y0)\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(t[:len(y0)],y0,label='datos',lw=0.1)\nax.plot(t[:len(y0)],opti(t[:len(y0)],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.800000000000002 m/s/s \n altura inicial 9.559865513942757 m\n\n\n\n\n\n\n\n\n\nSi hacemos una gráfica de colores con la matriz de covarianza obtenemos una idea del “error” de cada parámetro. La interpretación de esta matriz escapa a lo que podemos ver en esta materia. La idea es que es una matriz cuadrada que relaciona todos los parámetros a los que ajustamos entre si. La diagonal es una medida del error de un parámetro específico las otras celdas son entre un parámetro y otro: es decir, la diagonal nos da una idea del error en un parámetro mientras que el resto nos indica como se influyen entre si los parámetros.\n\nprint(np.diag(cov))\n\n[9.78127213e-32 1.71503142e-32]\n\n\n\nprint(cov)\n\n[[9.78127213e-32 3.02608105e-32]\n [3.02608105e-32 1.71503142e-32]]\n\n\nen nuestro caso los errores son muy pequeños porque los datos son generados a partir de un modelo teórico.\n\nplt.imshow(np.log(np.abs(cov)))\nplt.colorbar()\n\n\n\n\n\n\n\n\n\n\n\nConstantes físicas\nScipy también ofece a mano las constantes físicas mas usuales para que podamos usarla en nuestros cálculos.\n\nfrom scipy import constants\n\n\nprint(constants.Boltzmann)\n\n1.380649e-23\n\n\n\nconstants? # para ver la ayuda el listado de constantes disponibles\n\n\ng = constants.g\nprint(g)\n\n9.80665\n\n\n\nm_e = constants.m_e\nprint(m_e)\n\n9.1093837015e-31\n\n\n\nconstants.unit('electron mass') # ver las unidades\n\n'kg'\n\n\n\nprint(constants.yotta) # acceder a prefijos\n\n1e+24\n\n\n\nk = constants.kilo\n\nprint(10*k)\n\n10000.0\n\n\n\nconstants.gram # Kg / g\n\n0.001\n\n\n\nprint(constants.kilogram_force) # Newtons / Kgf\nprint(constants.kgf)\n\n9.80665\n9.80665",
-    "crumbs": [
-      "Apuntes",
-      "05 Matpolitlib"
-    ]
-  },
-  {
-    "objectID": "Apuntes/07 Scipy y Ajuste de curvas.html",
-    "href": "Apuntes/07 Scipy y Ajuste de curvas.html",
-    "title": "07 Scipy",
-    "section": "",
-    "text": "Scipy\nEl módulo Scipy es una colección de herramientas para el cálculo científico de amplio espectro. veremos algunas de sus posibilidades\n\nAjuste de curvas\nNos centraremos en unas pocas funciones de su vasto arsenal: aquellas que nos permiten obtener la expresión analítica que más se ajusta a un conjunto de datos discretos.\nEs de suma importancia a la hora de ajustar los datos de una curva, tener una idea del modelo físico al cual queremos ajustar nuestros datos. Es decir, la hipótesis teórica que el experimento debe validar es un a-priori que la experimentación validará (o no) y somos nosotros los experimentadores quienes debemos proveer el modelo al cual ajustar.\nEn términos matemáticos lo que optimize hace es es minimizar una función del tipo:\n\\[\\sum_i (f(x_i,\\beta) - y_i)^2\\]\nen donde \\(\\beta\\) son los parámetros que podemos variar, y \\(x_i\\) y \\(y_i\\) conforman los pares de valores obtenidos experimentalmente (suponemos el caso de una variable de entrada y una de salida por simplicidad en la notación)\nEl modulo a usar es optimize de la libreria scipy por lo que para importarlo haremos\nfrom scipy import optmize as op\no alternativamente:\nimport scipy.optimize as sp\n\nEjemplo\nVamos a crear unos datos a partir del modelo teórico de una caída libre sin rozamiento. Debajo vemos como se filtra un array y para obtener los valores de altura mayores a cero y luego “rebanamos” el array t para que tenga la misma cantidad de elementos que el array de alturas, y luego hacemos un gráfico de dispersión (scatter) como si los datos hubieran sido obtenidos desde un experimento. Está claro que estos datos van a ajustar “perfecto” al modelo teórico ya que lso datos fueron creados a paritr de éste.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10\ny0 = y[y &gt; 0]\nfig, ax = plt.subplots()\nfig.set_size_inches(12,5)\nax = ax.scatter(t[:len(y0)],y0)\n\n\n\n\n\n\n\n\nPara ver más sobre como filtrar o rebanar un array pueden consultar acá o acá\ncon nuestras habilidades de pandas, construyamos un archivo ficticio en base a estos datos, para luego “leerlo” y a partir de ahí usar el ajuste de curvas. Este paso no es necsario, ya que podemos usar los datos ya disponibles en los arrays, pero no viene mal la práctica\n\nimport pandas as pd\n\ndf0 = pd.DataFrame([t[:len(y0)],y0])\n# este array tiene dos filas y N columnas por lo que el dataframe no nos sirve\ndf = pd.DataFrame(np.array([t[:len(y0)],y0]).T, columns=['t','y'])\n# si transponemos los datos queda en la forma correta y podemos agregar los nombres\n# de los ejes\n\ndf.head() # para mirar los primeros datos\ndf.tail() # para mirar los ultimos datos\n\ndf.to_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv',index=False)\n# la ruta para que funcione debe ser la que se haya montado en tu sesión de colab\n# index=False hace que no exportemos la columna de los índices que genera pandas\n\n\n# otra opción para crear el dataframe es\n# pasra como índices los nombres de las columnas y\n# transponer el dataframe una vez creado\narr = np.array([t[:len(y0)],y0])\ndfa = pd.DataFrame(arr,index=['t','y']).T\n\ndfa.head()\n\n\n\n  \n    \n      \n\n\n\n\n\n\nt\ny\n\n\n\n\n0\n0.000\n10.000000\n\n\n1\n0.015\n9.998897\n\n\n2\n0.030\n9.995590\n\n\n3\n0.045\n9.990077\n\n\n4\n0.060\n9.982360\n\n\n\n\n\n      \n        \n  \n    \n    \n  \n      \n      \n  \n\n      \n    \n  \n  \n\n\n\n\ndatos = pd.read_csv('/content/drive/MyDrive/Docente/INSPT/Computación 2/Apuntes/ej_op.csv')\n\nTenemos que crear una función que contega la información del modelo. Como primer parámetro debe contener la variable dependiente y luego los parámetros\n\ndef opti(x,a,b):\n  \"\"\"\n  x: variable independiente\n  a: parámetro de la aceleración\n  b: parámetro de la altura inicial\n  \"\"\"\n  return -0.5*a*x**2+b\n\n\nfrom scipy import optimize as op\n\n\nparam_a, cov = op.curve_fit(opti,datos['t'],datos['y'])\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.8 m/s/s \n altura inicial 10.0 m\n\n\nPodemos hacer un gráfico de los “datos” contra la curva con los parámetros obtenidos del ajuste\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(datos['t'],datos['y'],label='datos',lw=0.1)\nax.plot(datos['t'],opti(datos['t'],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\n\n\n\n\n\n\n\nSi quiséramos tener un caso que se vea mas “real” podemos hacer que los datos generados tengan un poco de “ruido”\n\nruido = np.random.randint(-1,2)*np.random.rand()\n# agregamos un número aleatorio entre -1 y 1\n\nt = np.arange(0,10,0.05)\ny = -4.9*t**2+10 +ruido\ny0 = y[y &gt; 0]\n#fig, ax = plt.subplots()\n#fig.set_size_inches(12,5)\n#ax = ax.scatter(t[:len(y0)],y0)\n\nparam_a, cov = op.curve_fit(opti,t[:len(y0)],y0)\n\nfig,ax = plt.subplots()\nfig.set_size_inches(10,5)\nax.scatter(t[:len(y0)],y0,label='datos',lw=0.1)\nax.plot(t[:len(y0)],opti(t[:len(y0)],param_a[0],param_a[1]),'--',label='ajuste',color='red')\nax.legend(loc='upper right')\n\nprint('aceleracion' , param_a[0],'m/s/s','\\n','altura inicial',param_a[1],'m')\n\naceleracion 9.800000000000002 m/s/s \n altura inicial 9.559865513942757 m\n\n\n\n\n\n\n\n\n\nSi hacemos una gráfica de colores con la matriz de covarianza obtenemos una idea del “error” de cada parámetro. La interpretación de esta matriz escapa a lo que podemos ver en esta materia. La idea es que es una matriz cuadrada que relaciona todos los parámetros a los que ajustamos entre si. La diagonal es una medida del error de un parámetro específico las otras celdas son entre un parámetro y otro: es decir, la diagonal nos da una idea del error en un parámetro mientras que el resto nos indica como se influyen entre si los parámetros.\n\nprint(np.diag(cov))\n\n[9.78127213e-32 1.71503142e-32]\n\n\n\nprint(cov)\n\n[[9.78127213e-32 3.02608105e-32]\n [3.02608105e-32 1.71503142e-32]]\n\n\nen nuestro caso los errores son muy pequeños porque los datos son generados a partir de un modelo teórico.\n\nplt.imshow(np.log(np.abs(cov)))\nplt.colorbar()\n\n\n\n\n\n\n\n\n\n\n\nConstantes físicas\nScipy también ofece a mano las constantes físicas mas usuales para que podamos usarla en nuestros cálculos.\n\nfrom scipy import constants\n\n\nprint(constants.Boltzmann)\n\n1.380649e-23\n\n\n\nconstants? # para ver la ayuda el listado de constantes disponibles\n\n\ng = constants.g\nprint(g)\n\n9.80665\n\n\n\nm_e = constants.m_e\nprint(m_e)\n\n9.1093837015e-31\n\n\n\nconstants.unit('electron mass') # ver las unidades\n\n'kg'\n\n\n\nprint(constants.yotta) # acceder a prefijos\n\n1e+24\n\n\n\nk = constants.kilo\n\nprint(10*k)\n\n10000.0\n\n\n\nconstants.gram # Kg / g\n\n0.001\n\n\n\nprint(constants.kilogram_force) # Newtons / Kgf\nprint(constants.kgf)\n\n9.80665\n9.80665",
-    "crumbs": [
-      "Apuntes",
-      "07 Scipy"
-    ]
-  },
-  {
-    "objectID": "Apuntes/EV 01 1P 2024.html",
-    "href": "Apuntes/EV 01 1P 2024.html",
+    "objectID": "Practicas/EV 01 1P 2024.html",
+    "href": "Practicas/EV 01 1P 2024.html",
     "title": "Primer parcial",
     "section": "",
-    "text": "1 Simulacro de parcial\n\nEjercicio 1 (Python básico) Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones x e y en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias (a_x,a_y,v_x,v_y,x_0,y_0,\\Delta t).\n\n\nEjercicio 2 (Pandas y numpy) Sea a_y=-3, v_{0x}=10 y x_0=2 genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.\n\n\nEjercicio 3 (Matplotlib) Importe los datos del csv y haga gráficas x(t), y(t), v_x(t), v_y(t) e y(x) que incluyan los nombres de los ejes con sus rótulos respctivos.\n\n\nEjercicio 4 (Matplotlib y animaciones) Haga una animación de la gráfica y(x) para el tiempo de vuelo.\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\n\ndef f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):\n\n    t = np.linspace(0,dt,50*dt)\n    x = ax*t**2 + v0x*t + x0\n    y = ay*t**2 + v0y*t + y0\n\n    yr = y[y&gt;0]\n    xr = x[:len(y[y&gt;0])]\n    tr = t[:len(y[y&gt;0])]\n\n    d = np.array([tr,xr,yr])\n    # d2 = pd.DataFrame(d.T, columns=['t','x','y'])\n\n    return d",
+    "text": "1 Simulacro de parcial\n\nEjercicio 1 (Python básico) Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones x e y en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias con aceleración constante (a_x,a_y,v_x,v_y,x_0,y_0,\\Delta t).\n\n\nEjercicio 2 (Pandas y numpy) Sea a_y=-3, v_{0x}=10 y x_0=2 genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.\n\n\nEjercicio 3 (Matplotlib) Importe los datos del csv y haga gráficas x(t), y(t), v_x(t), v_y(t) e y(x) que incluyan los nombres de los ejes con sus rótulos respctivos.\n\n\nEjercicio 4 (Matplotlib y animaciones) Haga una animación de la gráfica y(x) para el tiempo de vuelo.\n\nUna pista de como encarar el último punto se puede ver a continuación (este código tal cual como está no corre, pero les puede servir de ayuda)\n\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\nfrom matplotlib.animation import PillowWriter\nfrom matplotlib import rc\nrc('animation', html='jshtml')\nimport numpy as np\nimport pandas as pd\n\n\n\ndef f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):\n\n    t = np.linspace(0,dt,50*dt)\n    x = ax*t**2 + v0x*t + x0\n    y = ay*t**2 + v0y*t + y0\n\n    yr = y[y&gt;0]\n    xr = x[:len(y[y&gt;0])]\n    tr = t[:len(y[y&gt;0])]\n\n    d = np.array([tr,xr,yr]) # analizar d\n    d2 = pd.DataFrame(d.T, columns=['t','x','y']) # analizar d2\n\n    return d\n\ndatos = f(ax=0,ay=-9.8,v0x=0,v0y=30,x0=0,y0=0,dt=10)\nfigura, ejes = plt.subplots()\ngrafico = ejes.plot(datos[0][0],datos[2][0])[0]\nejes.set(xlim=[0,max(datos[0])], ylim=[0,max(datos[2])], xlabel='Tiempo [s]', ylabel='d')\n\ndef actualizar(frame):\n    x = datos[0][:frame]\n    y = datos[2][:frame]\n    grafico.set_xdata(x)\n    grafico.set_ydata(y)\n\n    return grafico\n\nanimacion = animation.FuncAnimation(fig=figura,func=actualizar,frames=len(datos[0]),interval=30)",
     "crumbs": [
       "Apuntes",
+      "Practicas",
       "Primer parcial"
     ]
   },
   {
-    "objectID": "Prácticas/EV 01 1P 2024.html",
-    "href": "Prácticas/EV 01 1P 2024.html",
-    "title": "Primer parcial",
-    "section": "",
-    "text": "1 Simulacro de parcial\n\nEjercicio 1 (Python básico) Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones x e y en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias (a_x,a_y,v_x,v_y,x_0,y_0,\\Delta t).\n\n\nEjercicio 2 (Pandas y numpy) Sea a_y=-3, v_{0x}=10 y x_0=2 genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.\n\n\nEjercicio 3 (Matplotlib) Importe los datos del csv y haga gráficas x(t), y(t), v_x(t), v_y(t) e y(x) que incluyan los nombres de los ejes con sus rótulos respctivos.\n\n\nEjercicio 4 (Matplotlib y animaciones) Haga una animación de la gráfica y(x) para el tiempo de vuelo.\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\n\ndef f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):\n\n    t = np.linspace(0,dt,50*dt)\n    x = ax*t**2 + v0x*t + x0\n    y = ay*t**2 + v0y*t + y0\n\n    yr = y[y&gt;0]\n    xr = x[:len(y[y&gt;0])]\n    tr = t[:len(y[y&gt;0])]\n\n    d = np.array([tr,xr,yr])\n    # d2 = pd.DataFrame(d.T, columns=['t','x','y'])\n\n    return d",
-    "crumbs": [
-      "Apuntes",
-      "Prácticas",
-      "Primer parcial"
-    ]
-  },
-  {
-    "objectID": "Prácticas/TP 02 Iteraciones.html",
-    "href": "Prácticas/TP 02 Iteraciones.html",
+    "objectID": "Practicas/TP 02 Iteraciones.html",
+    "href": "Practicas/TP 02 Iteraciones.html",
     "title": "TP 02 Iteraciones",
     "section": "",
     "text": "Computación 2 - Física y física aplicada 2661 # TP 02: Iteraciones",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#divisores-de-un-número",
-    "href": "Prácticas/TP 02 Iteraciones.html#divisores-de-un-número",
+    "objectID": "Practicas/TP 02 Iteraciones.html#divisores-de-un-número",
+    "href": "Practicas/TP 02 Iteraciones.html#divisores-de-un-número",
     "title": "TP 02 Iteraciones",
     "section": "1. Divisores de un número",
     "text": "1. Divisores de un número\n\nPlanteo\nElaborar un programa que solicite a un usuario que ingrese un número entero y muestre todos los divisores de ese número (un número al dividirse por sus divisores arroja resto 0).\n\n\nSolución\nUna opción es usar un bucle while y un contador junto al operador módulo. Si el modulo de dividir al número ingresado con el contador es cero, signiica que el contador es divisor del número. Incrementando el contador desde 1 hasta el número ingresado se usa un condicional para imprimir sólo aquellos resultados donde num%div==0\n\nnum = int(input(\"ingrese un número entero: \"))\ndiv = 1\nwhile div &lt; num:\n  if num%div == 0:\n    print(div, \"es divisor de \",num)\n  div = div+1\n\ningrese un número entero: 50\n1 es divisor de  50\n2 es divisor de  50\n5 es divisor de  50\n10 es divisor de  50\n25 es divisor de  50\n\n\nOtra opción es usar un bucle for (se pueden almacenar los divisores en una lista usando append)\n\nnum = int(input(\"ingrese un número entero: \"))\ndivisores = []\n\nfor i in range(num):\n  if num%(i+1) == 0: # uso i+1 porque range va de 0 a n-1. range(4) = 0,1,2,3\n    print(i+1, \"es divisor de \",num)\n    divisores.append(i+1)\nif len(divisores) == 2: # si la lista de divsores tiene dos elementos, el número es primo\n  print (num, \"es primo\")\nelse:\n  print(num, \"no es primo\")\nprint(\"divores de \",num, \": \" ,divisores)\n\ningrese un número entero: 34\n1 es divisor de  34\n2 es divisor de  34\n17 es divisor de  34\n34 es divisor de  34\n34 no es primo\ndivores de  34 :  [1, 2, 17, 34]\n\n\nPodemos usar un formulario de colab para ingresar nuestra variable. Vamos a insertar =&gt; añadir un campo de formulario y elegimos crear una variable de tipo integer\n\nnum = 120 #@param {type:\"integer\"}\ndivisores = []\n\nfor i in range(num):\n  if num%(i+1) == 0: # uso i+1 porque range va de 0 a n-1. range(4) = 0,1,2,3\n    print(i+1, \"es divisor de \",num)\n    divisores.append(i+1)\nif len(divisores) == 2:\n  print (num, \"es primo\")\nelse:\n  print(num, \"no es primo\")\nprint(\"divores de 10: \",divisores)\n\n1 es divisor de  213\n3 es divisor de  213\n71 es divisor de  213\n213 es divisor de  213\n213 no es primo\ndivores de 10:  [1, 3, 71, 213]",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#números-primos",
-    "href": "Prácticas/TP 02 Iteraciones.html#números-primos",
+    "objectID": "Practicas/TP 02 Iteraciones.html#números-primos",
+    "href": "Practicas/TP 02 Iteraciones.html#números-primos",
     "title": "TP 02 Iteraciones",
     "section": "2. Números primos",
     "text": "2. Números primos\n\nPlanteo\nElaborar un programa que solicite al usuario que ingrese un número entero y determine si el mismo es un número primo. Un número primo es un número que solo es divisible por 1 y por sí mismo.\n\n\nSolución\nLa solución del problema anterior tiene las pistas para poder hacerlo",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#cifras-con-condiciones",
-    "href": "Prácticas/TP 02 Iteraciones.html#cifras-con-condiciones",
+    "objectID": "Practicas/TP 02 Iteraciones.html#cifras-con-condiciones",
+    "href": "Practicas/TP 02 Iteraciones.html#cifras-con-condiciones",
     "title": "TP 02 Iteraciones",
     "section": "3. Cifras con condiciones",
     "text": "3. Cifras con condiciones\n\nPlanteo\nHacer un programa que encuentre e imprima un listado con todos los números de 4 cifras que cumplan la condición de que la suma de las cifras de orden impar es igual a la suma de las cifras de orden par. Por ejemplo, el número \\(7821\\) cumple esta condición ya que \\(7 + 2 = 8 + 1\\).\n\n\nSolución\nMás adelante veremos como se puede resolver este mismo problema mucho más fácil si se trata al número como un string y se acceden a las posiciones decimales de forma sistemática.\nif una suma == otra suma:\n  print( num, 'cumple con la condición')\nPodemos volver a usar el operador módulo para recuperar las cifras y usar una condicion para evaluar lo que se pide. Como debemos conseguir todos los números de cuatro cifras, nuestra condición deberá ser recorrida en un bucle while o for",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#números-perfectos",
-    "href": "Prácticas/TP 02 Iteraciones.html#números-perfectos",
+    "objectID": "Practicas/TP 02 Iteraciones.html#números-perfectos",
+    "href": "Practicas/TP 02 Iteraciones.html#números-perfectos",
     "title": "TP 02 Iteraciones",
     "section": "4. Números perfectos",
     "text": "4. Números perfectos\n\nPlanteo\nEscribir un programa que encuentre los primeros 4 números perfectos. Un número perfecto es un entero positivo, que es igual a la suma de todos los enteros positivos (excluido él mismo) que son divisores del número. Por ejemplo, el primer número perfecto es \\(6\\), ya que los divisores de \\(6\\) son $1, 2, 3 , $ y \\(1 + 2 + 3 = 6\\).\n\n\nSolución\nEs muy similar al problema anterior, sólo que tenemos que agregar un contador que al llegar a 4 detenga la ejecución del bucle",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#bluce-con-condicion",
-    "href": "Prácticas/TP 02 Iteraciones.html#bluce-con-condicion",
+    "objectID": "Practicas/TP 02 Iteraciones.html#bluce-con-condicion",
+    "href": "Practicas/TP 02 Iteraciones.html#bluce-con-condicion",
     "title": "TP 02 Iteraciones",
     "section": "5. Bluce con condicion",
     "text": "5. Bluce con condicion\n\nPlanteo\nEscribir un programa que reciba una cantidad indefinida de números enteros positivos hasta que se ingresa el 0. A continuación el programa debe indicar cuál fue el mayor y cuál el menor.\n\n\nSolución\nDebemos tener dos variables, una que registre el número mínimo y otra para guardar el máximo. Este bucle se ejecuta hasta que el usuario ingresa el cero, y luego nos devuelve los dos resultados almacenados en nusestras variables. Una pista\nmenor = 0\nmayor = 0\nwhile n !=0:\n  if n&gt;mayor:\n    mayor = n\n  if n&lt;menor:\n    menor = n",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#serie-armónica",
-    "href": "Prácticas/TP 02 Iteraciones.html#serie-armónica",
+    "objectID": "Practicas/TP 02 Iteraciones.html#serie-armónica",
+    "href": "Practicas/TP 02 Iteraciones.html#serie-armónica",
     "title": "TP 02 Iteraciones",
     "section": "6. Serie armónica",
     "text": "6. Serie armónica\n\nPlanteo\nRealizar un programa que aproxime el cálculo de una serie armónica calculando e imprimiendo los primeros N términos y su sumatoria donde N es un valor ingresado por teclado. La serie armónica es:\n\\[\\sum_{n=1}^{∞} \\frac{1}{x}\\]\nPruebe también con la serie\n\\[\\sum_{n=1}^{∞} \\frac{1}{x^2}\\]\n¿Qué diferencia se observa?\n\n[wikipedia de la serie armónica](https://es.wikipedia.org/wiki/Serie_arm%C3%B3nica_(matem%C3%A1tica)\n\n\nSolución\nUn enfoque no funcional sería acumular el resultado iterativamente, es decir, que el término siguiente se suma al anterior y el próximo se suma a lo que uno ya tiene calculado y así sucesivamente.\nn1 = 1\nn2 = n1+1/2\nn3 = n2 + 1/3\nSe puede incluir la variable en el cálculo\nUn paso intermedio útil puede ser generar una variable que se incremente y nos dé los términos \\(\\frac{1}{n}\\) en un bucle\n\nn=1\nwhile n &lt; 5:\n  term = 1/n\n  print(term)\n  n=n+1\n\n1.0\n0.5\n0.3333333333333333\n0.25\n\n\nLes presento el ciclo for ¿Qué entienden de la sintaxis?\n\nfor i in range(1,5):\n  x = 1/i\n  print(x)\n\n1.0\n0.5\n0.3333333333333333\n0.25\n\n\n¿Qué pasaría si escribieran\nfor i in range(5):\n  print(i)\nPruébenlo\n\nnterm = 3 #@param {type:\"integer\"}\nsuma = 0\nn = 1 # contador comienza en uno (conviene en este caso para evitar dividir por cero)\nwhile n &lt;= nterm:\n  term = 1/n\n  suma = suma + term\n  #print(term)\n  #print(suma)\n  tabla = [term, suma]\n  print(tabla)\n  n=n+1\n\n\n[1.0, 1.0]\n[0.5, 1.5]\n[0.3333333333333333, 1.8333333333333333]\n\n\n\nnterm = 3 #@param {type:\"integer\"}\nsuma = 0\nn = 1 # contador comienza en uno (conviene en este caso para evitar dividir por cero)\nwhile n &lt;= nterm:\n  term = 1/n\n  suma = suma + term\n  print('termino ',n,': ', term)\n  print('suma:', suma)\n  n=n+1\n\ntermino  1 :  1.0\nsuma: 1.0\ntermino  2 :  0.5\nsuma: 1.5\ntermino  3 :  0.3333333333333333\nsuma: 1.8333333333333333",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#sucesión-de-fibonacci",
-    "href": "Prácticas/TP 02 Iteraciones.html#sucesión-de-fibonacci",
+    "objectID": "Practicas/TP 02 Iteraciones.html#sucesión-de-fibonacci",
+    "href": "Practicas/TP 02 Iteraciones.html#sucesión-de-fibonacci",
     "title": "TP 02 Iteraciones",
     "section": "7. Sucesión de Fibonacci",
     "text": "7. Sucesión de Fibonacci\n\nPlanteo\nRealizar un programa que imprima los primeros N términos de una sucesión de fibonacci, la que empieza con 0 y 1, y cada término que sigue a estos valores es la suma de los dos valores anteriores. Imprimir la razón entre un número y su número anterior\n\n\nSolución\nUna aproximación poco eficiente es calcular todo el árbol cada vez que se nos pide un término: si se nos pide el término “n” se calcular todos los anteriores para luego hacer la suma y obtener el que se nos pide. Esto implica que vamos “Bajando” por un proceso en donde a fin de cuentas sólo calcularemos muchas veces \\(f(0)\\) y \\(f(1)\\)\nmatemáticamente tenemos que:\n\\[\\begin{align}\nf_0 &= 0 \\\\\nf_1 &= 1 \\\\\nf_n &= f_{n-1} + f_{n-2} \\\\\nf_2 &= f_{2-1} + f_{2-2} \\\\\nf_2 &= f_{1} + f_{0} \\\\\nf_2 &= 1 + 0 = 1 \\\\\n\\end{align}\\]\nCalcular \\(f(3)\\) implica calcular \\(f(2)\\) (que incluye a los términos anteriores) y así sucesivamente.\n\nn = 2 #@param {type:\"integer\"}\ncontador = 0 # el contador controla el bucle\n# definimos los valores iniciales\nf0 = 0  # valor fijo al comienzo de la secuencia\nf1 = 1  # valor fijo al comienzo de la secuencia\nfn = f0+f1  # termino n de la secuencia\n\nwhile contador &lt;= n:\n  if n &lt;=2:\n    if n == 0:\n      print(f0)\n    if n == 1:\n      print(f0,f1)\n    if n == 2:\n      print(f0,f1,fn)\n    break\n  else:\n    f0 = f1\n    f1 = fn\n    fn = f0+f1\n    contador = contador+1\n    print(fn)\n\n0 1 1\n\n\nPodemos usar este problema para introducir las funciones y algunas propiedades de las listas en python. Ya que los valores de \\(f_n\\) se calculan una y otra vez, quizás podríamos guardar éstos mismos en algun listado. Una lista en python es cualquier cosa encerrada entre corchetes.\nlista = []\narriba vemos una lista vacía\nlista = [2,3]\nLista con dos elementos numéricos\nlista = [2.0,2,'boca','river']\nLista con elementos mixtos\nlista[2]\nnos devuelve el elemento que ocula la posición 2 (recordar que los índices empiezan en cero)\nlista[2] = 'velez'\nasigna el dato ingresado en la posición 2 de la lista.\npodemos agregar un valor al final de una lista usando\nlista.append('mi nuevo valor')\nFunciones: Las definimos tal como en matemática\ndef f(x):\n  y=2*x\n  return y\nla palabra def es reservada para definir funciones. Luego del nombre, en el ejemplo es f entre parénteis van los argumentos. Luego, en el bloque central las instrucciones. La palabra return hace explicta la ejecución de la función y “devuelve” lo que se ponga allí. De todas formas, las funciones pueden imprimir en consola respuestas o valores sin necesida de que devuelvan un resultado mediante return.\ndef f(x):\n  y=2*x\n  print(y)\nla diferencia radica en que al imprimir, el resultado sólo esta visible en pantalla y no podemos volver a usar ese dato para otro cáculo o proceso. por ejemplo, si uno quisiera graficar la función f debería poder tener los valores de entrada y salida como pares ordenados y eso sólo podríamos lograrlo mediante el uso de return. Más adelante profundizaremos.\n\ndef fibo(n):\n  serie = [0,1]\n  ratio = [\"-\",1]\n  if n &lt;= 2:\n    print(serie[0:n]) # imprime desde las posiciones 0 a la n de la lista serie\n    print(ratio[0:n]) # imprime desde las posiciones 0 a la n de la lista ratio\n  else:\n\n    for i in range(1,n):\n      serie.append(serie[i]+serie[i-1])\n      ratio.append(serie[i+1]/serie[i])\n\n    print(serie)\n    print(ratio)\n\n\nfibo(6)\n\n[0, 1, 1, 2, 3, 5, 8]\n['-', 1, 1.0, 2.0, 1.5, 1.6666666666666667, 1.6]\n\n\nSe puede definir un método recurrente (que se llama a sí mismo dentro de su definición) para calcular la sucesión de Fibonacci. Lo pueden googlear, pero es didácticamente basatante oscuro, por lo que no lo recomiendo como material de enseñanza.\nLo que si se puede hacer, es la versión mas sencilla, que también es un poco críptica pero más clara, que sería algo así:\n\ndef fib(n):\n    f_n = 0  # posición n\n    fn_1 = 1  # posición n+1\n\n    for k in range(n): # recorro de 0 a n calculando los valores\n        fn_2 = fn_1+ f_n # posición n+2, para n=0  fn_2 =&gt; vale 1=1+0\n        f_n = fn_1 # ahora la posición n, que es la que se va a imprimir, se redefine como la posición siguiente f_n=1\n        fn_1 = fn_2 # la posiciión n+1 se define como lo que se obtuvo para n+2 y volvemos al inicio del bucle fn_1 = 1\n\n        # para n=1\n        # fn_2 = 1+1\n        # f_n = 1\n        # f_n1 =2\n\n        # para n=2\n        # fn_2 = 2+1 =3\n        # f_n = 2\n        #fn_1 = 3\n\n        # para n=3\n        # fn_2 = 3+2= 5\n        # fn = 3\n        # fn_1 = 3\n\n    return f_n\n\n\nfor i in range(8):\n  print(fib(i))\n\n0\n1\n1\n2\n3\n5\n8\n13",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#fibonacci-y-la-proporción-aurea",
-    "href": "Prácticas/TP 02 Iteraciones.html#fibonacci-y-la-proporción-aurea",
+    "objectID": "Practicas/TP 02 Iteraciones.html#fibonacci-y-la-proporción-aurea",
+    "href": "Practicas/TP 02 Iteraciones.html#fibonacci-y-la-proporción-aurea",
     "title": "TP 02 Iteraciones",
     "section": "8. Fibonacci y la proporción aurea",
     "text": "8. Fibonacci y la proporción aurea\n\nPlanteo\nRealizar un programa que imprima términos de la sucesión de fibonacci hasta que la razón entre un número y su número anterior de como resultado, con una incerteza de una diez millonésima parte, el número áureo.\n\n\nSolución",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#raíces-de-ecuaciones",
-    "href": "Prácticas/TP 02 Iteraciones.html#raíces-de-ecuaciones",
+    "objectID": "Practicas/TP 02 Iteraciones.html#raíces-de-ecuaciones",
+    "href": "Practicas/TP 02 Iteraciones.html#raíces-de-ecuaciones",
     "title": "TP 02 Iteraciones",
     "section": "9. Raíces de ecuaciones",
     "text": "9. Raíces de ecuaciones\n\nPlanteo\nCálculo numérico. Raices de ecuaciones no lineales: La ecuación de Van Der Waals para gases reales a grandes presiones es\n\\[\\left(p+\\frac{an^2}{V^2}\\right)\\left(V-nb\\right)=nRT \\]\ndonde \\(a\\) y \\(b\\) son constantes empíricas propias de cada gas. Si se tiene un mol de nitrógeno gaseoso en un tanque a 0º C y 400 atm de presión, siendo \\(a=1,3896 \\,\\mathrm{atm\\cdot l^2/mol^2}\\), \\(b=0,03913 \\, \\mathrm{l/mol}\\) y \\(R=0,082 \\, \\mathrm{atm\\cdot l/mol \\cdot K}\\) calcular el volumen del gas.\n\n\nSolución",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 02 Iteraciones.html#cinemática",
-    "href": "Prácticas/TP 02 Iteraciones.html#cinemática",
+    "objectID": "Practicas/TP 02 Iteraciones.html#cinemática",
+    "href": "Practicas/TP 02 Iteraciones.html#cinemática",
     "title": "TP 02 Iteraciones",
     "section": "10. Cinemática",
     "text": "10. Cinemática\n\nPlanteo\nUn tiro vertical a baja velocidad considerando la viscosidad del aire puede modelarse con la ecuación horaria (considerando \\(C=m/β\\) siendo \\(β\\) el coeficiente que multiplica la velocidad en la ecuación \\(F=β.v\\) para la fuerza de arrastre). Siendo \\(C=2\\), la altura inicial \\(10 \\, \\mathrm{m}\\) y la velocidad de lanzamiento \\(18 \\, \\mathrm{m / s}\\), determinar el tiempo de vuelo.\n\\[ y(t)=y_0+\\left(C \\cdot v_y + C^2 g\\right)\\left(1-{e}^{-\\frac{t}{C}}\\right)-g\\cdot C\\cdot t \\]\n\n\nSolución\nUsando un desarrollo lineal: - Se definen las variables y constantes del problema. - Se crea una expresión equivalente a \\(y(t)\\) - Se usa un bule con el tiempo \\(t\\) como contador - Se imprime el resultado\n\ny0= 10 # m\nvy= 18 # m/s\ng= 9.8 # m/s^2\nc=2 # s\nt=0 # s\ny=y0+(c*vy+c**2*g)*(1- 2.7**(-t/c))-g*c*t\n\n\nwhile y&gt;0:\n  y=y0+(c*vy+c**2*g)*(1- 2.7**(-t/c))-g*c*t\n  t=t+0.01\nprint(t)\n\n3.7699999999999636",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 02 Iteraciones"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html",
-    "href": "Prácticas/TP 04 Matplotlib.html",
+    "objectID": "Practicas/TP 04 Matplotlib.html",
+    "href": "Practicas/TP 04 Matplotlib.html",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Dado un movimiento en caída libre en una dimensión con condiciones inciales arbitrarias crear en un sólo lienzo gráficas de posición, velocidad y aceleración en función del tiempo.\n\n\n\nDado un movimiento armónico simple en una dimensión (con condiciones inciales aribtrarias) crear en un sólo lienzo las gráficas de posición, velocidad y aceleración en función del tiempo\n\n\n\nElegir alguno de los gráficos de posición anteriores y animarlo en un intervalo de tiempo adecuado para la situación elegida.\n\n\n\nHacer un gráfico de barras que muestre la relación (en una animación) entre energía cinética y energía potencial para la caída libre del punto 1\n\n\n\nGraficar una superficie de nivel para las funciones \\(f(x,y)=x^2+y^2\\) y \\(f(x,y)=x^2-y^2\\)\n\n\n\nGraficar el campo vectorial \\(F(x,y)=\\frac{1}{2}x \\hat{i}+\\frac{1}{2}y \\hat{j}\\)\npueden consultar acá más sobre campos vectorialesy vectores en matplotlib.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-1",
-    "href": "Prácticas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-1",
+    "objectID": "Practicas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-1",
+    "href": "Practicas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-1",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Dado un movimiento en caída libre en una dimensión con condiciones inciales arbitrarias crear en un sólo lienzo gráficas de posición, velocidad y aceleración en función del tiempo.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-2",
-    "href": "Prácticas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-2",
+    "objectID": "Practicas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-2",
+    "href": "Practicas/TP 04 Matplotlib.html#gráficos-de-posición-velocidad-y-aceleración-2",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Dado un movimiento armónico simple en una dimensión (con condiciones inciales aribtrarias) crear en un sólo lienzo las gráficas de posición, velocidad y aceleración en función del tiempo",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#animacion-1",
-    "href": "Prácticas/TP 04 Matplotlib.html#animacion-1",
+    "objectID": "Practicas/TP 04 Matplotlib.html#animacion-1",
+    "href": "Practicas/TP 04 Matplotlib.html#animacion-1",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Elegir alguno de los gráficos de posición anteriores y animarlo en un intervalo de tiempo adecuado para la situación elegida.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#animación-2",
-    "href": "Prácticas/TP 04 Matplotlib.html#animación-2",
+    "objectID": "Practicas/TP 04 Matplotlib.html#animación-2",
+    "href": "Practicas/TP 04 Matplotlib.html#animación-2",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Hacer un gráfico de barras que muestre la relación (en una animación) entre energía cinética y energía potencial para la caída libre del punto 1",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#superficie-de-nivel",
-    "href": "Prácticas/TP 04 Matplotlib.html#superficie-de-nivel",
+    "objectID": "Practicas/TP 04 Matplotlib.html#superficie-de-nivel",
+    "href": "Practicas/TP 04 Matplotlib.html#superficie-de-nivel",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Graficar una superficie de nivel para las funciones \\(f(x,y)=x^2+y^2\\) y \\(f(x,y)=x^2-y^2\\)",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   },
   {
-    "objectID": "Prácticas/TP 04 Matplotlib.html#campos-vectoriales",
-    "href": "Prácticas/TP 04 Matplotlib.html#campos-vectoriales",
+    "objectID": "Practicas/TP 04 Matplotlib.html#campos-vectoriales",
+    "href": "Practicas/TP 04 Matplotlib.html#campos-vectoriales",
     "title": "TP 04 Matplotlib",
     "section": "",
     "text": "Graficar el campo vectorial \\(F(x,y)=\\frac{1}{2}x \\hat{i}+\\frac{1}{2}y \\hat{j}\\)\npueden consultar acá más sobre campos vectorialesy vectores en matplotlib.",
     "crumbs": [
       "Apuntes",
-      "Prácticas",
+      "Practicas",
       "TP 04 Matplotlib"
     ]
   }

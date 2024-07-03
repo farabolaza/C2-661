@@ -29,7 +29,7 @@ website:
     search: true
     contents: 
       - auto: Apuntes
-      - auto: Prácticas
+      - auto: Practicas
 
 
 format:

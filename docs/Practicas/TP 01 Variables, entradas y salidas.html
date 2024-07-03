@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>C2-661 - Primer parcial</title>
+<title>C2-661 - TP 01 Variables, entradas y salidas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Prácticas/TP 01 Variables, entradas y salidas.html" rel="next">
-<link href="../Apuntes/EV 01 1P 2024.html" rel="prev">
+<link href="../Practicas/TP 02 Iteraciones.html" rel="next">
+<link href="../Practicas/EV 01 1P 2024.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,22 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -192,7 +178,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Prácticas/EV 01 1P 2024.html">Prácticas</a></li><li class="breadcrumb-item"><a href="../Prácticas/EV 01 1P 2024.html">Primer parcial</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 01 Variables, entradas y salidas.html">TP 01 Variables, entradas y salidas</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -269,18 +255,12 @@ window.Quarto = {
  <span class="menu-text">08 Sympy</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Apuntes/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Primer parcial</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Prácticas</span></a>
+ <span class="menu-text">Practicas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -288,37 +268,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Practicas/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Primer parcial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/TP 01 Variables, entradas y salidas.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 01 Variables, entradas y salidas.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 01 Variables, entradas y salidas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/TP 02 Iteraciones.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 02 Iteraciones.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 02 Iteraciones</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/TP 03 Arrays.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 03 Arrays.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 03 Arrays y Numpy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/TP 04 Matplotlib.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 04 Matplotlib.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 04 Matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Prácticas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 06 Sympy</span></a>
   </div>
 </li>
@@ -334,16 +314,56 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#simulacro-de-parcial" id="toc-simulacro-de-parcial" class="nav-link active" data-scroll-target="#simulacro-de-parcial"><span class="header-section-number">1</span> Simulacro de parcial</a></li>
+  <li><a href="#conversión-de-temperatura" id="toc-conversión-de-temperatura" class="nav-link active" data-scroll-target="#conversión-de-temperatura">Conversión de temperatura</a>
+  <ul class="collapse">
+  <li><a href="#planteo" id="toc-planteo" class="nav-link" data-scroll-target="#planteo">Planteo</a></li>
+  <li><a href="#solución" id="toc-solución" class="nav-link" data-scroll-target="#solución">Solución</a></li>
+  <li><a href="#versión-mejorada" id="toc-versión-mejorada" class="nav-link" data-scroll-target="#versión-mejorada">Versión mejorada</a></li>
+  </ul></li>
+  <li><a href="#superficie-de-un-triángulo" id="toc-superficie-de-un-triángulo" class="nav-link" data-scroll-target="#superficie-de-un-triángulo">Superficie de un triángulo</a>
+  <ul class="collapse">
+  <li><a href="#planteo-1" id="toc-planteo-1" class="nav-link" data-scroll-target="#planteo-1">Planteo</a></li>
+  <li><a href="#solución-1" id="toc-solución-1" class="nav-link" data-scroll-target="#solución-1">Solución</a></li>
+  </ul></li>
+  <li><a href="#dígitos-de-un-número" id="toc-dígitos-de-un-número" class="nav-link" data-scroll-target="#dígitos-de-un-número">Dígitos de un número</a>
+  <ul class="collapse">
+  <li><a href="#planteo-2" id="toc-planteo-2" class="nav-link" data-scroll-target="#planteo-2">Planteo</a></li>
+  <li><a href="#solución-2" id="toc-solución-2" class="nav-link" data-scroll-target="#solución-2">Solución</a></li>
+  </ul></li>
+  <li><a href="#pitágoras-2" id="toc-pitágoras-2" class="nav-link" data-scroll-target="#pitágoras-2">Pitágoras 2</a>
+  <ul class="collapse">
+  <li><a href="#planteo-3" id="toc-planteo-3" class="nav-link" data-scroll-target="#planteo-3">Planteo</a></li>
+  <li><a href="#solución-3" id="toc-solución-3" class="nav-link" data-scroll-target="#solución-3">Solución</a></li>
+  </ul></li>
+  <li><a href="#conversiones-de-tiempo" id="toc-conversiones-de-tiempo" class="nav-link" data-scroll-target="#conversiones-de-tiempo">Conversiones de tiempo</a>
+  <ul class="collapse">
+  <li><a href="#planteo-4" id="toc-planteo-4" class="nav-link" data-scroll-target="#planteo-4">Planteo</a></li>
+  <li><a href="#solución-4" id="toc-solución-4" class="nav-link" data-scroll-target="#solución-4">Solución</a></li>
+  </ul></li>
+  <li><a href="#tiro-vertical" id="toc-tiro-vertical" class="nav-link" data-scroll-target="#tiro-vertical">Tiro vertical</a>
+  <ul class="collapse">
+  <li><a href="#planteo-5" id="toc-planteo-5" class="nav-link" data-scroll-target="#planteo-5">Planteo</a></li>
+  <li><a href="#solución-5" id="toc-solución-5" class="nav-link" data-scroll-target="#solución-5">Solución</a></li>
+  </ul></li>
+  <li><a href="#comparación-de-números" id="toc-comparación-de-números" class="nav-link" data-scroll-target="#comparación-de-números">Comparación de números</a>
+  <ul class="collapse">
+  <li><a href="#planteo-6" id="toc-planteo-6" class="nav-link" data-scroll-target="#planteo-6">Planteo</a></li>
+  <li><a href="#solución-6" id="toc-solución-6" class="nav-link" data-scroll-target="#solución-6">Solución</a></li>
+  </ul></li>
+  <li><a href="#aprobación-con-condiciones" id="toc-aprobación-con-condiciones" class="nav-link" data-scroll-target="#aprobación-con-condiciones">Aprobación con condiciones</a>
+  <ul class="collapse">
+  <li><a href="#planteo-7" id="toc-planteo-7" class="nav-link" data-scroll-target="#planteo-7">Planteo</a></li>
+  <li><a href="#solución-7" id="toc-solución-7" class="nav-link" data-scroll-target="#solución-7">Solución</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Prácticas/EV 01 1P 2024.html">Prácticas</a></li><li class="breadcrumb-item"><a href="../Prácticas/EV 01 1P 2024.html">Primer parcial</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 01 Variables, entradas y salidas.html">TP 01 Variables, entradas y salidas</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Primer parcial</h1>
+<h1 class="title">TP 01 Variables, entradas y salidas</h1>
 </div>
 
 
@@ -360,42 +380,189 @@ window.Quarto = {
 </header>
 
 
-<section id="simulacro-de-parcial" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Simulacro de parcial</h1>
-<div id="exr-primero" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 1 (Python básico)</strong></span> Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones <span class="math inline">x</span> e <span class="math inline">y</span> en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias (<span class="math inline">a_x</span>,<span class="math inline">a_y</span>,<span class="math inline">v_x</span>,<span class="math inline">v_y</span>,<span class="math inline">x_0</span>,<span class="math inline">y_0</span>,<span class="math inline">\Delta t</span>).</p>
+<p>Computación 2 - Física y física aplicada 2661 # TP 01: Variables, entradas y salidas</p>
+<section id="conversión-de-temperatura" class="level2">
+<h2 class="anchored" data-anchor-id="conversión-de-temperatura">Conversión de temperatura</h2>
+<section id="planteo" class="level3">
+<h3 class="anchored" data-anchor-id="planteo">Planteo</h3>
+<p>El usuario ingresa un número que representa una temperatura en °C. El programa imprime esa temperatura en F</p>
+</section>
+<section id="solución" class="level3">
+<h3 class="anchored" data-anchor-id="solución">Solución</h3>
+<div id="cell-5" class="cell" data-executioninfo="{&quot;elapsed&quot;:3749,&quot;status&quot;:&quot;error&quot;,&quot;timestamp&quot;:1712183552522,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="98243fe5-c186-45d6-c75c-e78f2d8584a6">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ingrese la temperatura en C"</span>) <span class="co"># se imprime un mensaje</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>()) <span class="co"># se pide un valor por teclado y se lo convierte en número</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span>(C<span class="op">*</span><span class="fl">1.80</span><span class="op">+</span><span class="dv">32</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La temperatura es </span><span class="sc">{</span>F<span class="sc">}</span><span class="ss"> F"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ingrese la temperatura en C
+h</code></pre>
 </div>
-<div id="exr-segundo" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 2 (Pandas y numpy)</strong></span> Sea <span class="math inline">a_y=-3</span>, <span class="math inline">v_{0x}=10</span> y <span class="math inline">x_0=2</span> genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.</p>
+<div class="cell-output cell-output-error">
+<pre><code>ValueError: could not convert string to float: 'h'</code></pre>
 </div>
-<div id="exr-tercero" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 3 (Matplotlib)</strong></span> Importe los datos del csv y haga gráficas <span class="math inline">x(t)</span>, <span class="math inline">y(t)</span>, <span class="math inline">v_x(t)</span>, <span class="math inline">v_y(t)</span> e <span class="math inline">y(x)</span> que incluyan los nombres de los ejes con sus rótulos respctivos.</p>
 </div>
-<div id="exr-extra" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 4 (Matplotlib y animaciones)</strong></span> Haga una animación de la gráfica <span class="math inline">y(x)</span> para el tiempo de vuelo.</p>
+</section>
+<section id="versión-mejorada" class="level3">
+<h3 class="anchored" data-anchor-id="versión-mejorada">Versión mejorada</h3>
+<p>¿Cómo hacer para tratar con un dato erróneo? Por ejemplo, un usuario ingresa un valor no númerico. En tal caso, el programa anterior arrojaría un error. Pruebe correr el programa anterior ingresando un valor no numérico.</p>
+<div id="cell-7" class="cell" data-executioninfo="{&quot;elapsed&quot;:20,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1713393408194,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> caf():</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> <span class="bu">float</span>(c)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    F <span class="op">=</span>(C<span class="op">*</span><span class="fl">1.80</span><span class="op">+</span><span class="dv">32</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"La temperatura es </span><span class="sc">{</span>F<span class="sc">}</span><span class="ss"> F"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span>:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"ingrese un valor númerico como temperatura"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    caf()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cdbaa25e" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(ax<span class="op">=</span><span class="dv">0</span>,ay<span class="op">=-</span><span class="fl">9.8</span>,v0x<span class="op">=</span><span class="dv">0</span>,v0y<span class="op">=</span><span class="dv">0</span>,x0<span class="op">=</span><span class="dv">0</span>,y0<span class="op">=</span><span class="dv">0</span>,dt<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="dv">0</span>,dt,<span class="dv">50</span><span class="op">*</span>dt)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> ax<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> v0x<span class="op">*</span>t <span class="op">+</span> x0</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> ay<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> v0y<span class="op">*</span>t <span class="op">+</span> y0</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    yr <span class="op">=</span> y[y<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    xr <span class="op">=</span> x[:<span class="bu">len</span>(y[y<span class="op">&gt;</span><span class="dv">0</span>])]</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    tr <span class="op">=</span> t[:<span class="bu">len</span>(y[y<span class="op">&gt;</span><span class="dv">0</span>])]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> np.array([tr,xr,yr])</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># d2 = pd.DataFrame(d.T, columns=['t','x','y'])</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="superficie-de-un-triángulo" class="level2">
+<h2 class="anchored" data-anchor-id="superficie-de-un-triángulo">Superficie de un triángulo</h2>
+<section id="planteo-1" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-1">Planteo</h3>
+<p>Realizar un programa en el que se ingrese la base y la altura de un triángulo e informe su superficie. El programa debe imprimir una leyenda que incluya los datos de entrada y el resultado.</p>
+<p>Ingrese la base del triángulo: 8 Ingrese la altura del triángulo: 5 La superficie del triángulo de base 7 y altura 5 es 17.50</p>
+</section>
+<section id="solución-1" class="level3">
+<h3 class="anchored" data-anchor-id="solución-1">Solución</h3>
+<p>Con lo hecho en el problema anterior se puede resolver. Recordar que la potenciación es una multipliación repetida, por lo que en pyhton el operador es <code>**</code>.</p>
+</section>
+</section>
+<section id="dígitos-de-un-número" class="level2">
+<h2 class="anchored" data-anchor-id="dígitos-de-un-número">Dígitos de un número</h2>
+<section id="planteo-2" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-2">Planteo</h3>
+<p>Desarrollar un programa en el que se ingrese un número de 5 dígitos y que luego muestre cada dígito separado por un guión</p>
+</section>
+<section id="solución-2" class="level3">
+<h3 class="anchored" data-anchor-id="solución-2">Solución</h3>
+<p>Una forma de encontrar el primer dígito de un número es dividirlo por <span class="math inline">\(10^n\)</span> donde n es el orden de magnitud del número y quedarse con la parte entera. Por ejemplo: Si tenemos el número 1450 y lo dividimos por 1000 el primer dígito es la parte entera del resultado de la división, usando la operación división entera <code>//</code> y módulo <code>%</code> podemos obtener los elementos necesarios para resolver este problema. Para el resto de los dígitos, usando el operador módulo en potencias de diez decrecientes, obtenemos los “restos” usamos para reiterar el proceso de obtener el primer dígito.</p>
+<div id="cell-14" class="cell" data-executioninfo="{&quot;elapsed&quot;:355,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712076860255,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="f21b072e-9358-4ff9-9c2d-734e95047441">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1450</span><span class="op">//</span><span class="dv">1000</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="cell-15" class="cell" data-executioninfo="{&quot;elapsed&quot;:306,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712076730218,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="ad039746-f6aa-470b-cbc8-eee6b439398b">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1450</span><span class="op">%</span><span class="dv">1000</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>450</code></pre>
+</div>
+</div>
+<div id="cell-16" class="cell" data-executioninfo="{&quot;elapsed&quot;:273,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712076767666,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="f623aa18-30c4-4ae8-a4ec-af2ec50c3086">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">450</span><span class="op">//</span><span class="dv">100</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="cell-17" class="cell" data-executioninfo="{&quot;elapsed&quot;:274,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712076831065,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="fd81916d-03ba-4157-93af-4daf962122a7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">450</span><span class="op">%</span><span class="dv">100</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>50</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-executioninfo="{&quot;elapsed&quot;:271,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712077000752,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="ec51d11c-0827-4a76-ae82-0f5df02d07f8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1450</span><span class="op">%</span><span class="dv">1000</span><span class="op">//</span><span class="dv">100</span>,<span class="st">"-"</span>,<span class="dv">1450</span><span class="op">%</span><span class="dv">1000</span><span class="op">%</span><span class="dv">100</span><span class="op">//</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4 - 5</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="pitágoras-2" class="level2">
+<h2 class="anchored" data-anchor-id="pitágoras-2">Pitágoras 2</h2>
+<section id="planteo-3" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-3">Planteo</h3>
+<p>Hacer un programa en el que se ingrese la medida de los catetos de un triángulo rectángulo y que se calcule y muestre el perímetro de dicho triángulo. Incluir math a fin de utilizar la función sqrt(expresión) que calcula la raíz cuadrada de un número.</p>
+<p>Para usar la función, tenemos que importarla desde el módulo math. Para ello hacemos</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>o</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math.sqrt <span class="im">as</span> sqrt</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La diferencia es qe en el primer caso tendremos que llamarla usando el nombre completo <code>math.sqrt(num)</code> mientras que en el segundo caso no. Como opción, también se puede prescindir de la raíz cuadrada y elevar a <span class="math inline">\(\frac{1}{2}\)</span>.</p>
+</section>
+<section id="solución-3" class="level3">
+<h3 class="anchored" data-anchor-id="solución-3">Solución</h3>
+<p>Con lo visto hasta ahora se puede resolver este problema.</p>
+</section>
+</section>
+<section id="conversiones-de-tiempo" class="level2">
+<h2 class="anchored" data-anchor-id="conversiones-de-tiempo">Conversiones de tiempo</h2>
+<section id="planteo-4" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-4">Planteo</h3>
+<p>Elaborar un programa en el que se ingrese una cantidad expresada en segundos y luego la exprese en días, horas, minutos y segundos.</p>
+<p><strong>Ejemplo:</strong> Ingrese tiempo en segundos: 93714.</p>
+<p>1 dia(s), 2 hora(s), 1 minuto(s), 54 segundo(s)</p>
+</section>
+<section id="solución-4" class="level3">
+<h3 class="anchored" data-anchor-id="solución-4">Solución</h3>
+<p>Similar al problema de los dígitos, solo que el resto no resulta de dividir por potencias de diez, sino de 60.</p>
+</section>
+</section>
+<section id="tiro-vertical" class="level2">
+<h2 class="anchored" data-anchor-id="tiro-vertical">Tiro vertical</h2>
+<section id="planteo-5" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-5">Planteo</h3>
+<p>El usuario ingresa un instante de tiempo (t) y el programa calcula e imprime la posición de un móvil arrojado a 20 m/s hacia arriba en el planeta tierra para ese instante de tiempo.</p>
+</section>
+<section id="solución-5" class="level3">
+<h3 class="anchored" data-anchor-id="solución-5">Solución</h3>
+<p>Escribir una ecuación para la la posición en función del tiempo con los datos del problema y crear la variable t como dato de entrada.</p>
+</section>
+</section>
+<section id="comparación-de-números" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-de-números">Comparación de números</h2>
+<section id="planteo-6" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-6">Planteo</h3>
+<p>Realizar un programa en el que se ingresen dos números enteros positivos. Luego deberá restar el mayor del menor e indicar si dicha diferencia es un valor que está entre ambos números (es decir, es mayor que el más chico y menor que el más grande de los ingresados).</p>
+</section>
+<section id="solución-6" class="level3">
+<h3 class="anchored" data-anchor-id="solución-6">Solución</h3>
+<p>Se almacenan los dos números a comparar, se efectúan los cálculos, se devuelve el resultado condicionalmente usando if para cada caso.</p>
+</section>
+</section>
+<section id="aprobación-con-condiciones" class="level2">
+<h2 class="anchored" data-anchor-id="aprobación-con-condiciones">Aprobación con condiciones</h2>
+<section id="planteo-7" class="level3">
+<h3 class="anchored" data-anchor-id="planteo-7">Planteo</h3>
+<p>Realizar un programa que solicite 3 notas de parciales obtenidas por un alumno. A continuación se mostrará por pantalla un mensaje que indique la situación del alumno:</p>
+<ul>
+<li>Si el alumno aprobó los 3 parciales (nota 4 o más) y su promedio es mayor a 7, promociona la materia con la nota promedio.</li>
+<li>Si el alumno aprobó los 3 parciales pero su promedio no supera los 7 puntos, debe rendir examen final.</li>
+<li>Si el alumno no aprobó uno o más parciales, se solicitará que se ingrese la nota de un recuperatorio. Si éste hubiera sido aprobado, se informará el promedio general (3 parciales + el recuperatorio) y su condición de aprobado (aún cuando el promedio no supere los 4 puntos).</li>
+<li>Si no hubiera aprobado el recuperatorio se informará que el alumno fue aplazado.</li>
+</ul>
+</section>
+<section id="solución-7" class="level3">
+<h3 class="anchored" data-anchor-id="solución-7">Solución</h3>
+<p>Este código no resuelve todo el problema pero presenta algunas herramientas útiles, como limitar los dígitos que se muestran al imprimir una variable o el uso de la funcion suma sobre los elementos de una lista. Lea atentamente cada línea y asegúrese de que comprende qué hace en cada caso. El problema requiere evaluar los escenarios posibles por lo que quizás le resulte útil hacer un bosquejo en papel sobre los posibles casos para luego pasarlos a código.</p>
+<div id="cell-36" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calif(n<span class="op">=</span><span class="dv">3</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Función que hace lo que se pide</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  notas <span class="op">=</span> []</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ingrese la </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> nota"</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    nota <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>())</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    notas.append(nota)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  prom <span class="op">=</span> (<span class="bu">sum</span>(notas))<span class="op">/</span>n</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>prom<span class="sc">:.2f}</span><span class="ss">"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-37" class="cell" data-executioninfo="{&quot;elapsed&quot;:290,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1712078706301,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="d9de53c5-e61c-4c2c-99e7-79365b068dcc">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>7</code></pre>
+</div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1005,13 +1172,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Apuntes/EV 01 1P 2024.html" class="pagination-link" aria-label="Primer parcial">
+      <a href="../Practicas/EV 01 1P 2024.html" class="pagination-link" aria-label="Primer parcial">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Primer parcial</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Prácticas/TP 01 Variables, entradas y salidas.html" class="pagination-link" aria-label="TP 01 Variables, entradas y salidas">
-        <span class="nav-page-text">TP 01 Variables, entradas y salidas</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Practicas/TP 02 Iteraciones.html" class="pagination-link" aria-label="TP 02 Iteraciones">
+        <span class="nav-page-text">TP 02 Iteraciones</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

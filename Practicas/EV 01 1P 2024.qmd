@@ -14,7 +14,7 @@ jupyter: python3
 ## Python básico
 
 Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones $x$ e $y$ 
-en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias ($a_x$,$a_y$,$v_x$,$v_y$,$x_0$,$y_0$,$\Delta t$).
+en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias con aceleración constante ($a_x$,$a_y$,$v_x$,$v_y$,$x_0$,$y_0$,$\Delta t$).
 :::
 
 ::: {#exr-segundo}
@@ -35,12 +35,20 @@ Importe los datos del csv y haga gráficas $x(t)$, $y(t)$, $v_x(t)$, $v_y(t)$ e 
 Haga una animación de la gráfica $y(x)$ para el tiempo de vuelo.
 :::
 
+Una pista de como encarar el último punto se puede ver a continuación 
+(este código tal cual como está no corre, pero les puede servir de ayuda)
 
-``` {python}
+``` python
 
 import matplotlib.pyplot as plt
+from matplotlib import animation
+from matplotlib.animation import PillowWriter
+from matplotlib import rc
+rc('animation', html='jshtml')
 import numpy as np
 import pandas as pd
+
+
 
 def f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):
 
@@ -52,8 +60,25 @@ def f(ax=0,ay=-9.8,v0x=0,v0y=0,x0=0,y0=0,dt=10):
     xr = x[:len(y[y>0])]
     tr = t[:len(y[y>0])]
 
-    d = np.array([tr,xr,yr])
-    # d2 = pd.DataFrame(d.T, columns=['t','x','y'])
+    d = np.array([tr,xr,yr]) # analizar d
+    d2 = pd.DataFrame(d.T, columns=['t','x','y']) # analizar d2
 
     return d
+
+datos = f(ax=0,ay=-9.8,v0x=0,v0y=30,x0=0,y0=0,dt=10)
+figura, ejes = plt.subplots()
+grafico = ejes.plot(datos[0][0],datos[2][0])[0]
+ejes.set(xlim=[0,max(datos[0])], ylim=[0,max(datos[2])], xlabel='Tiempo [s]', ylabel='d')
+
+def actualizar(frame):
+    x = datos[0][:frame]
+    y = datos[2][:frame]
+    grafico.set_xdata(x)
+    grafico.set_ydata(y)
+
+    return grafico
+
+animacion = animation.FuncAnimation(fig=figura,func=actualizar,frames=len(datos[0]),interval=30)
 ```
+
+

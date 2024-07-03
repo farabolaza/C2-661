@@ -2,6 +2,6 @@
 title: "Prácticas"
 subtitle: "Listado de prácticas"
 listing:
-  contents: Prácticas
+  contents: Practicas
 sidebar: true
 ---
