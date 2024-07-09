@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>C2-661 - TP 06 Sympy</title>
+<title>C2-661 - Primer parcial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Practicas/TP 04 Matplotlib.html" rel="prev">
+<link href="../Practicas/TP 01 Variables, entradas y salidas.html" rel="next">
+<link href="../Practicas/EV 01 1P 2024.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,8 +105,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -177,7 +192,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 06 Sympy.html">TP 06 Sympy</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024-x.html">Primer parcial</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -273,7 +288,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/EV 01 1P 2024-x.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/EV 01 1P 2024-x.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Primer parcial</span></a>
   </div>
 </li>
@@ -303,7 +318,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Practicas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 06 Sympy</span></a>
   </div>
 </li>
@@ -319,20 +334,16 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#sympy" id="toc-sympy" class="nav-link active" data-scroll-target="#sympy">Sympy</a>
-  <ul class="collapse">
-  <li><a href="#encuentro-con-condiciones" id="toc-encuentro-con-condiciones" class="nav-link" data-scroll-target="#encuentro-con-condiciones">Encuentro con condiciones</a></li>
-  </ul></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#primer-parcial" id="toc-primer-parcial" class="nav-link active" data-scroll-target="#primer-parcial"><span class="header-section-number">1</span> Primer parcial</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 06 Sympy.html">TP 06 Sympy</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024-x.html">Primer parcial</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TP 06 Sympy</h1>
+<div class="quarto-title-block"><div><h1 class="title">Primer parcial</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -349,104 +360,24 @@ window.Quarto = {
 </header>
 
 
-<section id="sympy" class="level1">
-<h1>Sympy</h1>
-<p>Ejercicios resueltos y para hacer</p>
-<div id="cell-2" class="cell" data-executioninfo="{&quot;elapsed&quot;:712,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693427895545,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> smp</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="primer-parcial" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Primer parcial</h1>
+<div id="exr-primero" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1 (Python básico)</strong></span> Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones <span class="math inline">x</span> e <span class="math inline">y</span> en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias con aceleración constante (<span class="math inline">a_x</span>,<span class="math inline">a_y</span>,<span class="math inline">v_x</span>,<span class="math inline">v_y</span>,<span class="math inline">x_0</span>,<span class="math inline">y_0</span>,<span class="math inline">\Delta t</span>).</p>
 </div>
-<section id="encuentro-con-condiciones" class="level2">
-<h2 class="anchored" data-anchor-id="encuentro-con-condiciones">Encuentro con condiciones</h2>
-<p>Un objeto que está cayendo con aceleración constante <span class="math inline">\(g\)</span> se choca contra una plataforma que acelera hacia arriba:</p>
-<ol type="1">
-<li>Objeto <span class="math inline">\(h_o(t) = h_0 - v_o t - \frac{1}{2}gt^2\)</span></li>
-<li>Platforma <span class="math inline">\(h_p(t) = v_p t + \frac{1}{2}qt^2\)</span></li>
-</ol>
-<p><strong>Encontrar la velocidad inciial del objeto <span class="math inline">\(v_0\)</span> tal que cuando se encuentren ambos tengan la misma velocidad.</strong></p>
-<p>Tenemos que encontrar <span class="math inline">\(v_0\)</span> y <span class="math inline">\(t\)</span> en estas ecuaciones</p>
-<ol type="1">
-<li><span class="math inline">\(h_0(t) = h_p(t)\)</span></li>
-<li>$ (t) = - (t) $</li>
-</ol>
-<p>Para que funcionen en Sympy las tenemos que reescribir igualadas a cero</p>
-<ol type="1">
-<li><span class="math inline">\(h_0(t) - h_p(t) = 0\)</span></li>
-<li><span class="math inline">\(\frac{dh_0}{dt} + \frac{dh_p}{dt} = 0\)</span></li>
-</ol>
-<div id="cell-5" class="cell" data-executioninfo="{&quot;elapsed&quot;:20,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426695137,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t, h0, v0, g, vp, q <span class="op">=</span> smp.symbols(<span class="st">'t h_0 v_0 g v_p q'</span>, real<span class="op">=</span><span class="va">True</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># es una buena práctica achicar el ámbito o dominino de nuestras variables cuando</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># podemos asumirlo por restricciones físicas del problema. En este caso</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># podemos definir todas nuestras variables como reales y positivas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="exr-segundo" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2 (Pandas y numpy)</strong></span> Dadas las condiciones iniciales que recibió en papel genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.</p>
 </div>
-<p>Definimos laexpresiones en sympy</p>
-<div id="cell-7" class="cell" data-executioninfo="{&quot;elapsed&quot;:9,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426699520,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>h0t <span class="op">=</span> h0 <span class="op">-</span> v0<span class="op">*</span>t <span class="op">-</span> smp.Rational(<span class="dv">1</span>,<span class="dv">2</span>)<span class="op">*</span>g<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dh0dt <span class="op">=</span> g<span class="op">*</span>t <span class="op">-</span> v0</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>hpt <span class="op">=</span> vp<span class="op">*</span>t <span class="op">+</span> smp.Rational(<span class="dv">1</span>,<span class="dv">2</span>)<span class="op">*</span>q<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dhpdt <span class="op">=</span> vp <span class="op">+</span> q<span class="op">*</span>t</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="exr-tercero" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3 (Matplotlib)</strong></span> Importe los datos del csv y haga gráficas <span class="math inline">x(t)</span>, <span class="math inline">y(t)</span>, <span class="math inline">v_x(t)</span>, <span class="math inline">v_y(t)</span> e <span class="math inline">y(x)</span> que incluyan los nombres de los ejes con sus rótulos respctivos.</p>
 </div>
-<p>Definimos las ecuaciones</p>
-<div id="cell-9" class="cell" data-executioninfo="{&quot;elapsed&quot;:1003,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426703013,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>eq1 <span class="op">=</span> h0t <span class="op">-</span> hpt</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>eq2 <span class="op">=</span> dh0dt <span class="op">+</span> dhpdt</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="exr-extra" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4 (Matplotlib y animaciones)</strong></span> Haga una animación de la gráfica <span class="math inline">y(x)</span> para el tiempo de vuelo.</p>
 </div>
-<p>Las resolvemos usando <code>smp.solve()</code>. También existe el método o función <code>solveset()</code> que da los resultados en forma de conjunto y suele ser más general y poderosa que <code>smp.solve()</code>.</p>
-<div id="cell-11" class="cell" data-executioninfo="{&quot;elapsed&quot;:1033,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426706097,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="6b7dc187-6835-4e4a-d5ba-79d90acacd3d" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>smp.solve([eq1, eq2], [t, v0])[<span class="dv">0</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>((-2*v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)/(g + q),
- v_p/3 + sqrt(2)*sqrt(3*g*h_0 + 3*h_0*q + 2*v_p**2)/3)</code></pre>
-</div>
-</div>
-<div id="cell-12" class="cell" data-executioninfo="{&quot;elapsed&quot;:929,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426711542,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>t_col, v_ini <span class="op">=</span> smp.solve([eq1, eq2], [t, v0])[<span class="dv">0</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-13" class="cell" data-executioninfo="{&quot;elapsed&quot;:445,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426714126,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="36e47171-4c08-4d3b-dbe9-406dca36764f" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>v_ini</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
-<p><span class="math inline">\(\displaystyle \frac{v_{p}}{3} + \frac{\sqrt{2} \sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}\)</span></p>
-</div>
-</div>
-<div id="cell-14" class="cell" data-executioninfo="{&quot;elapsed&quot;:409,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426717894,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="9d901243-9cad-40b0-fa40-d3eb7edbafc9" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>t_col</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
-<p><span class="math inline">\(\displaystyle \frac{- \frac{2 v_{p}}{3} + \frac{\sqrt{2} \sqrt{3 g h_{0} + 3 h_{0} q + 2 v_{p}^{2}}}{3}}{g + q}\)</span></p>
-</div>
-</div>
-<p><strong>¿A que velocidad se encuentran?</strong></p>
-<div id="cell-16" class="cell" data-executioninfo="{&quot;elapsed&quot;:380,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426722026,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="ded252db-986d-4e24-98e3-34ed0a7fd2e9" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dh0dt.subs([(t,t_col),(v0,v_ini)]).simplify()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
-<p><span class="math inline">\(\displaystyle \frac{- g v_{p} - \frac{q v_{p}}{3} - \frac{q \sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\)</span></p>
-</div>
-</div>
-<div id="cell-17" class="cell" data-executioninfo="{&quot;elapsed&quot;:561,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1693426724931,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="e9b76299-ec1a-4ef8-c72c-0f8a27131dee" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dhpdt.subs([(t,t_col),(v0,v_ini)]).simplify()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
-<p><span class="math inline">\(\displaystyle \frac{g v_{p} + \frac{q v_{p}}{3} + \frac{q \sqrt{6 g h_{0} + 6 h_{0} q + 4 v_{p}^{2}}}{3}}{g + q}\)</span></p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="ejercicios" class="level1">
-<h1>Ejercicios</h1>
-<ol type="1">
-<li><p>Encontrar la fórmula resolvente (de manera analítica) de las ecuaciones cuadráticas usando sympy.</p></li>
-<li><p>Encontrar la fórmula para las cúbicas (se puede chequear el resultado buscando en internet, les recomiendo este <a href="https://youtu.be/N-KXStupwsc?si=9R3zEu2mTIe5Eb9f">video</a></p></li>
-<li><p>Resolver las siguientes integrales con sympy:</p></li>
-<li><p><span class="math inline">\(∫xe^xdx\)</span></p></li>
-<li><p>$dx $</p></li>
-<li><p>$dx $</p></li>
-<li><p>$e^{6x} (e^{3x}) dx $</p></li>
-<li><p>Encontrar las raíces de la función <span class="math inline">\(\cos(2\pi \cdot 20 t)\)</span> (pueden probar la funcion <code>solveset()</code>)</p></li>
-<li><p>Derivar analíticamente las ecuaciones cinemáticas de un movimiento con aceleración constante mediante intregración sucesiva.</p></li>
-<li><p>A Partir de un listado (array) de funciones elementales generar una tabla de integrales y derivadas de las mismas. (pueden guiarse con este <a href="https://www.derivadas.es/tabla-de-derivadas-e-integrales/">link</a> a la hora de elegir algunas. pista: definir las funciones y armar un bucle que vaya operando sobres las mismas y guardando los resultados en listas, levantar esas istas con pandas para que se vean como una tabla.</p></li>
-</ol>
+<p>Una pista de como encarar el último punto se puede ver a continuación (este código tal cual como está no corre, pero les puede servir de ayuda)</p>
 
+
+<!-- -->
 
 </section>
 
@@ -1057,13 +988,56 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Practicas/TP 04 Matplotlib.html" class="pagination-link" aria-label="TP 04 Matplotlib">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 04 Matplotlib</span>
+      <a href="../Practicas/EV 01 1P 2024.html" class="pagination-link" aria-label="Primer parcial">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Primer parcial</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../Practicas/TP 01 Variables, entradas y salidas.html" class="pagination-link" aria-label="TP 01 Variables, entradas y salidas">
+        <span class="nav-page-text">TP 01 Variables, entradas y salidas</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Primer parcial"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        number-sections: true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Primer parcial</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {#exr-primero}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python básico</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones $x$ e $y$ </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>en el plano de un cuerpo que se mueve bajo condiciones iniciales arbiatrarias con aceleración constante ($a_x$,$a_y$,$v_x$,$v_y$,$x_0$,$y_0$,$\Delta t$).</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>::: {#exr-segundo}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pandas y numpy</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Dadas las condiciones iniciales que recibió en papel genere un dataframe con valores creados con la función anterior para el tiempo de vuelo del cuerpo y guardelo como .csv.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>::: {#exr-tercero}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Matplotlib</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Importe los datos del csv y haga gráficas $x(t)$, $y(t)$, $v_x(t)$, $v_y(t)$ e $y(x)$ que incluyan los nombres de los ejes con sus rótulos respctivos.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>::: {#exr-extra}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Matplotlib y animaciones</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Haga una animación de la gráfica $y(x)$ para el tiempo de vuelo.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Una pista de como encarar el último punto se puede ver a continuación </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>(este código tal cual como está no corre, pero les puede servir de ayuda)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
