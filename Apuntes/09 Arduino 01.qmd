@@ -47,7 +47,7 @@ Arduino tiene su propio lenguaje de programación que está inspirado y replica 
 
 En [ésta página](https://www.arduino.cc/reference/es/) tenemos acceso las funciones, estructurales y variables mas usuales de Arduino con su sintaxis y descripción.
 
-### Ejemplo
+## Ejemplo
 
 Veamos un esqueleto de código de Arudino
 
@@ -70,7 +70,7 @@ else { // ejecuta esta otra cosa; }
 }}}
 ```         
 
-## Primeros pasos en Arduino
+# Primeros pasos en Arduino
 
 Vamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=M6fYpbgP-rITZw1M)  
 por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.
@@ -92,7 +92,7 @@ Versión esquemática de la placa con la conexión actual
 ![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)
 
 
-Pueden probar este código con la conexión anterior
+Pueden probar este código con la conexión anterior:
 
 ```c++
 int pinPWM = 10
@@ -106,8 +106,7 @@ void loop(){
     analogWrite(pinPWM,i);
     delay(1000);
     }
-}
-```
+}```
 
 ¿Qué se podría cambiar en el código para que la iluminación progresiva sea "ida y vuelta", 
 es decir, de apagado a prendido y de prendido a apagado.
