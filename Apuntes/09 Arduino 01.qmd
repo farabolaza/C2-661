@@ -1,5 +1,5 @@
 ---
-title: "Arduino 01"
+title: "09 Arduino 01"
 format: 
     html: 
         toc: true
@@ -27,7 +27,7 @@ jupyter: python3
 
 La placa Arduino permite la interacción entre el mundo físico y el digital mediante el uso de componentes electrónicos y sensores. No se trata de una única placa sino una familia de placas de software y hardware libe. De ésta familia utilizaremos la más usual, Arduino Uno (y sus clones).
 
-![Elephant](arduino.webp){width="500"}
+![placa arduino uno](arduino.webp){width="500"}
 
 # Los entornos de trabajo
 
@@ -51,8 +51,7 @@ En [ésta página](https://www.arduino.cc/reference/es/) tenemos acceso las func
 
 Veamos un esqueleto de código de Arudino
 
-```{.c++ .c++}
-
+```c++
 void setup(){ // los bloque encerrados entre llaves
 pinMode(13;OUTPUT); // los comentarios van precedidos por doble barra
 }
@@ -95,7 +94,7 @@ Versión esquemática de la placa con la conexión actual
 
 Pueden probar este código con la conexión anterior
 
-``` C++
+```c++
 int pinPWM = 10
 
 void setup(){
