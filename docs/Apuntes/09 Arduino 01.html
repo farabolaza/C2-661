@@ -355,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul></li>
 <li><label><input type="checkbox">Arduino IDE</label></li>
-<li><label><input type="checkbox">Lenguaje arduino (C++) <a href="https://www.arduino.cc/reference/en/">Arduino Reference - Arduino Reference</a></label>
+<li><label><input type="checkbox">Lenguaje arduino</label>
 <ul class="task-list">
 <li><label><input type="checkbox">Variables, estructuras, funciones y comentarios</label></li>
 </ul></li>
@@ -418,8 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="primeros-pasos-en-arduino" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Primeros pasos en Arduino</h1>
-<p>Vamos a seguir bastante la guía presente en <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M">esta lista de Youtube</a><br>
-por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</p>
+<p>Vamos a seguir bastante la guía presente en <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M">esta lista de Youtube</a> por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</p>
 <section id="conexión-de-un-led" class="level3" data-number="5.0.1">
 <h3 data-number="5.0.1" class="anchored" data-anchor-id="conexión-de-un-led"><span class="header-section-number">5.0.1</span> Conexión de un led</h3>
 <p>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia <strong>electrónica</strong>. Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona. Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</p>
@@ -439,7 +438,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <p>Versión esquemática de la placa con la conexión actual</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png" class="img-fluid figure-img"></p>
+<p><img src="https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>simplefade_pin9_schem.png (1920×1080) (arduino.cc)</figcaption>
 </figure>
 </div>
@@ -448,14 +447,14 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>pinPWM<span class="op">,</span>OUTPUT<span class="op">);</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="er">```</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="er">```</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>¿Qué se podría cambiar en el código para que la iluminación progresiva sea <span class="st">"ida y vuelta"</span><span class="op">,</span> </span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>es decir<span class="op">,</span> de apagado a prendido y de prendido a apagado<span class="op">.</span></span>
@@ -463,7 +462,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Referencias</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Arduino Hardware \<span class="op">|</span> Arduino<span class="op">](</span>https<span class="op">:</span><span class="co">//www.arduino.cc/en/hardware) [Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/) [Curso de arduino](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT) [Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo) [Fading a LED \| Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TinkerCad de esta clase<span class="op">]</span>https<span class="op">:</span><span class="co">//www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TinkerCad de esta clase<span class="op">](</span>https<span class="op">:</span><span class="co">//www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
@@ -536,7 +535,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Entradas digitales</span>
 <span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Salida digitales</span>
 <span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Arduino IDE</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Lenguaje arduino <span class="op">(</span>C<span class="op">++)</span> <span class="op">[</span>Arduino Reference <span class="op">-</span> Arduino Reference<span class="op">](</span>https<span class="op">:</span><span class="co">//www.arduino.cc/reference/en/)</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Lenguaje arduino</span>
 <span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Variables<span class="op">,</span> estructuras<span class="op">,</span> funciones y comentarios</span>
 <span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Modulación PWM</span>
 <span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>   <span class="op">[</span> <span class="op">]</span> Uso del led integrado</span>
@@ -592,8 +591,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 </section>
 <section id="primeros-pasos-en-arduino-1" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Primeros pasos en Arduino</h1>
-<p>Vamos a seguir bastante la guía presente en <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M">esta lista de Youtube</a><br>
-por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</p>
+<p>Vamos a seguir bastante la guía presente en <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M">esta lista de Youtube</a> por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</p>
 <section id="conexión-de-un-led-1" class="level3" data-number="6.0.1">
 <h3 data-number="6.0.1" class="anchored" data-anchor-id="conexión-de-un-led-1"><span class="header-section-number">6.0.1</span> Conexión de un led</h3>
 <p>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia <strong>electrónica</strong>. Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona. Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</p>
@@ -613,7 +611,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <p>Versión esquemática de la placa con la conexión actual</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png" class="img-fluid figure-img"></p>
+<p><img src="https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>simplefade_pin9_schem.png (1920×1080) (arduino.cc)</figcaption>
 </figure>
 </div>
@@ -622,14 +620,14 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>pinPWM<span class="op">,</span>OUTPUT<span class="op">);</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="er">```</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="er">```</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>¿Qué se podría cambiar en el código para que la iluminación progresiva sea <span class="st">"ida y vuelta"</span><span class="op">,</span> </span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>es decir<span class="op">,</span> de apagado a prendido y de prendido a apagado<span class="op">.</span></span>
@@ -637,7 +635,7 @@ por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Referencias</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Arduino Hardware \<span class="op">|</span> Arduino<span class="op">](</span>https<span class="op">:</span><span class="co">//www.arduino.cc/en/hardware) [Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/) [Curso de arduino](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT) [Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo) [Fading a LED \| Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TinkerCad de esta clase<span class="op">]</span>https<span class="op">:</span><span class="co">//www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>TinkerCad de esta clase<span class="op">](</span>https<span class="op">:</span><span class="co">//www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>:::</p>
 </section>
 </section>

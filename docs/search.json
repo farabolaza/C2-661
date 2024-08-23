@@ -256,7 +256,7 @@
     "href": "Apuntes/09 Arduino 01.html",
     "title": "09 Arduino 01",
     "section": "",
-    "text": "Placa arduino\n\nPines Entradas analógicas\nPines digitales\n\nEntradas digitales\nSalida digitales\n\n\nArduino IDE\nLenguaje arduino (C++) Arduino Reference - Arduino Reference\n\nVariables, estructuras, funciones y comentarios\n\nModulación PWM\nUso del led integrado\nConexión de un LED\n\npwm",
+    "text": "Placa arduino\n\nPines Entradas analógicas\nPines digitales\n\nEntradas digitales\nSalida digitales\n\n\nArduino IDE\nLenguaje arduino\n\nVariables, estructuras, funciones y comentarios\n\nModulación PWM\nUso del led integrado\nConexión de un LED\n\npwm",
     "crumbs": [
       "Apuntes",
       "09 Arduino 01"

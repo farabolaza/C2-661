@@ -16,7 +16,7 @@ jupyter: python3
         -   [ ] Entradas digitales
         -   [ ] Salida digitales
 -   [ ] Arduino IDE
--   [ ] Lenguaje arduino (C++) [Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/)
+-   [ ] Lenguaje arduino
     -   [ ] Variables, estructuras, funciones y comentarios
 -   [ ] Modulación PWM
 -   [ ] Uso del led integrado
@@ -68,12 +68,11 @@ else if (otra condicion) {
 }
 else { // ejecuta esta otra cosa; }
 }}}
-```         
+```       
 
 # Primeros pasos en Arduino
 
-Vamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=M6fYpbgP-rITZw1M)  
-por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.
+Vamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=M6fYpbgP-rITZw1M) por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.
 
 ### Conexión de un led
 
@@ -89,7 +88,7 @@ En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El c
 
 Versión esquemática de la placa con la conexión actual
 
-![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)
+![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png){width="500"}
 
 
 Pueden probar este código con la conexión anterior:
@@ -99,7 +98,6 @@ int pinPWM = 10
 
 void setup(){
     pinMode(pinPWM,OUTPUT);
-
 }
 void loop(){
     for(i=0;i<=255;i++){
@@ -108,10 +106,11 @@ void loop(){
     }
 }```
 
+
 ¿Qué se podría cambiar en el código para que la iluminación progresiva sea "ida y vuelta", 
 es decir, de apagado a prendido y de prendido a apagado.
 
 ## Referencias
 
 [Arduino Hardware \| Arduino](https://www.arduino.cc/en/hardware) [Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/) [Curso de arduino](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=4VGzMiUyuoBzNvuT) [Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&si=103_cDcPluovnGBo) [Fading a LED \| Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)
-[TinkerCad de esta clase]https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities
+[TinkerCad de esta clase](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)
