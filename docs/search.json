@@ -254,56 +254,56 @@
   {
     "objectID": "Apuntes/09 Arduino 01.html",
     "href": "Apuntes/09 Arduino 01.html",
-    "title": "Arduino 01",
+    "title": "09 Arduino 01",
     "section": "",
     "text": "Placa arduino\n\nPines Entradas analógicas\nPines digitales\n\nEntradas digitales\nSalida digitales\n\n\nArduino IDE\nLenguaje arduino (C++) Arduino Reference - Arduino Reference\n\nVariables, estructuras, funciones y comentarios\n\nModulación PWM\nUso del led integrado\nConexión de un LED\n\npwm",
     "crumbs": [
       "Apuntes",
-      "Arduino 01"
+      "09 Arduino 01"
     ]
   },
   {
     "objectID": "Apuntes/09 Arduino 01.html#arduino-ide",
     "href": "Apuntes/09 Arduino 01.html#arduino-ide",
-    "title": "Arduino 01",
+    "title": "09 Arduino 01",
     "section": "3.1 Arduino IDE",
     "text": "3.1 Arduino IDE\nEl software arduino IDE es el software que permite escribir el código y subirlo a la placa para su ejecución",
     "crumbs": [
       "Apuntes",
-      "Arduino 01"
+      "09 Arduino 01"
     ]
   },
   {
     "objectID": "Apuntes/09 Arduino 01.html#tinkercad",
     "href": "Apuntes/09 Arduino 01.html#tinkercad",
-    "title": "Arduino 01",
+    "title": "09 Arduino 01",
     "section": "3.2 Tinkercad",
     "text": "3.2 Tinkercad\nEl sitio Tinkercad ofrece la posibilidad de escribir en el lenguaje Arduino y simular componente a componente un circuito entero, lo que es de mucha utilidad para practicar cuando se está comenzando o testeando un nuevo diseño.",
     "crumbs": [
       "Apuntes",
-      "Arduino 01"
+      "09 Arduino 01"
     ]
   },
   {
     "objectID": "Apuntes/09 Arduino 01.html#referencia-en-línea-del-lenguaje-arduino",
     "href": "Apuntes/09 Arduino 01.html#referencia-en-línea-del-lenguaje-arduino",
-    "title": "Arduino 01",
+    "title": "09 Arduino 01",
     "section": "4.1 Referencia en línea del lenguaje arduino",
-    "text": "4.1 Referencia en línea del lenguaje arduino\nEn ésta página tenemos acceso las funciones, estructurales y variables mas usuales de Arduino con su sintaxis y descripción.\n\n4.1.1 Ejemplo\nVeamos un esqueleto de código de Arudino\n```{.c++ .c++}\nvoid setup(){ // los bloque encerrados entre llaves pinMode(13;OUTPUT); // los comentarios van precedidos por doble barra }\nvoid loop(){ if (alguna condición) { // ejecuta esto; // cada instrucción se finaliza con un punto y coma // esto otro; // esto otro; } else if (otra condicion) { // haga esto otro; } else { // ejecuta esta otra cosa; } }}}\n\n## Primeros pasos en Arduino\n\nVamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=M6fYpbgP-rITZw1M)  \npor lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.\n\n### Conexión de un led\n\nUn diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. \nPor el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona.\nTiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.\n\n![iu (598×402) (duckduckgo.com)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcursos.mcielectronics.cl%2Fwp-content%2Fuploads%2F2014%2F07%2Fdiodo.png&f=1&nofb=1&ipt=d459c863b44139e0ca9af10e3da3121618bd5ad54c0a3c962aa8605dd49456ef&ipo=images)\n\nEn la vida real, podemos ver la polaridad de un LED como se muestra debajo. El cátodo es la patita corta y el lado plano. En ocasiones las patitas son cortadas o no están visibles, por lo que:\n\n![un diodo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geekfactory.mx%2Fwp-content%2Fuploads%2F2020%2F04%2Fled-con-arduino-como-determinar-polaridad.jpg&f=1&nofb=1&ipt=6db7be7c736b3ab2ff5f755987c0239c3914991c3020f68d55a72556c4da61c8&ipo=images)\n\nVersión esquemática de la placa con la conexión actual\n\n![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)\n\n\nPueden probar este código con la conexión anterior\n\n``` C++\nint pinPWM = 10\n\nvoid setup(){\n    pinMode(pinPWM,OUTPUT);\n\n}\nvoid loop(){\n    for(i=0;i&lt;=255;i++){\n    analogWrite(pinPWM,i);\n    delay(1000);\n    }\n}\n¿Qué se podría cambiar en el código para que la iluminación progresiva sea “ida y vuelta”, es decir, de apagado a prendido y de prendido a apagado.",
+    "text": "4.1 Referencia en línea del lenguaje arduino\nEn ésta página tenemos acceso las funciones, estructurales y variables mas usuales de Arduino con su sintaxis y descripción.",
     "crumbs": [
       "Apuntes",
-      "Arduino 01"
+      "09 Arduino 01"
     ]
   },
   {
-    "objectID": "Apuntes/09 Arduino 01.html#referencias",
-    "href": "Apuntes/09 Arduino 01.html#referencias",
-    "title": "Arduino 01",
-    "section": "4.2 Referencias",
-    "text": "4.2 Referencias\nArduino Hardware | Arduino Arduino Reference - Arduino Reference Curso de arduino Curso de arduino 2 Fading a LED | Arduino Documentation [TinkerCad de esta clase]https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities\nLínea test",
+    "objectID": "Apuntes/09 Arduino 01.html#ejemplo",
+    "href": "Apuntes/09 Arduino 01.html#ejemplo",
+    "title": "09 Arduino 01",
+    "section": "4.2 Ejemplo",
+    "text": "4.2 Ejemplo\nVeamos un esqueleto de código de Arudino\nvoid setup(){ // los bloque encerrados entre llaves\npinMode(13;OUTPUT); // los comentarios van precedidos por doble barra\n}\n\nvoid loop(){\nif (alguna condición)\n{ \n    // ejecuta esto; \n    // cada instrucción se finaliza con un punto y coma \n    // esto otro; \n    // esto otro; }\nelse if (otra condicion) {\n// haga esto otro;\n}\nelse { // ejecuta esta otra cosa; }\n}}}",
     "crumbs": [
       "Apuntes",
-      "Arduino 01"
+      "09 Arduino 01"
     ]
   },
   {
@@ -399,7 +399,7 @@
     "href": "00 apuntes.html",
     "title": "Apuntes",
     "section": "",
-    "text": "01 Intro a Python 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n02 Contenedores y bucles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n03 Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n04 Módulos: Pandas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n05 Matpolitlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n06 Matplotlib (más)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n07 Scipy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n08 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArduino 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
+    "text": "01 Intro a Python 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n02 Contenedores y bucles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n03 Numpy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n04 Módulos: Pandas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n05 Matpolitlib\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n06 Matplotlib (más)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n07 Scipy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n08 Sympy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n09 Arduino 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "00 practicas.html",
