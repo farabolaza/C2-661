@@ -112,9 +112,9 @@ es decir, de apagado a prendido y de prendido a apagado.
 
 ## Referencias
 
-[Arduino Hardware Arduino](https://www.arduino.cc/en/hardware) 
-[Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/) 
-[Curso de arduino](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=4VGzMiUyuoBzNvuT) 
-[Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&si=103_cDcPluovnGBo) 
-[Fading a LED | Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)
-[TinkerCad de esta clase](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)
+- [Arduino Hardware Arduino](https://www.arduino.cc/en/hardware) 
+- [Arduino Reference - Arduino Reference](https://www.arduino.cc/reference/en/) 
+- [Curso de arduino](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=4VGzMiUyuoBzNvuT) 
+- [Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&si=103_cDcPluovnGBo) 
+- [Fading a LED | Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)
+- [TinkerCad de esta clase](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)
