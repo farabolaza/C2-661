@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>01 Intro a Python 2024 – C2-661</title>
+<title>Arduino 01 – C2-661</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Apuntes/02 Contenedores y loops.html" rel="next">
+<link href="../Practicas/EV 01 1P 2024.html" rel="next">
+<link href="../Apuntes/08 Sympy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -148,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">01 Intro a Python 2024</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/09 Arduino 01.html">Arduino 01</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -179,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Apuntes/01 Python intro 101 (2024).html" class="sidebar-item-text sidebar-link active">
+  <a href="../Apuntes/01 Python intro 101 (2024).html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Intro a Python 2024</span></a>
   </div>
 </li>
@@ -227,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Apuntes/09 Arduino 01.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/09 Arduino 01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Arduino 01</span></a>
   </div>
 </li>
@@ -296,26 +297,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#intro-a-python" id="toc-intro-a-python" class="nav-link active" data-scroll-target="#intro-a-python">Intro a Python</a>
+  <li><a href="#ojbetivos-de-la-clase" id="toc-ojbetivos-de-la-clase" class="nav-link active" data-scroll-target="#ojbetivos-de-la-clase"><span class="header-section-number">1</span> Ojbetivos de la clase</a></li>
+  <li><a href="#la-placa-arduino" id="toc-la-placa-arduino" class="nav-link" data-scroll-target="#la-placa-arduino"><span class="header-section-number">2</span> La placa Arduino</a></li>
+  <li><a href="#los-entornos-de-trabajo" id="toc-los-entornos-de-trabajo" class="nav-link" data-scroll-target="#los-entornos-de-trabajo"><span class="header-section-number">3</span> Los entornos de trabajo</a>
   <ul class="collapse">
-  <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a>
+  <li><a href="#arduino-ide" id="toc-arduino-ide" class="nav-link" data-scroll-target="#arduino-ide"><span class="header-section-number">3.1</span> Arduino IDE</a></li>
+  <li><a href="#tinkercad" id="toc-tinkercad" class="nav-link" data-scroll-target="#tinkercad"><span class="header-section-number">3.2</span> Tinkercad</a></li>
+  </ul></li>
+  <li><a href="#el-lenguaje-de-programación-de-arduino" id="toc-el-lenguaje-de-programación-de-arduino" class="nav-link" data-scroll-target="#el-lenguaje-de-programación-de-arduino"><span class="header-section-number">4</span> El lenguaje de programación de Arduino</a>
   <ul class="collapse">
-  <li><a href="#fracciones" id="toc-fracciones" class="nav-link" data-scroll-target="#fracciones">Fracciones</a></li>
+  <li><a href="#referencia-en-línea-del-lenguaje-arduino" id="toc-referencia-en-línea-del-lenguaje-arduino" class="nav-link" data-scroll-target="#referencia-en-línea-del-lenguaje-arduino"><span class="header-section-number">4.1</span> Referencia en línea del lenguaje arduino</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">4.1.1</span> Ejemplo</a></li>
   </ul></li>
-  <li><a href="#operadores-de-cadenas-de-texto" id="toc-operadores-de-cadenas-de-texto" class="nav-link" data-scroll-target="#operadores-de-cadenas-de-texto">Operadores de cadenas de texto</a></li>
-  <li><a href="#operadores-matemáticos" id="toc-operadores-matemáticos" class="nav-link" data-scroll-target="#operadores-matemáticos">Operadores Matemáticos</a></li>
-  <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos">Operadores lógicos</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">4.2</span> Referencias</a></li>
   </ul></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">01 Intro a Python 2024</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/09 Arduino 01.html">Arduino 01</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">01 Intro a Python 2024</h1>
+<div class="quarto-title-block"><div><h1 class="title">Arduino 01</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -332,223 +337,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="intro-a-python" class="level1">
-<h1>Intro a Python</h1>
-<p>Este documento es una adaptación de otro existente. Compilamos algunos recursos útiles para la materia</p>
-<p><a href="https://docs.python.org/es/3/tutorial/index.html">Manual de Python en español</a></p>
-<p><a href="https://drive.google.com/drive/folders/1GpbkimUwTVskCDHbgSEUIJD2t8eWUtvA?usp=share_link">Bibliografía de la materia</a></p>
-<hr>
-<section id="tipos-de-variables" class="level2">
-<h2 class="anchored" data-anchor-id="tipos-de-variables">Tipos de variables</h2>
-<ul>
-<li>Numéricas:
-<ul>
-<li>int, float, long, complex</li>
+<section id="ojbetivos-de-la-clase" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Ojbetivos de la clase</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">Placa arduino</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Pines Entradas analógicas</label></li>
+<li><label><input type="checkbox">Pines digitales</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Entradas digitales</label></li>
+<li><label><input type="checkbox">Salida digitales</label></li>
 </ul></li>
-<li>string</li>
-<li>booleanas
-<ul>
-<li>True / False</li>
+</ul></li>
+<li><label><input type="checkbox">Arduino IDE</label></li>
+<li><label><input type="checkbox">Lenguaje arduino (C++) <a href="https://www.arduino.cc/reference/en/">Arduino Reference - Arduino Reference</a></label>
+<ul class="task-list">
+<li><label><input type="checkbox">Variables, estructuras, funciones y comentarios</label></li>
+</ul></li>
+<li><label><input type="checkbox">Modulación PWM</label></li>
+<li><label><input type="checkbox">Uso del led integrado</label></li>
+<li><label><input type="checkbox">Conexión de un LED</label>
+<ul class="task-list">
+<li><label><input type="checkbox">pwm</label></li>
 </ul></li>
 </ul>
-<p>Se resumen en la siguiente tabla</p>
-**
-<center>
-Python Scalar Types
-</center>
-<p>**</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 17%">
-<col style="width: 68%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>str</code></td>
-<td><code>x = 'abc'</code></td>
-<td>String: caracteres de texto</td>
-</tr>
-<tr class="even">
-<td><code>int</code></td>
-<td><code>x = 1</code></td>
-<td>integers (i.e., números enteros)</td>
-</tr>
-<tr class="odd">
-<td><code>float</code></td>
-<td><code>x = 1.0</code></td>
-<td>floating-point numbers (i.e., números reales)</td>
-</tr>
-<tr class="even">
-<td><code>complex</code></td>
-<td><code>x = 1 + 2j</code></td>
-<td>números complejos</td>
-</tr>
-<tr class="odd">
-<td><code>bool</code></td>
-<td><code>x = True</code></td>
-<td>Booleano: Verdadero/Falso</td>
-</tr>
-<tr class="even">
-<td><code>NoneType</code></td>
-<td><code>x = None</code></td>
-<td>Objeto para designar el valor nulo</td>
-</tr>
-</tbody>
-</table>
-<p>Se usa la función <code>type()</code> para conocer el tipo de una variable</p>
-<section id="fracciones" class="level3">
-<h3 class="anchored" data-anchor-id="fracciones">Fracciones</h3>
-<p>Bueno, las fracciones no son representaciones “típicas” en los lenguajes de programación, y en python, debemos usar los módulos específicos para operar con ellas. Más información <a href="https://realpython.com/python-fractions/#decimal-vs-fractional-notation">acá</a>. Veremos más adelante como trabjar con fracciones.</p>
-<p><img src="https://files.realpython.com/media/uml_numeric_types.ed370d32b0b3.png" class="img-fluid"></p>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># String</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">'hello'</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(c))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="la-placa-arduino" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> La placa Arduino</h1>
+<p>La placa Arduino permite la interacción entre el mundo físico y el digital mediante el uso de componentes electrónicos y sensores. No se trata de una única placa sino una familia de placas de software y hardware libe. De ésta familia utilizaremos la más usual, Arduino Uno (y sus clones).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="arduino.webp" class="img-fluid figure-img" width="500"></p>
+<figcaption>Elephant</figcaption>
+</figure>
 </div>
-<div id="cell-5" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integer</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-6" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Float</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-7" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(d))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-8" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># None</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(e))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-9" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cast integer to string</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">str</span>(a)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
+</section>
+<section id="los-entornos-de-trabajo" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Los entornos de trabajo</h1>
+<section id="arduino-ide" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="arduino-ide"><span class="header-section-number">3.1</span> Arduino IDE</h2>
+<p>El software arduino IDE es el software que permite escribir el código y subirlo a la placa para su ejecución</p>
+</section>
+<section id="tinkercad" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="tinkercad"><span class="header-section-number">3.2</span> Tinkercad</h2>
+<p>El sitio Tinkercad ofrece la posibilidad de escribir en el lenguaje Arduino y simular componente a componente un circuito entero, lo que es de mucha utilidad para practicar cuando se está comenzando o testeando un nuevo diseño.</p>
 </section>
 </section>
-<section id="operadores-de-cadenas-de-texto" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-de-cadenas-de-texto">Operadores de cadenas de texto</h2>
-<p>Los operadores matemáticos son diferentes en las cadenas de teto, por ejemplo el sigo + se usa para unir cadenas</p>
-<p>Repeticiones: Se usa *n para repetir una cadena n veces</p>
-<div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignar y combinar cadenas</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'Hello'</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">'World'</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-13" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-strings: reemplazarvalores de variables en cadenas</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>firstname <span class="op">=</span> <span class="st">'Beto'</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Me llamo </span><span class="sc">{</span>firstname<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combininar f-strings</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>firstname <span class="op">=</span> <span class="st">'Beto'</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>lastname <span class="op">=</span> <span class="st">'Velez'</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'My name is </span><span class="sc">{</span>firstname<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>lastname<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-15" class="cell" data-scrolled="true">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Repetir una cadena</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(a)<span class="op">*</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-16" class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Repetir un cadena con espacios</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(a<span class="op">+</span><span class="st">' '</span>)<span class="op">*</span><span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-</section>
-<section id="operadores-matemáticos" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-matemáticos">Operadores Matemáticos</h2>
-<ul>
-<li>+, -, *, y /</li>
-<li>Exponenciación **</li>
-<li>Modulo % (Resto)</li>
-</ul>
-<div id="cell-19" class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adición</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">7</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sustracción</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a <span class="op">-</span> <span class="dv">5</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'b = a-5 = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">-5 = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiplicación</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'b*2 = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">*2 = </span><span class="sc">{</span>b<span class="op">*</span><span class="dv">2</span><span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># División</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'a/3 = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">/3 = </span><span class="sc">{</span>a<span class="op">/</span><span class="dv">3</span><span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-23" class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponenciación</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'b^2 = b**2 = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">**2 = </span><span class="sc">{</span>b<span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-24" class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modulo</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'(Modulo de vuelve el resto luego de dividir entre dos números)'</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'el resto de  b/9 = resto de </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">/9 = </span><span class="sc">{</span>b<span class="op">%</span><span class="dv">9</span><span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-</section>
-<section id="operadores-lógicos" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-lógicos">Operadores lógicos</h2>
-<p>Hacen una comparación y devuelven un booleano (verdadero o falso)</p>
-<pre><code>x == y # x es igual a y
-x != y # x no es igual a y
-x &gt; y # x es mayor que y
-x &lt; y # x es menor que y
-x &gt;= y # x es mayor o igual que y
-x &lt;= y # x es menor o igual que y</code></pre>
-<div id="cell-27" class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En cadenas de texto</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'hola'</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">'que tal'</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">'Hola'</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a==b: '</span> <span class="op">+</span> <span class="bu">str</span>(a<span class="op">==</span>b))</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a==c: '</span> <span class="op">+</span> <span class="bu">str</span>(a<span class="op">==</span>c))</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a!=b: '</span> <span class="op">+</span> <span class="bu">str</span>(a<span class="op">!=</span>b))</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-28" class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En datos numéricos</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> <span class="dv">8</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'d &lt; e: '</span> <span class="op">+</span> <span class="bu">str</span>(d <span class="op">&lt;</span> e))</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'d &gt;= e: '</span> <span class="op">+</span> <span class="bu">str</span>(d <span class="op">&gt;=</span> e))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-</section>
-</section>
-<section id="ejercicios" class="level1">
-<h1>Ejercicios</h1>
-<ol type="1">
-<li>Crear una variable de tipo numérica</li>
-<li>Asignar a la variable un número entero, por ejemplo “1” y ejecutar la función <code>type</code> sobre ella.</li>
-<li>Asignar a la variable un número con decimales ejemplo “3.5” y ejecutar la función <code>type</code> sobre ella.</li>
-<li>Crear dos variables, a una asignarle un valor numérico entero y a otra uno con lugares decimales, pero que coincidan. Por ejemplo “5” y “5.0” compararlos usando el operador lógico de igualdad. ¿Qué se obtiene?</li>
-<li>Usar la el operador módulo (resto) sobre diferentes números. ¿Cómo podría escribir un programa sencillo que me indique si un número es divible por otro? ¿Qué condiciones debería evaluar? ¿Qué operadores lógicos necesito?</li>
-<li>Escribir un diagrama de lo que debería hacer el programa del punto 5</li>
-</ol>
+<section id="el-lenguaje-de-programación-de-arduino" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> El lenguaje de programación de Arduino</h1>
+<p>Arduino tiene su propio lenguaje de programación que está inspirado y replica en parte al lenguaje C++. Nosotros nos centraremos las estructuras de control más sencillas (que ya vimos para python) que resultan ser ligeramente diferentes en Arduino en cuanto a su sintaxis pero que hacen efectivamente lo mismo que sus parientes Pythonicas. Por su parte, el funcionamiento de la placa requiere de ciertas estructuras que se encuentran siempre presentes y son escenciales para su funcionamiento.</p>
+<section id="referencia-en-línea-del-lenguaje-arduino" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="referencia-en-línea-del-lenguaje-arduino"><span class="header-section-number">4.1</span> Referencia en línea del lenguaje arduino</h2>
+<p>En <a href="https://www.arduino.cc/reference/es/">ésta página</a> tenemos acceso las funciones, estructurales y variables mas usuales de Arduino con su sintaxis y descripción.</p>
+<section id="ejemplo" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">4.1.1</span> Ejemplo</h3>
+<p>Veamos un esqueleto de código de Arudino</p>
+<p>```{.c++ .c++}</p>
+<p>void setup(){ // los bloque encerrados entre llaves pinMode(13;OUTPUT); // los comentarios van precedidos por doble barra }</p>
+<p>void loop(){ if (alguna condición) { // ejecuta esto; // cada instrucción se finaliza con un punto y coma // esto otro; // esto otro; } else if (otra condicion) { // haga esto otro; } else { // ejecuta esta otra cosa; } }}}</p>
+<pre><code>
+## Primeros pasos en Arduino
+
+Vamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M)  
+por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.
+
+### Conexión de un led
+
+Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. 
+Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona.
+Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.
+
+![iu (598×402) (duckduckgo.com)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcursos.mcielectronics.cl%2Fwp-content%2Fuploads%2F2014%2F07%2Fdiodo.png&amp;f=1&amp;nofb=1&amp;ipt=d459c863b44139e0ca9af10e3da3121618bd5ad54c0a3c962aa8605dd49456ef&amp;ipo=images)
+
+En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El cátodo es la patita corta y el lado plano. En ocasiones las patitas son cortadas o no están visibles, por lo que:
+
+![un diodo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geekfactory.mx%2Fwp-content%2Fuploads%2F2020%2F04%2Fled-con-arduino-como-determinar-polaridad.jpg&amp;f=1&amp;nofb=1&amp;ipt=6db7be7c736b3ab2ff5f755987c0239c3914991c3020f68d55a72556c4da61c8&amp;ipo=images)
+
+Versión esquemática de la placa con la conexión actual
+
+![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)
 
 
+Pueden probar este código con la conexión anterior
+
+``` C++
+int pinPWM = 10
+
+void setup(){
+    pinMode(pinPWM,OUTPUT);
+
+}
+void loop(){
+    for(i=0;i&lt;=255;i++){
+    analogWrite(pinPWM,i);
+    delay(1000);
+    }
+}</code></pre>
+<p>¿Qué se podría cambiar en el código para que la iluminación progresiva sea “ida y vuelta”, es decir, de apagado a prendido y de prendido a apagado.</p>
+</section>
+</section>
+<section id="referencias" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="referencias"><span class="header-section-number">4.2</span> Referencias</h2>
+<p><a href="https://www.arduino.cc/en/hardware">Arduino Hardware | Arduino</a> <a href="https://www.arduino.cc/reference/en/">Arduino Reference - Arduino Reference</a> <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT">Curso de arduino</a> <a href="https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo">Curso de arduino 2</a> <a href="https://docs.arduino.cc/built-in-examples/basics/Fade">Fading a LED | Arduino Documentation</a> [TinkerCad de esta clase]https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities</p>
+<p>Línea test</p>
+
+
+<!-- -->
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1169,13 +1065,138 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../Apuntes/08 Sympy.html" class="pagination-link" aria-label="08 Sympy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">08 Sympy</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Apuntes/02 Contenedores y loops.html" class="pagination-link" aria-label="02 Contenedores y bucles">
-        <span class="nav-page-text">02 Contenedores y bucles</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Practicas/EV 01 1P 2024.html" class="pagination-link" aria-label="Primer parcial">
+        <span class="nav-page-text">Primer parcial</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Arduino 01"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        number-sections: true</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ojbetivos de la clase</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Placa arduino</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="va">[ ]</span> Pines Entradas analógicas</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="va">[ ]</span> Pines digitales</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span><span class="va">[ ]</span> Entradas digitales</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span><span class="va">[ ]</span> Salida digitales</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Arduino IDE</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Lenguaje arduino (C++) <span class="co">[</span><span class="ot">Arduino Reference - Arduino Reference</span><span class="co">](https://www.arduino.cc/reference/en/)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="va">[ ]</span> Variables, estructuras, funciones y comentarios</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Modulación PWM</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Uso del led integrado</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="va">[ ]</span> Conexión de un LED</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="va">[ ]</span> pwm</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># La placa Arduino</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>La placa Arduino permite la interacción entre el mundo físico y el digital mediante el uso de componentes electrónicos y sensores. No se trata de una única placa sino una familia de placas de software y hardware libe. De ésta familia utilizaremos la más usual, Arduino Uno (y sus clones).</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Elephant](arduino.webp)</span>{width="500"}</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Los entornos de trabajo</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arduino IDE</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>El software arduino IDE es el software que permite escribir el código y subirlo a la placa para su ejecución</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tinkercad</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>El sitio Tinkercad ofrece la posibilidad de escribir en el lenguaje Arduino y simular componente a componente un circuito entero, lo que es de mucha utilidad para practicar cuando se está comenzando o testeando un nuevo diseño.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu"># El lenguaje de programación de Arduino</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>Arduino tiene su propio lenguaje de programación que está inspirado y replica en parte al lenguaje C++. Nosotros nos centraremos las estructuras de control más sencillas (que ya vimos para python) que resultan ser ligeramente diferentes en Arduino en cuanto a su sintaxis pero que hacen efectivamente lo mismo que sus parientes Pythonicas. Por su parte, el funcionamiento de la placa requiere de ciertas estructuras que se encuentran siempre presentes y son escenciales para su funcionamiento.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia en línea del lenguaje arduino</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>En <span class="co">[</span><span class="ot">ésta página</span><span class="co">](https://www.arduino.cc/reference/es/)</span> tenemos acceso las funciones, estructurales y variables mas usuales de Arduino con su sintaxis y descripción.</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>Veamos un esqueleto de código de Arudino</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{.c++ .c++}</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){ // los bloque encerrados entre llaves</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">pinMode(13;OUTPUT); // los comentarios van precedidos por doble barra</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">if (alguna condición)</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">{ </span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">    // ejecuta esto; </span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">    // cada instrucción se finaliza con un punto y coma </span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">    // esto otro; </span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">    // esto otro; }</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">else if (otra condicion) {</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">// haga esto otro;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">else { // ejecuta esta otra cosa; }</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">}}}</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span>         </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primeros pasos en Arduino</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>Vamos a seguir bastante la guía presente en <span class="co">[</span><span class="ot">esta lista de Youtube</span><span class="co">](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M)</span>  </span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conexión de un led</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. </span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona.</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="al">![iu (598×402) (duckduckgo.com)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcursos.mcielectronics.cl%2Fwp-content%2Fuploads%2F2014%2F07%2Fdiodo.png&amp;f=1&amp;nofb=1&amp;ipt=d459c863b44139e0ca9af10e3da3121618bd5ad54c0a3c962aa8605dd49456ef&amp;ipo=images)</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El cátodo es la patita corta y el lado plano. En ocasiones las patitas son cortadas o no están visibles, por lo que:</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="al">![un diodo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geekfactory.mx%2Fwp-content%2Fuploads%2F2020%2F04%2Fled-con-arduino-como-determinar-polaridad.jpg&amp;f=1&amp;nofb=1&amp;ipt=6db7be7c736b3ab2ff5f755987c0239c3914991c3020f68d55a72556c4da61c8&amp;ipo=images)</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Versión esquemática de la placa con la conexión actual</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="al">![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>Pueden probar este código con la conexión anterior</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">``` C++</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">int pinPWM = 10</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="in">    pinMode(pinPWM,OUTPUT);</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="in">    for(i=0;i&lt;=255;i++){</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">    analogWrite(pinPWM,i);</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="in">    delay(1000);</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>¿Qué se podría cambiar en el código para que la iluminación progresiva sea "ida y vuelta", </span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>es decir, de apagado a prendido y de prendido a apagado.</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Arduino Hardware \| Arduino</span><span class="co">](https://www.arduino.cc/en/hardware)</span> <span class="co">[</span><span class="ot">Arduino Reference - Arduino Reference</span><span class="co">](https://www.arduino.cc/reference/en/)</span> <span class="co">[</span><span class="ot">Curso de arduino</span><span class="co">](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT)</span> <span class="co">[</span><span class="ot">Curso de arduino 2</span><span class="co">](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo)</span> <span class="co">[</span><span class="ot">Fading a LED \| Arduino Documentation</span><span class="co">](https://docs.arduino.cc/built-in-examples/basics/Fade)</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">TinkerCad de esta clase</span><span class="co">]</span>https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>Línea test</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
