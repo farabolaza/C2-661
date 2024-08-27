@@ -121,3 +121,4 @@ es decir, de apagado a prendido y de prendido a apagado.
 - [Fading a LED | Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)
 - [TinkerCad de esta clase](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)
 - [Intro a Arduino de TinkerCad](https://www.tinkercad.com/projects/Basics-of-Arduino-TINKERCAD)
+- [Drivers para Placas alternativas](https://github.com/himalayanelixir/arduino-usb-drivers)
