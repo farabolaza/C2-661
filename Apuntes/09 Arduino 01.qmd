@@ -74,6 +74,8 @@ else { // ejecuta esta otra cosa; }
 
 Vamos a seguir bastante la guía presente en [esta lista de Youtube](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&si=M6fYpbgP-rITZw1M) por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.
 
+![Detalle de entradas y salidas](https://ibles-content.tinkercad.com/F2C/Z4TU/LEH47RIM/F2CZ4TULEH47RIM.png?width=1200&height=900&fit=bounds&auto=webp)
+
 ### Conexión de un led
 
 Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. 
@@ -118,3 +120,4 @@ es decir, de apagado a prendido y de prendido a apagado.
 - [Curso de arduino 2](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&si=103_cDcPluovnGBo) 
 - [Fading a LED | Arduino Documentation](https://docs.arduino.cc/built-in-examples/basics/Fade)
 - [TinkerCad de esta clase](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)
+- [Intro a Arduino de TinkerCad](https://www.tinkercad.com/projects/Basics-of-Arduino-TINKERCAD)

@@ -416,6 +416,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="primeros-pasos-en-arduino" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Primeros pasos en Arduino</h1>
 <p>Vamos a seguir bastante la guía presente en <a href="https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M">esta lista de Youtube</a> por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ibles-content.tinkercad.com/F2C/Z4TU/LEH47RIM/F2CZ4TULEH47RIM.png?width=1200&amp;height=900&amp;fit=bounds&amp;auto=webp" class="img-fluid figure-img"></p>
+<figcaption>Detalle de entradas y salidas</figcaption>
+</figure>
+</div>
 <section id="conexión-de-un-led" class="level3" data-number="5.0.1">
 <h3 data-number="5.0.1" class="anchored" data-anchor-id="conexión-de-un-led"><span class="header-section-number">5.0.1</span> Conexión de un led</h3>
 <p>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia <strong>electrónica</strong>. Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona. Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</p>
@@ -462,6 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo">Curso de arduino 2</a></li>
 <li><a href="https://docs.arduino.cc/built-in-examples/basics/Fade">Fading a LED | Arduino Documentation</a></li>
 <li><a href="https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities">TinkerCad de esta clase</a></li>
+<li><a href="https://www.tinkercad.com/projects/Basics-of-Arduino-TINKERCAD">Intro a Arduino de TinkerCad</a></li>
 </ul>
 
 
@@ -1174,50 +1181,53 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>Vamos a seguir bastante la guía presente en <span class="co">[</span><span class="ot">esta lista de Youtube</span><span class="co">](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=M6fYpbgP-rITZw1M)</span> por lo que si se pierden alguna clase o se olvidan de algo pueden volver a verlo.</span>
 <span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conexión de un led</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="al">![Detalle de entradas y salidas](https://ibles-content.tinkercad.com/F2C/Z4TU/LEH47RIM/F2CZ4TULEH47RIM.png?width=1200&amp;height=900&amp;fit=bounds&amp;auto=webp)</span></span>
 <span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. </span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona.</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="al">![iu (598×402) (duckduckgo.com)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcursos.mcielectronics.cl%2Fwp-content%2Fuploads%2F2014%2F07%2Fdiodo.png&amp;f=1&amp;nofb=1&amp;ipt=d459c863b44139e0ca9af10e3da3121618bd5ad54c0a3c962aa8605dd49456ef&amp;ipo=images)</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conexión de un led</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>Un diodo LED es un tipo especial de diodo. Los diodos son componentes electrónicos en cuyos detalles se profundizará en la materia **electrónica**. </span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>Por el momento sólo necesitamos saber que el diodo tiene polaridad: si lo conectamos al revés, no funciona.</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>Tiene un lado positivo o ánodo, y uno negativo, o cátodo. El esquemático mas usual es como se ve aquí abajo.</span>
 <span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El cátodo es la patita corta y el lado plano. En ocasiones las patitas son cortadas o no están visibles, por lo que:</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="al">![iu (598×402) (duckduckgo.com)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcursos.mcielectronics.cl%2Fwp-content%2Fuploads%2F2014%2F07%2Fdiodo.png&amp;f=1&amp;nofb=1&amp;ipt=d459c863b44139e0ca9af10e3da3121618bd5ad54c0a3c962aa8605dd49456ef&amp;ipo=images)</span></span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="al">![un diodo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geekfactory.mx%2Fwp-content%2Fuploads%2F2020%2F04%2Fled-con-arduino-como-determinar-polaridad.jpg&amp;f=1&amp;nofb=1&amp;ipt=6db7be7c736b3ab2ff5f755987c0239c3914991c3020f68d55a72556c4da61c8&amp;ipo=images)</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El cátodo es la patita corta y el lado plano. En ocasiones las patitas son cortadas o no están visibles, por lo que:</span>
 <span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>Versión esquemática de la placa con la conexión actual</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="al">![un diodo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geekfactory.mx%2Fwp-content%2Fuploads%2F2020%2F04%2Fled-con-arduino-como-determinar-polaridad.jpg&amp;f=1&amp;nofb=1&amp;ipt=6db7be7c736b3ab2ff5f755987c0239c3914991c3020f68d55a72556c4da61c8&amp;ipo=images)</span></span>
 <span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="al">![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)</span>{width="500"}</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>Versión esquemática de la placa con la conexión actual</span>
 <span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>Pueden probar este código con la conexión anterior:</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="al">![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png)</span>{width="500"}</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="in">```c++</span></span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> pinPWM <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>pinPWM<span class="op">,</span>OUTPUT<span class="op">);</span></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>¿Qué se podría cambiar en el código para que la iluminación progresiva sea "ida y vuelta", </span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>es decir, de apagado a prendido y de prendido a apagado.</span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>Pueden probar este código con la conexión anterior:</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="in">```c++</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> pinPWM <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>pinPWM<span class="op">,</span>OUTPUT<span class="op">);</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;=</span><span class="dv">255</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>pinPWM<span class="op">,</span>i<span class="op">);</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>¿Qué se podría cambiar en el código para que la iluminación progresiva sea "ida y vuelta", </span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>es decir, de apagado a prendido y de prendido a apagado.</span>
 <span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Arduino Hardware Arduino</span><span class="co">](https://www.arduino.cc/en/hardware)</span> </span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Arduino Reference - Arduino Reference</span><span class="co">](https://www.arduino.cc/reference/en/)</span> </span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Curso de arduino</span><span class="co">](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT)</span> </span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Curso de arduino 2</span><span class="co">](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo)</span> </span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Fading a LED | Arduino Documentation</span><span class="co">](https://docs.arduino.cc/built-in-examples/basics/Fade)</span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TinkerCad de esta clase</span><span class="co">](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Arduino Hardware Arduino</span><span class="co">](https://www.arduino.cc/en/hardware)</span> </span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Arduino Reference - Arduino Reference</span><span class="co">](https://www.arduino.cc/reference/en/)</span> </span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Curso de arduino</span><span class="co">](https://youtube.com/playlist?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;si=4VGzMiUyuoBzNvuT)</span> </span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Curso de arduino 2</span><span class="co">](https://youtube.com/playlist?list=PLEzmH7aN82FEh2JjYuNCvFu6wFolHai32&amp;si=103_cDcPluovnGBo)</span> </span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Fading a LED | Arduino Documentation</span><span class="co">](https://docs.arduino.cc/built-in-examples/basics/Fade)</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TinkerCad de esta clase</span><span class="co">](https://www.tinkercad.com/classrooms/3MFQhBZ2UnU/activities)</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Intro a Arduino de TinkerCad</span><span class="co">](https://www.tinkercad.com/projects/Basics-of-Arduino-TINKERCAD)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
