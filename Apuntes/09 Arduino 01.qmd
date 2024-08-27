@@ -90,7 +90,7 @@ En la vida real, podemos ver la polaridad de un LED como se muestra debajo. El c
 
 Versión esquemática de la placa con la conexión actual
 
-![simplefade_pin9_schem.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/de42b3d398cf40768c13508932428fdb/29114/simplefade_pin9_schem.png){width="500"}
+![simplefade_bb.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/d64f7f76fc5ba2668a1684d1d7583207/29114/simplefade_bb.png){width="600"}
 
 
 Pueden probar este código con la conexión anterior:
