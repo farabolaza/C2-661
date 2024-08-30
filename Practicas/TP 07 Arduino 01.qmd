@@ -1,0 +1,51 @@
+---
+title: "TP 07 Arduino 01"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+# Prende y apaga
+
+Con una conexión como la que se muestra a continuación, su trabajo consistirá en conectar el un LED al arduino y crear un programa que lo haga parpadear a intervalos de tiempo regulares.
+
+![simplefade_bb.png (1920×1080) (arduino.cc)](https://docs.arduino.cc/static/d64f7f76fc5ba2668a1684d1d7583207/29114/simplefade_bb.png)
+
+# Prende y apaga PWM
+
+Reutilizando el circuito anterior, prueben este código
+
+```C++
+int pinPWM = 10 // creamos una variable llamada pinPwm y le damos el valor 10 (entero)
+
+void setup(){
+	pinMode(pinPWM,OUTPUT); // definimos a este pin como salida
+
+}
+void loop(){
+	for(i=0;i<=255;i++){
+	analogWrite(pinPWM,i);
+	delay(1000);
+	}
+}
+```
+
+Pueden ver que la sintaxis del bucle ```for``` es algo diferente a la de python.
+En código equivalente en python sería así:
+
+```python
+for i in range(256):
+    analogWrite(pinPWM,1)
+    delay(1000)
+```
+
+Vale aclarar que éste código no ejecutaría nada ni se comunicaría con arudino porque
+todas las funciones a las que hace referencia sólo existen dentro del lenguaje de arduino.
+Más adelante  veremos como hacer para comunicarnos con el arduino desde Python.
+
+## Ida y vuelta
+
+¿Qué se podría cambiar en el código para que la iluminación progresiva 
+sea "ida y vuelta", es decir, de apagado a prendido y de prendido a apagado.
