@@ -9,6 +9,13 @@ format:
 
 # LED con potenciómetro
 
+Podemos usar las entradas para conectar un potenciómetro (una resistencia variable)
+y reutilizar parte del código para encender un LED de la clase anterior en donde la 
+intensidad de la luz está controlada por la posición del potenciómetro.
+
+Algo para aclarar es que como las entradas son de 10 bit (1024 valores) mientras
+que las salidas PWM son de 8 bit (254 valores) dividmos por 4 el valor d entrada
+para escalarlo al rango adecuado.  
 
 
 # Código
@@ -43,7 +50,7 @@ void loop(){
 
 En tinkercad prueben conectar y simular el cicruito.
 
-![Potenciómetro con LEDPWM](Potenci%C3%B3metro%20con%20LED%20PWM.png){width=600}
+![Potenciómetro con LEDPWM](Potenci%C3%B3metro%20con%20LED%20PWM.png){fig-align="center" width=80%}
 
 Luego pasamos al circuito físico y al Arduino IDE
 
