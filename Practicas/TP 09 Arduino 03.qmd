@@ -46,7 +46,7 @@ en forma de  señal con un rango de entre 1500 y 2500 ciclos por segundo general
 
 ## Esquema de conexión
 
-![buzzer](C:\Users\feder\Desktop\quarto\C2\Buzzer.png){width="600px"}
+![buzzer](Buzzer.png){width="600px"}
 
 ## Código
 
