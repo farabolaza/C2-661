@@ -46,7 +46,7 @@ en forma de  señal con un rango de entre 1500 y 2500 ciclos por segundo general
 
 ## Esquema de conexión
 
-![buzzer](C:\Users\feder\Desktop\quarto\C2\Buzzer.png){width="50%"}
+![buzzer](C:\Users\feder\Desktop\quarto\C2\Buzzer.png){width="600px"}
 
 ## Código
 
@@ -87,15 +87,12 @@ void loop (){
   } 
 }
 ```
-
-``` C++
-
 Si queremos usar un buzzer pasivo, reutilizamos el código y usamos 
 el comando `#define` para asignar las frencencias a las notas musicales. 
 La ventaja de usar éste comando es que no ocupa espacio en memoria la asignación 
 de los valores  y sus equivalentes. 
 
-
+``` C++
 /*
 	Generacion una simple melodia con buzzer pasivo KY-006 mediante pulsador.
 */
