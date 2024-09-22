@@ -1,0 +1,260 @@
+---
+title: "TP 08 Arduino 03"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+# Conexión de un buzzer
+
+## Tipos de buzzers
+
+Un Buzzer, "zumbador" es un dispositivo que puede emitir sonido al recibir 
+una señal eléctrica, es decir, cumple la función de un parlante.
+
+El principio de funcionamiento y su construcción pueden variar, existiendo 
+buzzers piezoeléctricos o magnéticos. (nostoros trabajaremos con los piezoeléctricos)
+
+::: {.column-margin}
+![buzzer](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FS7ad728171da6463dbb4c9f14516d3cd9a%2F10PCS-Piezo-Elements-Buzzer-Sounder-Sensor-Trigger-Drum-Disc-Copper-Piezo-Speaker-12MM-15MM-20MM-27MM.png_.webp&f=1&nofb=1&ipt=0f0c8b51b76ea687071ac922a0d86a837baa302decf001ce5e870dd7c289b8f9&ipo=images){#fig-buzzer width="300px"}
+:::
+
+Un dispositivo piezoeléctrico,  tal como los empleados como micrófonos de 
+instrumentos, se compone dos placas conectadas (electrodos) con una lámina de material cerámico 
+en medio que se deforma al recibir una señal eléctrica. Esta deformación sigue 
+la frecuencia de la señal que lo excita por lo que si se adhiere una 
+membrana al dispositivo éste vibrará con la frecuencia que fue enviada por los electrodos.
+
+::: {.column-margin}
+
+![piezos](https://electrositio.com/wp-content/uploads/2022/07/Que-es-el-Efecto-Piezoelectrico-Como-Funciona-y-Sus.png){#fig-piezos width="300px"}
+
+:::
+
+Los buzzers magnéticos se componen de un electroimán, tal como un parlante, y un diafragma magnético 
+que vibra al alimentar el sistema con una señal eléctrica. Ésta vibración se corresponde 
+con la la señal recibida por lo que tenemos como resultado, sonido.
+
+En cuanto a los buzzers piezoeléctricos, tenemos dos grandes categorías: Activos y pasivos.
+Los activos contienen un mecanismo interno (generalmente un cristal) con una frecuencia de 
+oscilación conocida. Cuando se excita el sistema, vibra con dicha frecuencia.
+
+En cambio los pasivos, no tienen una frecuencia "propia" sino que debe ser suministrada por
+en forma de  señal con un rango de entre 1500 y 2500 ciclos por segundo generalmente.
+
+## Esquema de conexión
+
+![buzzer](C:\Users\feder\Desktop\quarto\C2\Buzzer.png){width="50%"}
+
+## Código
+
+Nótese cómo se definien los pines para el pulsador y el buzzer en el setup. Primero 
+se hace uso del comando `#define` que permite asignar un valor de reemplazo a texto. 
+Para el pulsador haremos uso de una resistencia interna de arduino a la que podemos acceder 
+definiendo al pin usado como `INPUT_PULLUP` haciendo que se conecte una resistancia de 20 $k\Omega$ en
+serie con éste. Cabe aclarar que la resistencia en esta parte del circuito podría ser colocada 
+de manera externa en el protoboard de manera equivalente.
+
+Presetemos atención a las funciones especfícias `Tone` y `NoTone` que permiten, como es de esperar, 
+enviar sonido o silencio al buzzer.
+
+```C++
+/*
+	Generacion de 5 pitidos con buzzer activo KY-012 mediante pulsador.
+*/
+
+// define es un comando que evita usar memoria al asignar variables 
+// como marcadores de nombre
+
+#define PULSADOR 2			// pulsador en pin 2
+#define BUZZER_ACTIVO 8		// buzzer activo en pin 8
+
+void setup (){
+  pinMode (PULSADOR, INPUT_PULLUP);	// pin 2 como entrada con resistencia de pull-up
+  pinMode (BUZZER_ACTIVO, OUTPUT);	// pin 8 como salida
+}
+
+void loop (){
+  if(digitalRead(PULSADOR) == LOW){			// si se ha presionado el pulsador
+    for(int i = 0; i < 5; i++){				// bucle repite 5 veces
+      digitalWrite(BUZZER_ACTIVO, HIGH);	// activa buzzer
+      delay (500);							// demora de medio segundo
+      digitalWrite(BUZZER_ACTIVO, LOW);		// apaga buzzer
+      delay (500);							// demora de medio segundo
+    }
+  } 
+}
+```
+
+``` C++
+
+Si queremos usar un buzzer pasivo, reutilizamos el código y usamos 
+el comando `#define` para asignar las frencencias a las notas musicales. 
+La ventaja de usar éste comando es que no ocupa espacio en memoria la asignación 
+de los valores  y sus equivalentes. 
+
+
+/*
+	Generacion una simple melodia con buzzer pasivo KY-006 mediante pulsador.
+*/
+
+// esta parte del codigo debe incluir la conversion de notas musicales
+// frecuencias
+
+#define NOTE_B0  31
+#define NOTE_C1  33
+#define NOTE_CS1 35
+#define NOTE_D1  37
+#define NOTE_DS1 39
+#define NOTE_E1  41
+#define NOTE_F1  44
+#define NOTE_FS1 46
+#define NOTE_G1  49
+
+#define PULSADOR 2		// pulsador en pin 2
+#define BUZZER_PASIVO 8		// buzzer pasivo en pin 8
+
+
+int melodia[] = {		// array con las notas de la melodia
+  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
+int duraciones[] = {		// array con la duracion de cada nota
+  4, 8, 8, 4, 4, 4, 4, 4
+};
+
+void setup() {
+  pinMode(PULSADOR, INPUT_PULLUP);	// pin 2 como entrada con resistencia de pull-up
+  pinMode(BUZZER_PASIVO, OUTPUT);	// pin 8 como salida
+ 
+}
+
+void loop() {
+  if(digitalRead(PULSADOR) == LOW){			// si se ha presionadl el pulsador
+    for (int i = 0; i < 8; i++) {			// bucle repite 8 veces
+      int duracion = 1000 / duraciones[i];		// duracion de la nota en milisegundos
+      tone(BUZZER_PASIVO, melodia[i], duracion);	// ejecuta el tono con la duracion
+      int pausa = duracion * 1.30;			// calcula pausa
+      delay(pausa);					// demora con valor de pausa
+      noTone(BUZZER_PASIVO);				// detiene reproduccion de tono
+    }
+  }
+}
+```
+
+## Actividad: Generar sonido con un potenciómetro
+
+Algunas propuestas:
+
+1. Tocar una melódia de las propuestas en el link de las referencias
+2. Intentar controlar las frecuencias enviadas al buzzer
+a travéz de un potenciómetro asignando frecuencias en una octava 
+(entre una frecuencia y su doble) para todo el rango de giro.
+3. Asignar al potenciómetro valores conforme a una escala musical 
+4. Asignar frecuencias específicas a diferentes pulsadores y obtener un teclado.
+
+
+
+# Referencias
+
+[Melodías para arduino](https://github.com/robsoncouto/arduino-songs)
+
+
+{{< video https://www.youtube.com/watch?v=UQsixwoX5EQ >}}
+
+
+# Anexo: Freuencias  notas musicales
+
+```C++
+#define NOTE_B0  31	// notas y frecuencias
+#define NOTE_C1  33
+#define NOTE_CS1 35
+#define NOTE_D1  37
+#define NOTE_DS1 39
+#define NOTE_E1  41
+#define NOTE_F1  44
+#define NOTE_FS1 46
+#define NOTE_G1  49
+#define NOTE_GS1 52
+#define NOTE_A1  55
+#define NOTE_AS1 58
+#define NOTE_B1  62
+#define NOTE_C2  65
+#define NOTE_CS2 69
+#define NOTE_D2  73
+#define NOTE_DS2 78
+#define NOTE_E2  82
+#define NOTE_F2  87
+#define NOTE_FS2 93
+#define NOTE_G2  98
+#define NOTE_GS2 104
+#define NOTE_A2  110
+#define NOTE_AS2 117
+#define NOTE_B2  123
+#define NOTE_C3  131
+#define NOTE_CS3 139
+#define NOTE_D3  147
+#define NOTE_DS3 156
+#define NOTE_E3  165
+#define NOTE_F3  175
+#define NOTE_FS3 185
+#define NOTE_G3  196
+#define NOTE_GS3 208
+#define NOTE_A3  220
+#define NOTE_AS3 233
+#define NOTE_B3  247
+#define NOTE_C4  262
+#define NOTE_CS4 277
+#define NOTE_D4  294
+#define NOTE_DS4 311
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_FS4 370
+#define NOTE_G4  392
+#define NOTE_GS4 415
+#define NOTE_A4  440
+#define NOTE_AS4 466
+#define NOTE_B4  494
+#define NOTE_C5  523
+#define NOTE_CS5 554
+#define NOTE_D5  587
+#define NOTE_DS5 622
+#define NOTE_E5  659
+#define NOTE_F5  698
+#define NOTE_FS5 740
+#define NOTE_G5  784
+#define NOTE_GS5 831
+#define NOTE_A5  880
+#define NOTE_AS5 932
+#define NOTE_B5  988
+#define NOTE_C6  1047
+#define NOTE_CS6 1109
+#define NOTE_D6  1175
+#define NOTE_DS6 1245
+#define NOTE_E6  1319
+#define NOTE_F6  1397
+#define NOTE_FS6 1480
+#define NOTE_G6  1568
+#define NOTE_GS6 1661
+#define NOTE_A6  1760
+#define NOTE_AS6 1865
+#define NOTE_B6  1976
+#define NOTE_C7  2093
+#define NOTE_CS7 2217
+#define NOTE_D7  2349
+#define NOTE_DS7 2489
+#define NOTE_E7  2637
+#define NOTE_F7  2794
+#define NOTE_FS7 2960
+#define NOTE_G7  3136
+#define NOTE_GS7 3322
+#define NOTE_A7  3520
+#define NOTE_AS7 3729
+#define NOTE_B7  3951
+#define NOTE_C8  4186
+#define NOTE_CS8 4435
+#define NOTE_D8  4699
+#define NOTE_DS8 4978
+```
