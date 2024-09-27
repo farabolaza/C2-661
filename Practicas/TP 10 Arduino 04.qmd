@@ -30,12 +30,12 @@ ser resistencias del orden de los megaohm.
 :::
 
 Como instrumento de medición su aplicación es limitada ya que su precisión es 
-afectado por la temperatura de funcionamiento y no poseen la resolución en frecuencia
+afectada por la temperatura de funcionamiento y no poseen la resolución en frecuencia
 adecuada para ello.
 
 Dicho esto, lo que podemos concluir es que sirve para tener medidas cualitativas 
 sobre la cantidad de luz que están recibiendo y usar esa información para operar
-otro dispositivos. Si se desea medir la lu con precisión se debe usar un luxómetro.
+otro dispositivos. Si se desea medir la luminosidad con precisión se debe usar un luxómetro.
 
 
 ## Esquema de conexión
@@ -47,7 +47,7 @@ estaremos midiendo una tensión directamente proporcional a la luz incidente.
 Podemos agregar una led en una salida pwm y probar de iluminarlo en relación a la 
 luz recibida por la fotoresistencia, ya sea de forma directa o inversamente proporcional.
 
-![fotor](foto-resistencia.png.png){width="600px"}
+![fotor](foto-resistencia.png){width="600px"}
 
 El mismo circuito pero en la vista tradicional se vería asi
 
