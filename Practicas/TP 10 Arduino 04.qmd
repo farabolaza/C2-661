@@ -1,0 +1,99 @@
+---
+title: "TP 10 Arduino 04"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+# Conexión de una fotoresistencia
+
+## Principio de funcionamiento
+
+Como su nombre lo indica una fotoresistencia es una resistencia cuyo valor depende 
+de la cantidad de luz incidente sobre la misma. La relación entre la luminosidad 
+y la resistencia se vale de la siguiente expresión
+
+$$
+\frac{I}{I_0}=\left({\frac{R}{R_0}}\right)^{\gamma}
+$$
+
+No nos detendremos a analizar la construcción del dispositivo, lo que nos interesa 
+saber es que la resistencia disminuye a medida que aumenta la luz incidente y suelen
+ser resistencias del orden de los megaohm.
+
+::: {.column-margin}
+
+![fotoresistencia](https://www.luisllamas.es/wp-content/uploads/2015/03/ldr-gl55.webp){#fig-fotor width="300px"}
+
+:::
+
+Como instrumento de medición su aplicación es limitada ya que su precisión es 
+afectado por la temperatura de funcionamiento y no poseen la resolución en frecuencia
+adecuada para ello.
+
+Dicho esto, lo que podemos concluir es que sirve para tener medidas cualitativas 
+sobre la cantidad de luz que están recibiendo y usar esa información para operar
+otro dispositivos. Si se desea medir la lu con precisión se debe usar un luxómetro.
+
+
+## Esquema de conexión
+
+Como la resistencia es inversamente proporcional a la luminosidad al
+agregar una resistencia en serie y tomar el valor de tensión en medio de ellas 
+estaremos midiendo una tensión directamente proporcional a la luz incidente.
+
+Podemos agregar una led en una salida pwm y probar de iluminarlo en relación a la 
+luz recibida por la fotoresistencia, ya sea de forma directa o inversamente proporcional.
+
+![fotor](foto-resistencia.png.png){width="600px"}
+
+El mismo circuito pero en la vista tradicional se vería asi
+
+![cfotor](circuito-foto-resistencia.png){width="600px"}
+
+
+## Código
+
+```C++
+/*
+USO DE FOTORESITENCIA
+*/
+
+int SENSOR = 0;			// pin Sensor de modulo a entrada analogica A0
+int LED = 3;			// LED en pin 3
+int VALOR;			// almacena valor leido de entrada A0
+int PWM;
+
+void setup(){
+  pinMode(LED, OUTPUT);		// pin 3 como salida
+  // entradas analogicas no requieren inicialización
+}
+
+
+void loop(){
+  VALOR = analogRead(SENSOR);		// lee valor de entrada A0
+  PWM = map(VALOR, 0, 1023, 255, 0);	// convierte valores de entrada 0-1023 a 255-0 para brillo
+  analogWrite(LED, PWM);		// escribe valor al LED
+}
+
+```
+
+
+## Actividades
+
+1. Encender un led cuando a luz es menor a cierto umbral
+2. Usar el monitor serie para comprobar los rangos de tensión utilizados
+3. Extraer los datos y verificar la proporcionalidad en relación a la luz incidente
+4. Usar dos fotoresistencias para deducir la orientación de la luz incidente
+
+
+
+# Referencias
+
+[Fotoresistencias](https://www.luisllamas.es/medir-nivel-luz-con-arduino-y-fotoresistencia-ldr/)
+[Tutorial en Tinkercad](https://www.tinkercad.com/projects/Light-Sensor-Photoresistor-Arduino-Tinkercad)
+
+
+{{< video https://youtu.be/d3zcjfjqFxE?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2 >}}

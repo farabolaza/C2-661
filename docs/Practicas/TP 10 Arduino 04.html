@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prácticas – C2-661</title>
+<title>TP 10 Arduino 04 – C2-661</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,26 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Practicas/TP 09 Arduino 03.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,38 +103,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -164,20 +148,20 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./utn.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../utn.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">C2-661</span>
     </a>
   </div>
@@ -188,11 +172,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./00 apuntes.html"> 
+    <a class="nav-link" href="../00 apuntes.html"> 
 <span class="menu-text">Apuntes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./00 practicas.html" aria-current="page"> 
+    <a class="nav-link" href="../00 practicas.html"> 
 <span class="menu-text">Prácticas</span></a>
   </li>  
 </ul>
@@ -207,7 +191,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prácticas</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 10 Arduino 04.html">TP 10 Arduino 04</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -238,55 +222,55 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/01 Python intro 101 (2024).html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/01 Python intro 101 (2024).html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Intro a Python 2024</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/02 Contenedores y loops.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/02 Contenedores y loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02 Contenedores y bucles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/03 Numpy.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/03 Numpy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 Numpy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/04 Pandas y Manejo de archivos.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/04 Pandas y Manejo de archivos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04 Módulos: Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/05 Matplotlib.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/05 Matplotlib.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Matpolitlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/06 Matplotlib_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/06 Matplotlib_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06 Matplotlib (más)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/07 Scipy y Ajuste de curvas.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/07 Scipy y Ajuste de curvas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Scipy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/08 Sympy.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/08 Sympy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08 Sympy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Apuntes/09 Arduino 01.html" class="sidebar-item-text sidebar-link">
+  <a href="../Apuntes/09 Arduino 01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">09 Arduino 01</span></a>
   </div>
 </li>
@@ -294,76 +278,76 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Practicas</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Primer parcial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/EV 01 1P 2024-x.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/EV 01 1P 2024-x.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Primer parcial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 01 Variables, entradas y salidas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 01 Variables, entradas y salidas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 02 Iteraciones.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 02 Iteraciones.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 02 Iteraciones</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 03 Arrays.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 03 Arrays.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 03 Arrays y Numpy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 04 Matplotlib.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 04 Matplotlib.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 04 Matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 06 Sympy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 06 Sympy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 07 Arduino 01.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 07 Arduino 01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 07 Arduino 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 08 Arduino 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 09 Arduino 03.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 09 Arduino 03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 08 Arduino 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Practicas/TP 10 Arduino 04.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 10 Arduino 04.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 10 Arduino 04</span></a>
   </div>
 </li>
@@ -374,16 +358,28 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#conexión-de-una-fotoresistencia" id="toc-conexión-de-una-fotoresistencia" class="nav-link active" data-scroll-target="#conexión-de-una-fotoresistencia"><span class="header-section-number">1</span> Conexión de una fotoresistencia</a>
+  <ul class="collapse">
+  <li><a href="#principio-de-funcionamiento" id="toc-principio-de-funcionamiento" class="nav-link" data-scroll-target="#principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</a></li>
+  <li><a href="#esquema-de-conexión" id="toc-esquema-de-conexión" class="nav-link" data-scroll-target="#esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</a></li>
+  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">1.3</span> Código</a></li>
+  <li><a href="#actividades" id="toc-actividades" class="nav-link" data-scroll-target="#actividades"><span class="header-section-number">1.4</span> Actividades</a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">2</span> Referencias</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 10 Arduino 04.html">TP 10 Arduino 04</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Prácticas</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
-<p class="subtitle lead">Listado de prácticas</p>
+<div class="quarto-title-block"><div><h1 class="title">TP 10 Arduino 04</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -400,261 +396,92 @@ window.Quarto = {
 </header>
 
 
+<section id="conexión-de-una-fotoresistencia" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Conexión de una fotoresistencia</h1>
+<section id="principio-de-funcionamiento" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</h2>
+<p>Como su nombre lo indica una fotoresistencia es una resistencia cuyo valor depende de la cantidad de luz incidente sobre la misma. La relación entre la luminosidad y la resistencia se vale de la siguiente expresión</p>
+<p><span class="math display">
+\frac{I}{I_0}=\left({\frac{R}{R_0}}\right)^{\gamma}
+</span></p>
+<p>No nos detendremos a analizar la construcción del dispositivo, lo que nos interesa saber es que la resistencia disminuye a medida que aumenta la luz incidente y suelen ser resistencias del orden de los megaohm.</p>
 
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-fotor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fotor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.luisllamas.es/wp-content/uploads/2015/03/ldr-gl55.webp" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fotor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: fotoresistencia
+</figcaption>
+</figure>
+</div>
+</div></div><p>Como instrumento de medición su aplicación es limitada ya que su precisión es afectado por la temperatura de funcionamiento y no poseen la resolución en frecuencia adecuada para ello.</p>
+<p>Dicho esto, lo que podemos concluir es que sirve para tener medidas cualitativas sobre la cantidad de luz que están recibiendo y usar esa información para operar otro dispositivos. Si se desea medir la lu con precisión se debe usar un luxómetro.</p>
+</section>
+<section id="esquema-de-conexión" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</h2>
+<p>Como la resistencia es inversamente proporcional a la luminosidad al agregar una resistencia en serie y tomar el valor de tensión en medio de ellas estaremos midiendo una tensión directamente proporcional a la luz incidente.</p>
+<p>Podemos agregar una led en una salida pwm y probar de iluminarlo en relación a la luz recibida por la fotoresistencia, ya sea de forma directa o inversamente proporcional.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="foto-resistencia.png.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>fotor</figcaption>
+</figure>
+</div>
+<p>El mismo circuito pero en la vista tradicional se vería asi</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="circuito-foto-resistencia.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>cfotor</figcaption>
+</figure>
+</div>
+</section>
+<section id="código" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="código"><span class="header-section-number">1.3</span> Código</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">USO DE FOTORESITENCIA</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> SENSOR <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>         <span class="co">// pin Sensor de modulo a entrada analogica A0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> LED <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>            <span class="co">// LED en pin 3</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> VALOR<span class="op">;</span>          <span class="co">// almacena valor leido de entrada A0</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> PWM<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  pinMode<span class="op">(</span>LED<span class="op">,</span> OUTPUT<span class="op">);</span>     <span class="co">// pin 3 como salida</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// entradas analogicas no requieren inicialización</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  VALOR <span class="op">=</span> analogRead<span class="op">(</span>SENSOR<span class="op">);</span>       <span class="co">// lee valor de entrada A0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  PWM <span class="op">=</span> map<span class="op">(</span>VALOR<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1023</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span>    <span class="co">// convierte valores de entrada 0-1023 a 255-0 para brillo</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  analogWrite<span class="op">(</span>LED<span class="op">,</span> PWM<span class="op">);</span>        <span class="co">// escribe valor al LED</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="actividades" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="actividades"><span class="header-section-number">1.4</span> Actividades</h2>
+<ol type="1">
+<li>Encender un led cuando a luz es menor a cierto umbral</li>
+<li>Usar el monitor serie para comprobar los rangos de tensión utilizados</li>
+<li>Extraer los datos y verificar la proporcionalidad en relación a la luz incidente</li>
+<li>Usar dos fotoresistencias para deducir la orientación de la luz incidente</li>
+</ol>
+</section>
+</section>
+<section id="referencias" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Referencias</h1>
+<p><a href="https://www.luisllamas.es/medir-nivel-luz-con-arduino-y-fotoresistencia-ldr/">Fotoresistencias</a> <a href="https://www.tinkercad.com/projects/Light-Sensor-Photoresistor-Arduino-Tinkercad">Tutorial en Tinkercad</a></p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/d3zcjfjqFxE?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 <!-- -->
 
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1720563875373" data-listing-reading-time-sort="1" data-listing-word-count-sort="139">
-<div class="thumbnail">
-<p><a href="./Practicas/EV 01 1P 2024-x.html" class="no-external"></a></p><a href="./Practicas/EV 01 1P 2024-x.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/EV 01 1P 2024-x.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/EV 01 1P 2024-x.html" class="no-external">Primer parcial</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/EV 01 1P 2024-x.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/EV 01 1P 2024-x.html" class="no-external"><span class="theorem-title"><strong>Ejercicio 1 (Python básico)</strong></span> Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones <span class="math inline">x</span> e <span class="math inline">y</span> en el plano de un cuerpo que se mueve bajo…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/EV 01 1P 2024-x.html" class="no-external"></a></p><a href="./Practicas/EV 01 1P 2024-x.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1723056077091" data-listing-reading-time-sort="2" data-listing-word-count-sort="264">
-<div class="thumbnail">
-<p><a href="./Practicas/EV 01 1P 2024.html" class="no-external"></a></p><a href="./Practicas/EV 01 1P 2024.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/EV 01 1P 2024.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/EV 01 1P 2024.html" class="no-external">Primer parcial</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/EV 01 1P 2024.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/EV 01 1P 2024.html" class="no-external"><span class="theorem-title"><strong>Ejercicio 1 (Python básico)</strong></span> Crear una función que devuelva tres arrays o listas, para el tiempo y para las posiciones <span class="math inline">x</span> e <span class="math inline">y</span> en el plano de un cuerpo que se mueve bajo…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/EV 01 1P 2024.html" class="no-external"></a></p><a href="./Practicas/EV 01 1P 2024.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1716909400000" data-listing-reading-time-sort="5" data-listing-word-count-sort="802">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external"></a></p><a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external">TP 01 Variables, entradas y salidas</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external">Computación 2 - Física y física aplicada 2661 # TP 01: Variables, entradas y salidas</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external"></a></p><a href="./Practicas/TP 01 Variables, entradas y salidas.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1716909436000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1351">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 02 Iteraciones.html" class="no-external"></a></p><a href="./Practicas/TP 02 Iteraciones.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 02 Iteraciones.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 02 Iteraciones.html" class="no-external">TP 02 Iteraciones</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 02 Iteraciones.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 02 Iteraciones.html" class="no-external">Computación 2 - Física y física aplicada 2661 # TP 02: Iteraciones</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 02 Iteraciones.html" class="no-external"></a></p><a href="./Practicas/TP 02 Iteraciones.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1716909470000" data-listing-reading-time-sort="4" data-listing-word-count-sort="760">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 03 Arrays.html" class="no-external"></a></p><a href="./Practicas/TP 03 Arrays.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 03 Arrays.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 03 Arrays.html" class="no-external">TP 03 Arrays y Numpy</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 03 Arrays.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 03 Arrays.html" class="no-external">Para resolver esta guía pueden revisar el apunte que tienen sobre elementos básicos de Python, en particular apartado sobre <em>listas</em>.</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 03 Arrays.html" class="no-external"></a></p><a href="./Practicas/TP 03 Arrays.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1717525557966" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 04 Matplotlib.html" class="no-external"></a></p><a href="./Practicas/TP 04 Matplotlib.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 04 Matplotlib.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 04 Matplotlib.html" class="no-external">TP 04 Matplotlib</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 04 Matplotlib.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 04 Matplotlib.html" class="no-external">Dado un movimiento en caída libre en una dimensión con condiciones inciales arbitrarias crear en un sólo lienzo gráficas de posición, velocidad y aceleración en función del…</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 04 Matplotlib.html" class="no-external"></a></p><a href="./Practicas/TP 04 Matplotlib.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1717525396595" data-listing-reading-time-sort="2" data-listing-word-count-sort="281">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 06 Sympy.html" class="no-external"></a></p><a href="./Practicas/TP 06 Sympy.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 06 Sympy.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 06 Sympy.html" class="no-external">TP 06 Sympy</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 06 Sympy.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 06 Sympy.html" class="no-external">Ejercicios resueltos y para hacer</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 06 Sympy.html" class="no-external"></a></p><a href="./Practicas/TP 06 Sympy.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1725037831355" data-listing-reading-time-sort="1" data-listing-word-count-sort="169">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 07 Arduino 01.html" class="no-external"></a></p><a href="./Practicas/TP 07 Arduino 01.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 07 Arduino 01.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 07 Arduino 01.html" class="no-external">TP 07 Arduino 01</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 07 Arduino 01.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 07 Arduino 01.html" class="no-external">Con una conexión como la que se muestra a continuación, su trabajo consistirá en conectar el un LED al arduino y crear un programa que lo haga parpadear a intervalos de…</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 07 Arduino 01.html" class="no-external"></a></p><a href="./Practicas/TP 07 Arduino 01.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1725649553351" data-listing-reading-time-sort="1" data-listing-word-count-sort="175">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 08 Arduino 02.html" class="no-external"></a></p><a href="./Practicas/TP 08 Arduino 02.html" class="no-external">
-<p class="card-img-top"><img src="Practicas\Potenciómetro con LED PWM.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./Practicas/TP 08 Arduino 02.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 08 Arduino 02.html" class="no-external">TP 08 Arduino 02</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 08 Arduino 02.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 08 Arduino 02.html" class="no-external">Podemos usar las entradas para conectar un potenciómetro (una resistencia variable) y reutilizar parte del código para encender un LED de la clase anterior en donde la…</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 08 Arduino 02.html" class="no-external"></a></p><a href="./Practicas/TP 08 Arduino 02.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1727043123963" data-listing-reading-time-sort="6" data-listing-word-count-sort="1036">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 09 Arduino 03.html" class="no-external"></a></p><a href="./Practicas/TP 09 Arduino 03.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 09 Arduino 03.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 09 Arduino 03.html" class="no-external">TP 08 Arduino 03</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 09 Arduino 03.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 09 Arduino 03.html" class="no-external">Un Buzzer, “zumbador” es un dispositivo que puede emitir sonido al recibir una señal eléctrica, es decir, cumple la función de un parlante.</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 09 Arduino 03.html" class="no-external"></a></p><a href="./Practicas/TP 09 Arduino 03.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1727444534598" data-listing-reading-time-sort="2" data-listing-word-count-sort="346">
-<div class="thumbnail">
-<p><a href="./Practicas/TP 10 Arduino 04.html" class="no-external"></a></p><a href="./Practicas/TP 10 Arduino 04.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./Practicas/TP 10 Arduino 04.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./Practicas/TP 10 Arduino 04.html" class="no-external">TP 10 Arduino 04</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./Practicas/TP 10 Arduino 04.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./Practicas/TP 10 Arduino 04.html" class="no-external">Como su nombre lo indica una fotoresistencia es una resistencia cuyo valor depende de la cantidad de luz incidente sobre la misma. La relación entre la luminosidad y la…</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./Practicas/TP 10 Arduino 04.html" class="no-external"></a></p><a href="./Practicas/TP 10 Arduino 04.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1269,14 +1096,115 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Prácticas"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Listado de prácticas"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: Practicas</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Practicas/TP 09 Arduino 03.html" class="pagination-link" aria-label="TP 08 Arduino 03">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 08 Arduino 03</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 10 Arduino 04"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        number-sections: true</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conexión de una fotoresistencia</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Principio de funcionamiento</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Como su nombre lo indica una fotoresistencia es una resistencia cuyo valor depende </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>de la cantidad de luz incidente sobre la misma. La relación entre la luminosidad </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>y la resistencia se vale de la siguiente expresión</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>\frac{I}{I_0}=\left({\frac{R}{R_0}}\right)^{\gamma}</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>No nos detendremos a analizar la construcción del dispositivo, lo que nos interesa </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>saber es que la resistencia disminuye a medida que aumenta la luz incidente y suelen</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ser resistencias del orden de los megaohm.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="al">![fotoresistencia](https://www.luisllamas.es/wp-content/uploads/2015/03/ldr-gl55.webp)</span>{#fig-fotor width="300px"}</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Como instrumento de medición su aplicación es limitada ya que su precisión es </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>afectado por la temperatura de funcionamiento y no poseen la resolución en frecuencia</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>adecuada para ello.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>Dicho esto, lo que podemos concluir es que sirve para tener medidas cualitativas </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>sobre la cantidad de luz que están recibiendo y usar esa información para operar</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>otro dispositivos. Si se desea medir la lu con precisión se debe usar un luxómetro.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esquema de conexión</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Como la resistencia es inversamente proporcional a la luminosidad al</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>agregar una resistencia en serie y tomar el valor de tensión en medio de ellas </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>estaremos midiendo una tensión directamente proporcional a la luz incidente.</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>Podemos agregar una led en una salida pwm y probar de iluminarlo en relación a la </span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>luz recibida por la fotoresistencia, ya sea de forma directa o inversamente proporcional.</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="al">![fotor](foto-resistencia.png.png)</span>{width="600px"}</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>El mismo circuito pero en la vista tradicional se vería asi</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="al">![cfotor](circuito-foto-resistencia.png)</span>{width="600px"}</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Código</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">```C++</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">/*</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">USO DE FOTORESITENCIA</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">int SENSOR = 0;         // pin Sensor de modulo a entrada analogica A0</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">int LED = 3;            // LED en pin 3</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">int VALOR;          // almacena valor leido de entrada A0</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">int PWM;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">  pinMode(LED, OUTPUT);     // pin 3 como salida</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">  // entradas analogicas no requieren inicialización</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">  VALOR = analogRead(SENSOR);       // lee valor de entrada A0</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">  PWM = map(VALOR, 0, 1023, 255, 0);    // convierte valores de entrada 0-1023 a 255-0 para brillo</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">  analogWrite(LED, PWM);        // escribe valor al LED</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Actividades</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Encender un led cuando a luz es menor a cierto umbral</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Usar el monitor serie para comprobar los rangos de tensión utilizados</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Extraer los datos y verificar la proporcionalidad en relación a la luz incidente</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Usar dos fotoresistencias para deducir la orientación de la luz incidente</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Fotoresistencias</span><span class="co">](https://www.luisllamas.es/medir-nivel-luz-con-arduino-y-fotoresistencia-ldr/)</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tutorial en Tinkercad</span><span class="co">](https://www.tinkercad.com/projects/Light-Sensor-Photoresistor-Arduino-Tinkercad)</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/d3zcjfjqFxE?list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2 &gt;}}</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
