@@ -1,0 +1,100 @@
+---
+title: "TP 11 Arduino 04"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+# Conexión de un sensor ultrasónico de distancia
+
+## Principio de funcionamiento
+
+El sensor emite pulsos de 40 khz de freciencia a intervalos de 10 $\mu s$ enviando un tren de pulsos HIGH a 
+través del pin trigger y espera a recibirlo en el pin Echo.
+Cuando los pulsos emitidos llegan a un obstáculo, rebotan y vuelven, siendo recibidos por el receptor, 
+el cual generará un pulso alto (HIGH) en la salida (pin Echo) de igual duración que el tiempo transcurrido entre la emisión y la recepción del pulso.
+En el lado del controlador, la señal recibida debe será convertida a distancia al dividir el ancho del pulso por 58.2, obtenemos los datos en centímetros.
+Este dato que parece arbitrario se puede calcular sin más que hacer un par de conversiones de unidades al revisar la hoja de datos
+del componente.
+
+
+::: {.column-margin}
+
+![sensor ultrasónico](sensor-ultrasonico.jpg){#fig-sensor1 width="300px"}
+
+:::
+
+
+## Esquema de conexión
+
+La conexión será como se muestra en la imagen
+
+![conexion](sensor-ultra-conexion.png){width="600px"}
+
+El mismo circuito pero en la vista tradicional se vería asi
+
+![conexionc](sensor-ultra-conexion-circ.png){width="600px"}
+
+En ocasiones se conecta una resistencia como se muestra en la siguiente imagen
+
+![conexionr](sensor-ultrasonico2.jpg){width="600px"}
+
+
+## Código
+
+```C++
+/*
+CONEXIÓN DE SENSOR ULTRASÓNICO
+*/
+
+int TRIG = 10; // TRIGGER EN PIN 10
+int ECO = 9; // ECO EN PIN 9
+int LED = 13; // LED INTEGRADO O PIN DEL LED
+int DURACION; 
+int DISTANCIA;
+
+void setup() {
+  pinMode(LED, OUTPUT); // DEFINICION COMO SALIDA PIN LED
+  pinMode(ECO, INPUT); // DEFINICION COMO ENTRADA PIN ECHO
+  pinMode(TRIG, OUTPUT); // DEFINICION COMO SALIDA PIN TRIGGER
+  Serial.begin(9600); // INCIALIZACIÓN DEL MONITOR SERIE
+}
+ 
+
+void loop() {
+  digitalWrite(TRIG, HIGH); // ARRANCAMOS EL SENSOR
+  delay(1);
+  digitalWrite(TRIG, LOW);
+  DURACION = pulseIn(ECO, HIGH);
+  DISTANCIA = DURACION / 58.2;
+// esto esta especificado por el fabricante del sensor
+
+  if(DISTANCIA <=20 && DISTANCIA >=0){
+
+    digitalWrite(LED,HIGH);
+    delay(DISTANCIA*10);
+    digitalWrite(LED, LOW);
+  }
+	Serial.println(DISTANCIA);
+	delay(200);
+}
+
+```
+
+## Actividades
+
+1. Encender un led cuando a luz es menor a cierto umbral
+2. Usar el monitor serie para comprobar los rangos de tensión utilizados
+3. Extraer los datos y verificar la proporcionalidad en relación a la luz incidente
+4. Usar dos fotoresistencias para deducir la orientación de la luz incidente
+
+# Referencias
+
+- [Info sobre el sensor ultrasónico](https://www.hwlibre.com/hc-sr04/#Pinout_y_datasheets)
+- [Hoja de datos](https://pdf1.alldatasheet.com/datasheet-pdf/view/1132203/ETC2/HC-SR04.html)
+- [Proyectos usando el sensor ultrasónico](https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1)
+
+
+{{< video https://www.youtube.com/watch?v=mlw3APOUt8U >}}
