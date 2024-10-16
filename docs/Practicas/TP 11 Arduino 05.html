@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TP 08 Arduino 02 – C2-661</title>
+<title>TP 11 Arduino 05 – C2-661</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Practicas/TP 09 Arduino 03.html" rel="next">
-<link href="../Practicas/TP 07 Arduino 01.html" rel="prev">
+<link href="../Practicas/TP 10 Arduino 04.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,11 +104,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -149,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 08 Arduino 02.html">TP 08 Arduino 02</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 11 Arduino 05.html">TP 11 Arduino 05</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -293,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 08 Arduino 02</span></a>
   </div>
 </li>
@@ -311,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 11 Arduino 05.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 11 Arduino 05.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 11 Arduino 05</span></a>
   </div>
 </li>
@@ -327,19 +369,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#led-con-potenciómetro" id="toc-led-con-potenciómetro" class="nav-link active" data-scroll-target="#led-con-potenciómetro"><span class="header-section-number">1</span> LED con potenciómetro</a></li>
-  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">2</span> Código</a></li>
-  <li><a href="#tinkercad" id="toc-tinkercad" class="nav-link" data-scroll-target="#tinkercad"><span class="header-section-number">3</span> Tinkercad</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">4</span> Referencias</a></li>
+  <li><a href="#conexión-de-un-sensor-ultrasónico-de-distancia" id="toc-conexión-de-un-sensor-ultrasónico-de-distancia" class="nav-link active" data-scroll-target="#conexión-de-un-sensor-ultrasónico-de-distancia"><span class="header-section-number">1</span> Conexión de un sensor ultrasónico de distancia</a>
+  <ul class="collapse">
+  <li><a href="#principio-de-funcionamiento" id="toc-principio-de-funcionamiento" class="nav-link" data-scroll-target="#principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</a></li>
+  <li><a href="#esquema-de-conexión" id="toc-esquema-de-conexión" class="nav-link" data-scroll-target="#esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</a></li>
+  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">1.3</span> Código</a></li>
+  <li><a href="#actividades" id="toc-actividades" class="nav-link" data-scroll-target="#actividades"><span class="header-section-number">1.4</span> Actividades</a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">2</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 08 Arduino 02.html">TP 08 Arduino 02</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 11 Arduino 05.html">TP 11 Arduino 05</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">TP 08 Arduino 02</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">TP 11 Arduino 05</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -356,50 +402,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="led-con-potenciómetro" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> LED con potenciómetro</h1>
-<p>Podemos usar las entradas para conectar un potenciómetro (una resistencia variable) y reutilizar parte del código para encender un LED de la clase anterior en donde la intensidad de la luz está controlada por la posición del potenciómetro.</p>
-<p>Algo para aclarar es que como las entradas son de 10 bit (1024 valores) mientras que las salidas PWM son de 8 bit (254 valores) dividmos por 4 el valor d entrada para escalarlo al rango adecuado.</p>
-</section>
-<section id="código" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Código</h1>
-<p>Con éste código podemos manejar el LED con un potenciómetro</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Capitulo 4 de Arduino desde cero en Español.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Segundo programa que maneja el brillo del LED mediante el potenciometro.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Autor: bitwiseAr  </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> LED <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>                <span class="co">// LED en pin 3</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> BRILLO<span class="op">;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> POT <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>                <span class="co">// potenciometro en pin A0</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>LED<span class="op">,</span> OUTPUT<span class="op">);</span>       <span class="co">// pin 3 como salida</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// las entradas analogicas no requieren inicializacion</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    BRILLO <span class="op">=</span> analogRead<span class="op">(</span>POT<span class="op">)</span> <span class="op">/</span> <span class="dv">4</span><span class="op">;</span>   <span class="co">// valor leido de entrada analogica divido por 4</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>LED<span class="op">,</span> BRILLO<span class="op">);</span>   <span class="co">// brillo del LED proporcional al giro del potenciometro</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="tinkercad" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Tinkercad</h1>
-<p>En tinkercad prueben conectar y simular el cicruito.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Potenciómetro con LED PWM.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Potenciómetro con LEDPWM</figcaption>
+<section id="conexión-de-un-sensor-ultrasónico-de-distancia" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Conexión de un sensor ultrasónico de distancia</h1>
+<section id="principio-de-funcionamiento" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</h2>
+<p>El sensor emite pulsos de 40 khz de freciencia a intervalos de 10 <span class="math inline">\mu s</span> enviando un tren de pulsos HIGH a través del pin trigger y espera a recibirlo en el pin Echo. Cuando los pulsos emitidos llegan a un obstáculo, rebotan y vuelven, siendo recibidos por el receptor, el cual generará un pulso alto (HIGH) en la salida (pin Echo) de igual duración que el tiempo transcurrido entre la emisión y la recepción del pulso. En el lado del controlador, la señal recibida debe será convertida a distancia al dividir el ancho del pulso por 58.2, obtenemos los datos en centímetros. Este dato que parece arbitrario se puede calcular sin más que hacer un par de conversiones de unidades al revisar la hoja de datos del componente.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-sensor1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sensor1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="sensor-ultrasonico.jpg" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensor1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: sensor ultrasónico
+</figcaption>
 </figure>
 </div>
-<p>Luego pasamos al circuito físico y al Arduino IDE</p>
+</div></div></section>
+<section id="esquema-de-conexión" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</h2>
+<p>La conexión será como se muestra en la imagen</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sensor-ultra-conexion.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>conexion</figcaption>
+</figure>
+</div>
+<p>El mismo circuito pero en la vista tradicional se vería asi</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sensor-ultra-conexion-circ.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>conexionc</figcaption>
+</figure>
+</div>
+<p>En ocasiones se conecta una resistencia como se muestra en la siguiente imagen</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sensor-ultrasonico2.jpg" class="img-fluid figure-img" width="600"></p>
+<figcaption>conexionr</figcaption>
+</figure>
+</div>
 </section>
-<section id="referencias" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Referencias</h1>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ArvU6pEiQdA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="código" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="código"><span class="header-section-number">1.3</span> Código</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">CONEXIÓN DE SENSOR ULTRASÓNICO</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> TRIG <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// TRIGGER EN PIN 10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ECO <span class="op">=</span> <span class="dv">9</span><span class="op">;</span> <span class="co">// ECO EN PIN 9</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> LED <span class="op">=</span> <span class="dv">13</span><span class="op">;</span> <span class="co">// LED INTEGRADO O PIN DEL LED</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> DURACION<span class="op">;</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> DISTANCIA<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>&nbsp; pinMode<span class="op">(</span>LED<span class="op">,</span> OUTPUT<span class="op">);</span> <span class="co">// DEFINICION COMO SALIDA PIN LED</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>&nbsp; pinMode<span class="op">(</span>ECO<span class="op">,</span> INPUT<span class="op">);</span> <span class="co">// DEFINICION COMO ENTRADA PIN ECHO</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>&nbsp; pinMode<span class="op">(</span>TRIG<span class="op">,</span> OUTPUT<span class="op">);</span> <span class="co">// DEFINICION COMO SALIDA PIN TRIGGER</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&nbsp; Serial<span class="op">.</span>begin<span class="op">(</span><span class="dv">9600</span><span class="op">);</span> <span class="co">// INCIALIZACIÓN DEL MONITOR SERIE</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>&nbsp; digitalWrite<span class="op">(</span>TRIG<span class="op">,</span> HIGH<span class="op">);</span> <span class="co">// ARRANCAMOS EL SENSOR</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>&nbsp; delay<span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&nbsp; digitalWrite<span class="op">(</span>TRIG<span class="op">,</span> LOW<span class="op">);</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>&nbsp; DURACION <span class="op">=</span> pulseIn<span class="op">(</span>ECO<span class="op">,</span> HIGH<span class="op">);</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>&nbsp; DISTANCIA <span class="op">=</span> DURACION <span class="op">/</span> <span class="fl">58.2</span><span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">// esto esta especificado por el fabricante del sensor</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="cf">if</span><span class="op">(</span>DISTANCIA <span class="op">&lt;=</span><span class="dv">20</span> <span class="op">&amp;&amp;</span> DISTANCIA <span class="op">&gt;=</span><span class="dv">0</span><span class="op">){</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; digitalWrite<span class="op">(</span>LED<span class="op">,</span>HIGH<span class="op">);</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; delay<span class="op">(</span>DISTANCIA<span class="op">*</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; digitalWrite<span class="op">(</span>LED<span class="op">,</span> LOW<span class="op">);</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="op">}</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    Serial<span class="op">.</span>println<span class="op">(</span>DISTANCIA<span class="op">);</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">200</span><span class="op">);</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="actividades" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="actividades"><span class="header-section-number">1.4</span> Actividades</h2>
+<ol type="1">
+<li>Encender un led cuando a luz es menor a cierto umbral</li>
+<li>Usar el monitor serie para comprobar los rangos de tensión utilizados</li>
+<li>Extraer los datos y verificar la proporcionalidad en relación a la luz incidente</li>
+<li>Usar dos fotoresistencias para deducir la orientación de la luz incidente</li>
+</ol>
+</section>
+</section>
+<section id="referencias" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Referencias</h1>
+<ul>
+<li><a href="https://www.hwlibre.com/hc-sr04/#Pinout_y_datasheets">Info sobre el sensor ultrasónico</a></li>
+<li><a href="https://pdf1.alldatasheet.com/datasheet-pdf/view/1132203/ETC2/HC-SR04.html">Hoja de datos</a></li>
+<li><a href="https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1">Proyectos usando el sensor ultrasónico</a></li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/mlw3APOUt8U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 <!-- -->
@@ -1024,18 +1124,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Practicas/TP 07 Arduino 01.html" class="pagination-link" aria-label="TP 07 Arduino 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 07 Arduino 01</span>
+      <a href="../Practicas/TP 10 Arduino 04.html" class="pagination-link" aria-label="TP 10 Arduino 04">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 10 Arduino 04</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Practicas/TP 09 Arduino 03.html" class="pagination-link" aria-label="TP 09 Arduino 03">
-        <span class="nav-page-text">TP 09 Arduino 03</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 08 Arduino 02"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 11 Arduino 05"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
@@ -1043,59 +1140,97 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># LED con potenciómetro</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conexión de un sensor ultrasónico de distancia</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Podemos usar las entradas para conectar un potenciómetro (una resistencia variable)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>y reutilizar parte del código para encender un LED de la clase anterior en donde la </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>intensidad de la luz está controlada por la posición del potenciómetro.</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Algo para aclarar es que como las entradas son de 10 bit (1024 valores) mientras</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>que las salidas PWM son de 8 bit (254 valores) dividmos por 4 el valor d entrada</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>para escalarlo al rango adecuado.  </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># Código</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Principio de funcionamiento</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>El sensor emite pulsos de 40 khz de freciencia a intervalos de 10 $\mu s$ enviando un tren de pulsos HIGH a </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>través del pin trigger y espera a recibirlo en el pin Echo.</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Cuando los pulsos emitidos llegan a un obstáculo, rebotan y vuelven, siendo recibidos por el receptor, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>el cual generará un pulso alto (HIGH) en la salida (pin Echo) de igual duración que el tiempo transcurrido entre la emisión y la recepción del pulso.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>En el lado del controlador, la señal recibida debe será convertida a distancia al dividir el ancho del pulso por 58.2, obtenemos los datos en centímetros.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Este dato que parece arbitrario se puede calcular sin más que hacer un par de conversiones de unidades al revisar la hoja de datos</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>del componente.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>Con éste código podemos manejar el LED con un potenciómetro</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">```C++</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">/*</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="in">    Capitulo 4 de Arduino desde cero en Español.</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">    Segundo programa que maneja el brillo del LED mediante el potenciometro.</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="al">![sensor ultrasónico](sensor-ultrasonico.jpg)</span>{#fig-sensor1 width="300px"}</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">    Autor: bitwiseAr  </span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esquema de conexión</span></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>La conexión será como se muestra en la imagen</span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">int LED = 3;                // LED en pin 3</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">int BRILLO;</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="in">int POT = 0;                // potenciometro en pin A0</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="al">![conexion](sensor-ultra-conexion.png)</span>{width="600px"}</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>El mismo circuito pero en la vista tradicional se vería asi</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">    pinMode(LED, OUTPUT);       // pin 3 como salida</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">    // las entradas analogicas no requieren inicializacion</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">    BRILLO = analogRead(POT) / 4;   // valor leido de entrada analogica divido por 4</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">    analogWrite(LED, BRILLO);   // brillo del LED proporcional al giro del potenciometro</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="fu"># Tinkercad</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>En tinkercad prueben conectar y simular el cicruito.</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="al">![Potenciómetro con LEDPWM](Potenci%C3%B3metro%20con%20LED%20PWM.png)</span>{fig-align="center" width=80%}</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>Luego pasamos al circuito físico y al Arduino IDE</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="al">![conexionc](sensor-ultra-conexion-circ.png)</span>{width="600px"}</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>En ocasiones se conecta una resistencia como se muestra en la siguiente imagen</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="al">![conexionr](sensor-ultrasonico2.jpg)</span>{width="600px"}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Código</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">```C++</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">/*</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="in">CONEXIÓN DE SENSOR ULTRASÓNICO</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">int TRIG = 10; // TRIGGER EN PIN 10</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">int ECO = 9; // ECO EN PIN 9</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">int LED = 13; // LED INTEGRADO O PIN DEL LED</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">int DURACION; </span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">int DISTANCIA;</span></span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://www.youtube.com/watch?v=ArvU6pEiQdA&amp;list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;index=4 &gt;}}</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">void setup() {</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; pinMode(LED, OUTPUT); // DEFINICION COMO SALIDA PIN LED</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; pinMode(ECO, INPUT); // DEFINICION COMO ENTRADA PIN ECHO</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; pinMode(TRIG, OUTPUT); // DEFINICION COMO SALIDA PIN TRIGGER</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; Serial.begin(9600); // INCIALIZACIÓN DEL MONITOR SERIE</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">void loop() {</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; digitalWrite(TRIG, HIGH); // ARRANCAMOS EL SENSOR</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; delay(1);</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; digitalWrite(TRIG, LOW);</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; DURACION = pulseIn(ECO, HIGH);</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; DISTANCIA = DURACION / 58.2;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">// esto esta especificado por el fabricante del sensor</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; if(DISTANCIA &lt;=20 &amp;&amp; DISTANCIA &gt;=0){</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; &nbsp; digitalWrite(LED,HIGH);</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; &nbsp; delay(DISTANCIA*10);</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; &nbsp; digitalWrite(LED, LOW);</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">&nbsp; }</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">    Serial.println(DISTANCIA);</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">    delay(200);</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Actividades</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Encender un led cuando a luz es menor a cierto umbral</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Usar el monitor serie para comprobar los rangos de tensión utilizados</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Extraer los datos y verificar la proporcionalidad en relación a la luz incidente</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Usar dos fotoresistencias para deducir la orientación de la luz incidente</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Info sobre el sensor ultrasónico</span><span class="co">](https://www.hwlibre.com/hc-sr04/#Pinout_y_datasheets)</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Hoja de datos</span><span class="co">](https://pdf1.alldatasheet.com/datasheet-pdf/view/1132203/ETC2/HC-SR04.html)</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Proyectos usando el sensor ultrasónico</span><span class="co">](https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1)</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://www.youtube.com/watch?v=mlw3APOUt8U &gt;}}</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
