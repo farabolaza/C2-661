@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TP 08 Arduino 02 – C2-661</title>
+<title>TP 12 Arduino 06 – C2-661</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Practicas/TP 09 Arduino 03.html" rel="next">
-<link href="../Practicas/TP 07 Arduino 01.html" rel="prev">
+<link href="../Practicas/TP 11 Arduino 05.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -109,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -149,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 08 Arduino 02.html">TP 08 Arduino 02</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 12 Arduino 06.html">TP 12 Arduino 06</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -293,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Practicas/TP 08 Arduino 02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 08 Arduino 02</span></a>
   </div>
 </li>
@@ -317,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 12 Arduino 06.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 12 Arduino 06.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 12 Arduino 06</span></a>
   </div>
 </li>
@@ -333,19 +332,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#led-con-potenciómetro" id="toc-led-con-potenciómetro" class="nav-link active" data-scroll-target="#led-con-potenciómetro"><span class="header-section-number">1</span> LED con potenciómetro</a></li>
-  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">2</span> Código</a></li>
-  <li><a href="#tinkercad" id="toc-tinkercad" class="nav-link" data-scroll-target="#tinkercad"><span class="header-section-number">3</span> Tinkercad</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">4</span> Referencias</a></li>
+  <li><a href="#conexión-de-un-servomotor" id="toc-conexión-de-un-servomotor" class="nav-link active" data-scroll-target="#conexión-de-un-servomotor"><span class="header-section-number">1</span> Conexión de un servomotor</a>
+  <ul class="collapse">
+  <li><a href="#principio-de-funcionamiento" id="toc-principio-de-funcionamiento" class="nav-link" data-scroll-target="#principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</a></li>
+  <li><a href="#esquema-de-conexión" id="toc-esquema-de-conexión" class="nav-link" data-scroll-target="#esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</a></li>
+  <li><a href="#código" id="toc-código" class="nav-link" data-scroll-target="#código"><span class="header-section-number">1.3</span> Código</a></li>
+  <li><a href="#actividades" id="toc-actividades" class="nav-link" data-scroll-target="#actividades"><span class="header-section-number">1.4</span> Actividades</a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">2</span> Referencias</a>
+  <ul class="collapse">
+  <li><a href="#video-tutorial-de-servomotores-en-arduino" id="toc-video-tutorial-de-servomotores-en-arduino" class="nav-link" data-scroll-target="#video-tutorial-de-servomotores-en-arduino"><span class="header-section-number">2.1</span> Video tutorial de servomotores en Arduino</a></li>
+  <li><a href="#alimentación-externa-para-arduino" id="toc-alimentación-externa-para-arduino" class="nav-link" data-scroll-target="#alimentación-externa-para-arduino"><span class="header-section-number">2.2</span> Alimentación externa para Arduino</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 08 Arduino 02.html">TP 08 Arduino 02</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 12 Arduino 06.html">TP 12 Arduino 06</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">TP 08 Arduino 02</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">TP 12 Arduino 06</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -362,54 +369,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="led-con-potenciómetro" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> LED con potenciómetro</h1>
-<p>Podemos usar las entradas para conectar un potenciómetro (una resistencia variable) y reutilizar parte del código para encender un LED de la clase anterior en donde la intensidad de la luz está controlada por la posición del potenciómetro.</p>
-<p>Algo para aclarar es que como las entradas son de 10 bit (1024 valores) mientras que las salidas PWM son de 8 bit (254 valores) dividmos por 4 el valor d entrada para escalarlo al rango adecuado.</p>
-</section>
-<section id="código" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Código</h1>
-<p>Con éste código podemos manejar el LED con un potenciómetro</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Capitulo 4 de Arduino desde cero en Español.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Segundo programa que maneja el brillo del LED mediante el potenciometro.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Autor: bitwiseAr  </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> LED <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>                <span class="co">// LED en pin 3</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> BRILLO<span class="op">;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> POT <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>                <span class="co">// potenciometro en pin A0</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>LED<span class="op">,</span> OUTPUT<span class="op">);</span>       <span class="co">// pin 3 como salida</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// las entradas analogicas no requieren inicializacion</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    BRILLO <span class="op">=</span> analogRead<span class="op">(</span>POT<span class="op">)</span> <span class="op">/</span> <span class="dv">4</span><span class="op">;</span>   <span class="co">// valor leido de entrada analogica divido por 4</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>LED<span class="op">,</span> BRILLO<span class="op">);</span>   <span class="co">// brillo del LED proporcional al giro del potenciometro</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="tinkercad" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Tinkercad</h1>
-<p>En tinkercad prueben conectar y simular el cicruito.</p>
+<section id="conexión-de-un-servomotor" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Conexión de un servomotor</h1>
+<section id="principio-de-funcionamiento" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="principio-de-funcionamiento"><span class="header-section-number">1.1</span> Principio de funcionamiento</h2>
+<p>Un servomotor es un motor de la familia de los motores eléctricos cuya principal característica es que permiten controlar a voluntad el ángulo de rotación o de desplazamiento del mismo. Esto los vuelve útiles para ejecutar movimientos controlados en todas las aplicaciones que así lo requieran. Existen una gran variedad de servomotores de diferentes potencias, precisiones, torque, tipos de movimiento, etc. De aquellos rotativos, en general, sólo permiten un giro de hasta 180 grados, aunque pueden modificarse si la aplicación requieriera un giro completo.</p>
+<p>En arduino, la comunicación entre los servomotores y la placa se da como siempre a través del código. Sin embargo, deberemos agregar una librería propia llamada <strong>Servo</strong> para comunicarnos con el dispositivo.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Potenciómetro con LED PWM.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Potenciómetro con LEDPWM</figcaption>
+<p><img src="Servo-pwm.jpg" class="img-fluid figure-img" width="600"></p>
+<figcaption>Pwm</figcaption>
 </figure>
 </div>
-<p>Luego pasamos al circuito físico y al Arduino IDE</p>
+<p>Para indicar en que ángulo debe posicionarse, se hace uso de la modulación PWM donde la duración del pulso entre valores máiximos y mínimos en ciclos de 50 hz es aquello que se traduce luego en tensión y luego en el movimiento efectivo. Este proceso esta “oculto” detrás de la librería <strong>Servo</strong> que se encarga de ello.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-servo1" class="quarto-float quarto-figure quarto-figure-center anchored" width="300px">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-servo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Servo-pins.png" id="fig-servo1" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-servo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+</div></div></section>
+<section id="esquema-de-conexión" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="esquema-de-conexión"><span class="header-section-number">1.2</span> Esquema de conexión</h2>
+<p>La conexión será como se muestra en la imagen</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="servo-conexion.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>conexion</figcaption>
+</figure>
+</div>
+<p>El mismo circuito pero en la vista tradicional se vería asi</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="servo-circuito.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>conexionc</figcaption>
+</figure>
+</div>
 </section>
-<section id="referencias" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Referencias</h1>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ArvU6pEiQdA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="código" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="código"><span class="header-section-number">1.3</span> Código</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c++ code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">CONEXIÓN DE SERVOMOTOR</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span><span class="pp"> </span><span class="co">// incluimos la librería</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Servo motor<span class="op">;</span> <span class="co">// nombramos al servo</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> POT <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// potenciometro en pin analógico 1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> VO<span class="op">;</span> <span class="co">// variable para leer la tension del pote</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ANG<span class="op">;</span> <span class="co">// variable para expresar los ángulos</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">(){</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Serial<span class="op">.</span>begin<span class="op">(</span><span class="dv">9600</span><span class="op">);</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>motor<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">(){</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>VO <span class="op">=</span> analogRead<span class="op">(</span>POT<span class="op">);</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ANG <span class="op">=</span> map<span class="op">(</span>VO<span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">1023</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">180</span><span class="op">);</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Serial<span class="op">.</span>println<span class="op">(</span>ANG<span class="op">);</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>delay<span class="op">(</span><span class="dv">500</span><span class="op">);</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>motor<span class="op">.</span>write<span class="op">(</span>ANG<span class="op">);</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="actividades" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="actividades"><span class="header-section-number">1.4</span> Actividades</h2>
+<ol type="1">
+<li>Conectar el servo y girarlo en un loop de 0 a 180 y viceversa</li>
+<li>Controlar el servo con un potenciómetro</li>
+<li>Medir el torque máximo del servo en cada uno de sus orificios de anclaje</li>
+</ol>
+</section>
+</section>
+<section id="referencias" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Referencias</h1>
+<ul>
+<li><a href="https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer/">Servomotores y pwm</a></li>
+<li><a href="https://www.ingmecafenix.com/electronica/motores-electronicos/servomotor/">Qué es un servo</a></li>
+<li><a href="https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1">Proyectos usando el sensor ultrasónico</a></li>
+</ul>
+<section id="video-tutorial-de-servomotores-en-arduino" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="video-tutorial-de-servomotores-en-arduino"><span class="header-section-number">2.1</span> Video tutorial de servomotores en Arduino</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6bPVZg17vKc?si=IItqUcN2aR88ZWMY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="alimentación-externa-para-arduino" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="alimentación-externa-para-arduino"><span class="header-section-number">2.2</span> Alimentación externa para Arduino</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/9SKD_p9sFcI?si=m8Fmv-sWjBGs5RF5" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1030,18 +1087,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Practicas/TP 07 Arduino 01.html" class="pagination-link" aria-label="TP 07 Arduino 01">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 07 Arduino 01</span>
+      <a href="../Practicas/TP 11 Arduino 05.html" class="pagination-link" aria-label="TP 11 Arduino 05">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 11 Arduino 05</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Practicas/TP 09 Arduino 03.html" class="pagination-link" aria-label="TP 09 Arduino 03">
-        <span class="nav-page-text">TP 09 Arduino 03</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 08 Arduino 02"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 12 Arduino 06"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
@@ -1049,59 +1103,94 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># LED con potenciómetro</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conexión de un servomotor</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Podemos usar las entradas para conectar un potenciómetro (una resistencia variable)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>y reutilizar parte del código para encender un LED de la clase anterior en donde la </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>intensidad de la luz está controlada por la posición del potenciómetro.</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Algo para aclarar es que como las entradas son de 10 bit (1024 valores) mientras</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>que las salidas PWM son de 8 bit (254 valores) dividmos por 4 el valor d entrada</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>para escalarlo al rango adecuado.  </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Principio de funcionamiento</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Un servomotor es un motor de la familia de los motores eléctricos cuya principal característica</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>es que permiten controlar a voluntad el ángulo de rotación o de desplazamiento del mismo. Esto los</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>vuelve útiles para ejecutar movimientos controlados en todas las aplicaciones que así lo requieran.</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Existen una gran variedad de servomotores de diferentes potencias, precisiones, torque, tipos de movimiento, etc. </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>De aquellos rotativos, en general, sólo permiten un giro de hasta 180 grados, aunque pueden modificarse si </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>la aplicación requieriera un giro completo.</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># Código</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>Con éste código podemos manejar el LED con un potenciómetro</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">```C++</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">/*</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="in">    Capitulo 4 de Arduino desde cero en Español.</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">    Segundo programa que maneja el brillo del LED mediante el potenciometro.</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>En arduino, la comunicación entre los servomotores y la placa se da como siempre a través del código.</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Sin embargo, deberemos agregar una librería propia llamada **Servo** para comunicarnos con el dispositivo.</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="al">![Pwm](Servo-pwm.jpg)</span>{width="600px"}</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>Para indicar en que ángulo debe posicionarse, se hace uso de la modulación PWM donde la duración del pulso entre</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>valores máiximos y mínimos en ciclos de 50 hz es aquello que se traduce luego en tensión y luego en </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>el movimiento efectivo. Este proceso esta "oculto" detrás de la librería **Servo** que se encarga de ello.</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">    Autor: bitwiseAr  </span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">int LED = 3;                // LED en pin 3</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">int BRILLO;</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="in">int POT = 0;                // potenciometro en pin A0</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="al">![](Servo-pins.png)</span>{#fig-servo1 width="300px"}</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">    pinMode(LED, OUTPUT);       // pin 3 como salida</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">    // las entradas analogicas no requieren inicializacion</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">    BRILLO = analogRead(POT) / 4;   // valor leido de entrada analogica divido por 4</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">    analogWrite(LED, BRILLO);   // brillo del LED proporcional al giro del potenciometro</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esquema de conexión</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>La conexión será como se muestra en la imagen</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="al">![conexion](servo-conexion.png)</span>{width="600px"}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>El mismo circuito pero en la vista tradicional se vería asi</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="al">![conexionc](servo-circuito.png)</span>{width="600px"}</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="fu"># Tinkercad</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>En tinkercad prueben conectar y simular el cicruito.</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="al">![Potenciómetro con LEDPWM](Potenci%C3%B3metro%20con%20LED%20PWM.png)</span>{fig-align="center" width=80%}</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>Luego pasamos al circuito físico y al Arduino IDE</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Código</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">```C++</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">/*</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">CONEXIÓN DE SERVOMOTOR</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
 <span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://www.youtube.com/watch?v=ArvU6pEiQdA&amp;list=PLkjnQ3NFTPnY1eNyLDGi547gkVui1vyn2&amp;index=4 &gt;}}</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">#include &lt;Servo.h&gt; // incluimos la librería</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">Servo motor; // nombramos al servo</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">int POT = 1; // potenciometro en pin analógico 1</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">int VO; // variable para leer la tension del pote</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">int ANG; // variable para expresar los ángulos</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">void setup(){</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">Serial.begin(9600);</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">motor.attach(9);</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">void loop(){</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">VO = analogRead(POT);</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">ANG = map(VO,0,1023,0,180);</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">Serial.println(ANG);</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">delay(500);</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">motor.write(ANG);</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Actividades</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Conectar el servo y girarlo en un loop de 0 a 180 y viceversa </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Controlar el servo con un potenciómetro</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Medir el torque máximo del servo en cada uno de sus orificios de anclaje</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Servomotores y pwm</span><span class="co">](https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer/)</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Qué es un servo</span><span class="co">](https://www.ingmecafenix.com/electronica/motores-electronicos/servomotor/)</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Proyectos usando el sensor ultrasónico</span><span class="co">](https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1)</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Video tutorial de servomotores en Arduino</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/6bPVZg17vKc?si=IItqUcN2aR88ZWMY &gt;}}</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alimentación externa para Arduino</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/9SKD_p9sFcI?si=m8Fmv-sWjBGs5RF5 &gt;}}</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

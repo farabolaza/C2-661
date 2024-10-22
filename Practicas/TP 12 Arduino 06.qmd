@@ -1,0 +1,97 @@
+---
+title: "TP 12 Arduino 06"
+format: 
+    html: 
+        toc: true
+        number-sections: true
+        html-math-method: katex
+---
+
+# Conexión de un servomotor
+
+## Principio de funcionamiento
+
+Un servomotor es un motor de la familia de los motores eléctricos cuya principal característica
+es que permiten controlar a voluntad el ángulo de rotación o de desplazamiento del mismo. Esto los
+vuelve útiles para ejecutar movimientos controlados en todas las aplicaciones que así lo requieran.
+Existen una gran variedad de servomotores de diferentes potencias, precisiones, torque, tipos de movimiento, etc. 
+De aquellos rotativos, en general, sólo permiten un giro de hasta 180 grados, aunque pueden modificarse si 
+la aplicación requieriera un giro completo.
+
+En arduino, la comunicación entre los servomotores y la placa se da como siempre a través del código.
+Sin embargo, deberemos agregar una librería propia llamada **Servo** para comunicarnos con el dispositivo.
+
+![Pwm](Servo-pwm.jpg){width="600px"}
+
+Para indicar en que ángulo debe posicionarse, se hace uso de la modulación PWM donde la duración del pulso entre
+valores máiximos y mínimos en ciclos de 50 hz es aquello que se traduce luego en tensión y luego en 
+el movimiento efectivo. Este proceso esta "oculto" detrás de la librería **Servo** que se encarga de ello.
+
+
+::: {.column-margin}
+
+![](Servo-pins.png){#fig-servo1 width="300px"}
+
+:::
+
+
+## Esquema de conexión
+
+La conexión será como se muestra en la imagen
+
+![conexion](servo-conexion.png){width="600px"}
+
+El mismo circuito pero en la vista tradicional se vería asi
+
+![conexionc](servo-circuito.png){width="600px"}
+
+
+
+## Código
+
+```C++
+/*
+CONEXIÓN DE SERVOMOTOR
+*/
+
+#include <Servo.h> // incluimos la librería
+
+Servo motor; // nombramos al servo
+int POT = 1; // potenciometro en pin analógico 1
+int VO; // variable para leer la tension del pote
+int ANG; // variable para expresar los ángulos
+
+void setup(){
+Serial.begin(9600);
+motor.attach(9);
+}
+
+void loop(){
+VO = analogRead(POT);
+ANG = map(VO,0,1023,0,180);
+
+Serial.println(ANG);
+delay(500);
+motor.write(ANG);
+}
+
+
+```
+
+## Actividades
+
+1. Conectar el servo y girarlo en un loop de 0 a 180 y viceversa 
+2. Controlar el servo con un potenciómetro
+3. Medir el torque máximo del servo en cada uno de sus orificios de anclaje
+
+# Referencias
+
+- [Servomotores y pwm](https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer/)
+- [Qué es un servo](https://www.ingmecafenix.com/electronica/motores-electronicos/servomotor/)
+- [Proyectos usando el sensor ultrasónico](https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1)
+
+## Video tutorial de servomotores en Arduino
+{{< video https://youtu.be/6bPVZg17vKc?si=IItqUcN2aR88ZWMY >}}
+
+## Alimentación externa para Arduino
+{{< video https://youtu.be/9SKD_p9sFcI?si=m8Fmv-sWjBGs5RF5 >}}

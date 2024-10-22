@@ -1,5 +1,19 @@
 [
   {
+    "listing": "/00 apuntes.html",
+    "items": [
+      "/Apuntes/01 Python intro 101 (2024).html",
+      "/Apuntes/02 Contenedores y loops.html",
+      "/Apuntes/03 Numpy.html",
+      "/Apuntes/04 Pandas y Manejo de archivos.html",
+      "/Apuntes/05 Matplotlib.html",
+      "/Apuntes/06 Matplotlib_2.html",
+      "/Apuntes/07 Scipy y Ajuste de curvas.html",
+      "/Apuntes/08 Sympy.html",
+      "/Apuntes/09 Arduino 01.html"
+    ]
+  },
+  {
     "listing": "/00 practicas.html",
     "items": [
       "/Practicas/EV 01 1P 2024-x.html",
@@ -13,21 +27,8 @@
       "/Practicas/TP 08 Arduino 02.html",
       "/Practicas/TP 09 Arduino 03.html",
       "/Practicas/TP 10 Arduino 04.html",
-      "/Practicas/TP 11 Arduino 05.html"
-    ]
-  },
-  {
-    "listing": "/00 apuntes.html",
-    "items": [
-      "/Apuntes/01 Python intro 101 (2024).html",
-      "/Apuntes/02 Contenedores y loops.html",
-      "/Apuntes/03 Numpy.html",
-      "/Apuntes/04 Pandas y Manejo de archivos.html",
-      "/Apuntes/05 Matplotlib.html",
-      "/Apuntes/06 Matplotlib_2.html",
-      "/Apuntes/07 Scipy y Ajuste de curvas.html",
-      "/Apuntes/08 Sympy.html",
-      "/Apuntes/09 Arduino 01.html"
+      "/Practicas/TP 11 Arduino 05.html",
+      "/Practicas/TP 12 Arduino 06.html"
     ]
   }
 ]
