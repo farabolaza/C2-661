@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>03 Numpy – C2-661</title>
+<title>TP 13 Trabajo de final – C2-661</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Apuntes/04 Pandas y Manejo de archivos.html" rel="next">
-<link href="../Apuntes/02 Contenedores y loops.html" rel="prev">
+<link href="../Practicas/TP 12 Arduino 06.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -149,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/03 Numpy.html">03 Numpy</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 13 Final.html">TP 13 Trabajo de final</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -171,13 +170,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Apuntes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Apuntes/01 Python intro 101 (2024).html" class="sidebar-item-text sidebar-link">
@@ -192,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Apuntes/03 Numpy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Apuntes/03 Numpy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 Numpy</span></a>
   </div>
 </li>
@@ -236,13 +235,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Practicas</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Practicas/EV 01 1P 2024.html" class="sidebar-item-text sidebar-link">
@@ -323,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Practicas/TP 13 Final.html" class="sidebar-item-text sidebar-link">
+  <a href="../Practicas/TP 13 Final.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 13 Trabajo de final</span></a>
   </div>
 </li>
@@ -339,16 +338,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#numpy" id="toc-numpy" class="nav-link active" data-scroll-target="#numpy">NumPy</a></li>
+  <li><a href="#trabajo-de-final" id="toc-trabajo-de-final" class="nav-link active" data-scroll-target="#trabajo-de-final">Trabajo de final</a>
+  <ul class="collapse">
+  <li><a href="#regularización-de-la-materia" id="toc-regularización-de-la-materia" class="nav-link" data-scroll-target="#regularización-de-la-materia">Regularización de la materia</a></li>
+  <li><a href="#descripción-general" id="toc-descripción-general" class="nav-link" data-scroll-target="#descripción-general">Descripción general</a>
+  <ul class="collapse">
+  <li><a href="#elementos-del-documento" id="toc-elementos-del-documento" class="nav-link" data-scroll-target="#elementos-del-documento">Elementos del documento</a></li>
+  </ul></li>
+  <li><a href="#aportes-teóricos" id="toc-aportes-teóricos" class="nav-link" data-scroll-target="#aportes-teóricos">Aportes teóricos</a></li>
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a>
+  <ul class="collapse">
+  <li><a href="#links-python" id="toc-links-python" class="nav-link" data-scroll-target="#links-python">Links Python</a></li>
+  <li><a href="#links-arduino" id="toc-links-arduino" class="nav-link" data-scroll-target="#links-arduino">Links Arduino</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Apuntes/01 Python intro 101 (2024).html">Apuntes</a></li><li class="breadcrumb-item"><a href="../Apuntes/03 Numpy.html">03 Numpy</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Practicas/EV 01 1P 2024.html">Practicas</a></li><li class="breadcrumb-item"><a href="../Practicas/TP 13 Final.html">TP 13 Trabajo de final</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">03 Numpy</h1>
+<div class="quarto-title-block"><div><h1 class="title">TP 13 Trabajo de final</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -365,208 +378,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="numpy" class="level3">
-<h3 class="anchored" data-anchor-id="numpy">NumPy</h3>
-<p>NumPy es el módulo más usado para cálculo científico en Python</p>
-<div id="cell-2" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>El objeto principal de Numpy es un array homogéneo multidimensional. Básicamente se trata de una tabla de elementos (generalmente números) todos del mismo tipo (ésta es una diferencia en cuantoa las listas, que permitían tipos mezclados) que se encuentran indizados (indexados). Las dimensiones del array en Numpy se denominan ejes (axes).</p>
-<p>La clase base del array es <code>ndarray</code> (lo que Python nos devuelve si usamos la función <code>type</code> sobre un array.</p>
-<p>Los atributos principales de un array son:</p>
-<ul>
-<li><strong>ndarray.ndim</strong>: la cantidad de ejes</li>
-<li><strong>ndarray.shape</strong>: La “forma” del array, es decir, sus dimensiones. Es una n-upla de enteros que nos dice la dimensión del array en cada eje. Por ejemplo, para una matriz de n filas y m columnas shape será <code>(n,m)</code> (existiendo un sólo eje o axis). La longitud de la forma <code>shape</code> será la cantidad de ejes que tengamos, es decir <code>ndim</code>. Podríamos tener en un mismo array varias matrices una en cada eje.</li>
-<li><strong>ndarray.size</strong>: Cantidad de elementos en el array.</li>
-<li><strong>ndarray.dtype</strong>: El tipo de datos que contiene el array.</li>
-<li><strong>ndarray.itemsize</strong>: El tamaño (en bytes) de los elementos del array</li>
-</ul>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">15</span>) <span class="co">#array de numeros 0 a 14</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-5" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a.dtype</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-6" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-7" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.shape)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-8" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.ndim)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-9" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.dtype.name)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-10" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.itemsize)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-11" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.size)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="creando-un-array" class="level4">
-<h4 class="anchored" data-anchor-id="creando-un-array">Creando un array</h4>
-<p>Se puede crear un array desde una lista o tupla de Python al usar la función array. El tipo de array resultante se decude de los elementos de la lista.</p>
-<p>Un error común es pasar directamente los valores del array a la función,</p>
-<pre><code>a = np.array(1,2,3,4)   # MAL
-a = np.array([1,2,3,4]) # BIEN
-a = np.array((1,2,3,4))  # BIEN</code></pre>
-<div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>])</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-15" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>array</code> también puede transformar conjuntos de tuplas o secuencias de secuencias en arreglos n-dimensionales. Por ejemplo:</p>
-<div id="cell-17" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([(<span class="fl">1.5</span>, <span class="dv">2</span> ,<span class="dv">3</span>), (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), (<span class="fl">7.1</span>, <span class="fl">7.2</span>, <span class="fl">7.3</span>)])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-18" class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c.shape)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>La función <code>zeros</code> crea un array de ceros, la función <code>ones</code> crea un array de unos y la función <code>random.rand</code> crea un array de valores <code>float</code> aleatorios en el intervalo [0,1] mientras que la función <code>empty</code> crea un array cuyo contenido depende de lo que haya en memoria (sinceramente nunca usé esta función) con el tipo <code>float64</code>.</p>
-<p>Existen otras funciones como <code>zeros_like</code> que crea arrays del tamaño de otro objeto, útil cuando queremos que dos arrays tengan el mismo tamaño.</p>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.zeros((<span class="dv">3</span>,<span class="dv">4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> np.ones((<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), dtype<span class="op">=</span>np.int16)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>np.random.rand(<span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.random.rand(<span class="dv">3</span>,<span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-23" class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.empty((<span class="dv">2</span>,<span class="dv">3</span>)) <span class="co"># uninitialized, output may vary</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-24" class="cell" data-executioninfo="{&quot;elapsed&quot;:306,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683744735750,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="19662714-9d13-4b18-d1ff-9190d4ca8b03">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span>np.zeros_like(B)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>np.size(C)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(C)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0. 0.]
- [0. 0.]
- [0. 0.]]</code></pre>
-</div>
-</div>
-<p>NumPy provee algunas funciones para crear arrays de tamaño o paso predefinido. La función <code>arange</code> crea arrays de la siguiente manera</p>
-<div id="cell-26" class="cell" data-executioninfo="{&quot;elapsed&quot;:317,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683744936454,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="90e0123f-242e-48a9-db4e-dd3b104d23c4">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>np.arange( <span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">5</span> ) <span class="co"># array de 10 a 30 con un paso de 5 (de 5 en cinco)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>array([10, 15, 20, 25])</code></pre>
-</div>
-</div>
-<p>Otra función es <code>linspace</code> que hace algo similar</p>
-<div id="cell-28" class="cell" data-executioninfo="{&quot;elapsed&quot;:372,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683744918028,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="be91f795-a527-4d3c-e8d5-cdf96379e974">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">20</span>) <span class="co"># inicio, fin, cantidad de elementos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>array([ 0.        ,  0.52631579,  1.05263158,  1.57894737,  2.10526316,
-        2.63157895,  3.15789474,  3.68421053,  4.21052632,  4.73684211,
-        5.26315789,  5.78947368,  6.31578947,  6.84210526,  7.36842105,
-        7.89473684,  8.42105263,  8.94736842,  9.47368421, 10.        ])</code></pre>
-</div>
-</div>
+<section id="trabajo-de-final" class="level1">
+<h1>Trabajo de final</h1>
+<section id="regularización-de-la-materia" class="level2">
+<h2 class="anchored" data-anchor-id="regularización-de-la-materia">Regularización de la materia</h2>
+<p>La regularización de la materia requerirá (junto a la aprobación del primer parcial) de la presentación, a modo de segundo parcial, de una introducción conceptual y justificación del proyecto elegido como trabajo de final cuyos requisitos se describen a continuación.</p>
 </section>
-<section id="manipulación-de-arrays" class="level4">
-<h4 class="anchored" data-anchor-id="manipulación-de-arrays">Manipulación de arrays</h4>
-<p>Las funciones típicas son: - <code>ravel()</code> aplana el array - <code>reshape()</code> cambia la forma - <code>transpose()</code> lo transpone</p>
-<div id="cell-30" class="cell" data-executioninfo="{&quot;elapsed&quot;:303,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745003240,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="3d09f9a2-6d4b-42a2-b573-8e8707bf54e6">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> np.random.rand(<span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0.76567456 0.89133468 0.24932026 0.68175576]
- [0.28769869 0.37903078 0.21482535 0.10181396]
- [0.66248563 0.22776659 0.06954442 0.65318739]
- [0.97281025 0.51268667 0.84836693 0.600809  ]]</code></pre>
-</div>
-</div>
-<div id="cell-31" class="cell" data-executioninfo="{&quot;elapsed&quot;:376,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745006120,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="ef5a63eb-5cff-4e9c-bc29-b492ada2de5d">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>example<span class="op">*</span><span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>array([[7.65674557, 8.91334678, 2.49320258, 6.81755759],
-       [2.87698686, 3.79030783, 2.14825349, 1.01813956],
-       [6.62485635, 2.27766588, 0.6954442 , 6.53187385],
-       [9.7281025 , 5.12686673, 8.48366935, 6.00809002]])</code></pre>
-</div>
-</div>
-<div id="cell-32" class="cell" data-executioninfo="{&quot;elapsed&quot;:322,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745009506,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="f4ac150b-8fe6-4f3c-9150-21c665c1869a">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>example_flat <span class="op">=</span> example.ravel()  <span class="co"># devuelve el array, "aplanado"</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_flat)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0.76567456 0.89133468 0.24932026 0.68175576 0.28769869 0.37903078
- 0.21482535 0.10181396 0.66248563 0.22776659 0.06954442 0.65318739
- 0.97281025 0.51268667 0.84836693 0.600809  ]</code></pre>
-</div>
-</div>
-<div id="cell-33" class="cell" data-executioninfo="{&quot;elapsed&quot;:339,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745026797,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="7774e9a9-ca84-488c-898c-66cbd23e741d">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>example_flat.reshape(<span class="dv">2</span>,<span class="dv">8</span>) <span class="co"># devuelve el array pero como una matriz de 2x8</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>array([[0.76567456, 0.89133468, 0.24932026, 0.68175576, 0.28769869,
-        0.37903078, 0.21482535, 0.10181396],
-       [0.66248563, 0.22776659, 0.06954442, 0.65318739, 0.97281025,
-        0.51268667, 0.84836693, 0.600809  ]])</code></pre>
-</div>
-</div>
-<div id="cell-34" class="cell" data-executioninfo="{&quot;elapsed&quot;:291,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745036884,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="1ab561a9-89a4-475b-cbe1-beaa33cffb78">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>example_flat.reshape(<span class="dv">4</span>,<span class="dv">4</span>) <span class="co"># devuelve el array a su forma original</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>array([[0.76567456, 0.89133468, 0.24932026, 0.68175576],
-       [0.28769869, 0.37903078, 0.21482535, 0.10181396],
-       [0.66248563, 0.22776659, 0.06954442, 0.65318739],
-       [0.97281025, 0.51268667, 0.84836693, 0.600809  ]])</code></pre>
-</div>
-</div>
-<div id="cell-35" class="cell" data-executioninfo="{&quot;elapsed&quot;:339,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745040365,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="4d3d4dca-d3ed-455d-f903-82413f2dcce9">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> np.random.rand(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923]
-  [0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652]
-  [0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936]]
-
- [[0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269]
-  [0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593]
-  [0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]]]</code></pre>
-</div>
-</div>
-<div id="cell-36" class="cell" data-executioninfo="{&quot;elapsed&quot;:481,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745042775,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="83cfc828-13ee-4159-99fd-c3f3b2273fc6">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test.ravel())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0.61009191 0.952007   0.77818219 0.91818426 0.01325187 0.84426923
- 0.2999295  0.11685055 0.66988619 0.83109041 0.41411909 0.83161652
- 0.60303521 0.00812555 0.89188611 0.00854006 0.08885923 0.06199936
- 0.6950938  0.12561522 0.37506632 0.87337173 0.82233954 0.26800269
- 0.47610447 0.5304494  0.67729577 0.29651654 0.00721179 0.83393593
- 0.0146143  0.44131508 0.64560129 0.19333913 0.97524196 0.86407108]</code></pre>
-</div>
-</div>
-<div id="cell-37" class="cell" data-executioninfo="{&quot;elapsed&quot;:303,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1683745045594,&quot;user&quot;:{&quot;displayName&quot;:&quot;Fede A&quot;,&quot;userId&quot;:&quot;05061512369474109368&quot;},&quot;user_tz&quot;:180}" data-outputid="59964030-94e8-4eff-f04d-01ba58407bd8">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example.transpose())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0.76567456 0.28769869 0.66248563 0.97281025]
- [0.89133468 0.37903078 0.22776659 0.51268667]
- [0.24932026 0.21482535 0.06954442 0.84836693]
- [0.68175576 0.10181396 0.65318739 0.600809  ]]</code></pre>
-</div>
-</div>
-<p>Buscar las funciones que permiten en numpy calcular:</p>
+<section id="descripción-general" class="level2">
+<h2 class="anchored" data-anchor-id="descripción-general">Descripción general</h2>
+<p>El trabajo consistirá en una aplicación de las herramientas vistas durante la cursada a una situación experimental o de didáctica de la física (que por supuesto, puede ser experimental). Se puede pensar en aplicaciones que utilicen la placa Arduino, Python como lenguaje de programación o ambos elementos en conjunto.</p>
+<p>El trabajo no deberá seguir el formato de un informe de laboratorio formal, pero puede incluir sus secciones o estructuras si el desarrollo de la experiencia lo requiriera (por ejemplo para describir un montaje experimental o desarrollo teórico).</p>
+<p>Tampoco deberá atenerse a los formatos de publicaciones científicas, pero pueden usarse sus</p>
+<section id="elementos-del-documento" class="level3">
+<h3 class="anchored" data-anchor-id="elementos-del-documento">Elementos del documento</h3>
+<p>Los nombres son sólo a fines ilustrativos y pueden ser elegidos por los estudiantes acorde a especificidad o conveniencia. Pueden ser secciones por separado, alterarse el orden siempre y cuando se garantice la presencia de los contenidos.</p>
 <ul>
-<li>el valor medio</li>
-<li>la desviación estándar</li>
-<li>La sumatoria de un array</li>
-<li>El valor máximo de un array</li>
-<li>El valor mínimo de un array</li>
+<li><strong>Introducción, descripción y justificación:</strong> Se deberá entrega antes de finalizar la cursada para regularizar. En ella se describe a grandes rasgos el trabajo en cuanto a los objetivos que persigue y las herramientas utilizadas. Puede ser modificada para la versión final del trabajo.</li>
+<li><strong>Materiales necesarios:</strong> Listado de elementos necesarios con su descripción o detalle según sea conveniente (componentes electrónicos, software u otros elementos físicos)</li>
+<li><strong>Desarrollo de la experiencia:</strong> Describe lo que se hizo (o debería hacerse) para llevar a cabo la experiencia de laboratorio o ejecutar las tareas o procedimientos relativos al trabajo. Puede ser de extensión variable y contener explicaciones adicionales en cuanto al manejo de las herramientas utilizadas, los principios físicos o matemáticos que se describen o utilizan.</li>
+<li><strong>Descripción de las herramientas utilizadas:</strong> Toda herramienta utilizada, ya sea código de programación o materiales externos o de elaboración propia deberán estar acompañadas de una explicación de su funcionamiento que de cuentas de que rol cumplen en el desarrollo del trabajo. Ejemplo: comentar el código utilizado (aunque no fuera de elaboración propia) describiendo el trabajo que realiza cada bloque o sección del mismo. Explicar el funcionamiento de piezas, herramientas o materiales empleados que no resulten evidentes o de uso cotidiano.</li>
+<li><strong>Consideraciones sobre el uso de la tecnología:</strong> Análisis crítico sobre la conveniencia o no del empleo de las herramientas tecnológicas utilizadas en el trabajo en relación a experiencias equivalentes o similares que utilicen otros materiales más tradicionales n</li>
+<li><strong>Reflexiones o conclusiones:</strong> Deberán estar en relación a los objetivos propuestos para el trabajo.</li>
+</ul>
+</section>
+</section>
+<section id="aportes-teóricos" class="level2">
+<h2 class="anchored" data-anchor-id="aportes-teóricos">Aportes teóricos</h2>
+<p>El uso de las herramientas tecnológicas para facilitar tareas o mejorar procesos son inherentes al desarrollo del ser humano como tal. Sin embargo, la reflexión sobre la conveniencia o la efectividad de las mismas en relación a los objetivos por que se las han desarrollado o utilizado en primer lugar y en comparación a opciones existentes o previas representa un ejercicio necesario para no ser víctimas de comportamientos tecnocráticos que perjudican tanto al conocimiento básico como a la tecnología por igual. Por eso, les comparto algunos trabajos académicos respecto del uso de la tecnología en situaciones de enseñanza-aprendizaje que podrían ayudar poner en contexto y en valor las herramientas empleadas durante la cursada con el objetivo de promover un uso criterioso y adecuado de las mismas, entendiendo por tecnología no sólo a los dispositivos eléctricos, mecánicos o computacionales sino en sentido más amplio, como todo conjunto de instrumentos, técnicas, procedimientos o habilidades.</p>
+<ul>
+<li><a href="https://ddd.uab.cat/pub/edlc/02124521v17n2/02124521v17n2p179.pdf">¿Cómo enseñar ciencias?</a></li>
+<li><a href="https://www.iop.org/sites/default/files/2019-07/python.pdf">Teaching physics with python</a></li>
+<li><a href="https://web.mit.edu/fnl/volume/302/rebusco_et%20al.html">Pytthon en un primer curso de física</a></li>
+<li><a href="https://ria.utn.edu.ar/bitstream/handle/20.500.12272/8118/Aportaciones%20para%20la%20comprensi%C3%B3n....pdf?sequence=1">Aportes para la comprensión de la física a través de programas en Python</a></li>
+<li><a href="https://www.fcfm.buap.mx/frojas/PDF/FisicaComputacionaalPython_SMFE.pdf">Física Computacional: una propuesta educativa</a></li>
+<li><a href="https://riull.ull.es/xmlui/bitstream/handle/915/29552/J.%20Vidal%2c%20D.%20A.%20Bravo%20and%20C.%20F.%20Rengifo.pdf?sequence=1">Aprendizaje basado en Proyectos para la Enseñanza de Ciencias Físicas usando Arduino Physics Lab</a></li>
+<li><a href="https://indoc.uca.es/articulos/sol-201800111587-tra.pdf">Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste</a></li>
+</ul>
+</section>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+<p>A continuación se da una lista no exhaustiva de recursos con ejemplos y publicaciones para orientarse en las posibilidades existentes. Se los invita a buscar e investigar a conciencia para lograr un proyecto que pueda unir sus intereses personales con los de la carrera que están cursando.</p>
+<section id="links-python" class="level3">
+<h3 class="anchored" data-anchor-id="links-python">Links Python</h3>
+<ul>
+<li><a href="https://marceluda.github.io/python-para-fisicos/">Python para hacer física</a></li>
+<li><a href="https://marceluda.github.io/python-para-fisicos/tuto/labo2/toolkit_ajustes/">Ajustes de curvas con interfaz gráfica</a></li>
+<li><a href="https://marceluda.github.io/python-para-fisicos/tuto/orbitales/">Orbitales atómicos</a></li>
+<li><a href="http://blog.espol.edu.ec/ccpg1001/category/unidades/unidad-9-fisica-con-python-opcional/">Óptica del rayo con Python</a></li>
+</ul>
+</section>
+<section id="links-arduino" class="level3">
+<h3 class="anchored" data-anchor-id="links-arduino">Links Arduino</h3>
+<ul>
+<li><a href="https://fisica-arduino.gitbook.io/sensores">Sensores de bajo coste en el laboratorio de Física</a></li>
+<li><a href="https://smarterphysics.blogspot.com/p/taller-fisica-con-arduino.html">Taller Física con Arduino</a></li>
+<li><a href="https://stoppi-homemade-physics.de/">Experimentos de física (en alemán, pero se puede traducir facilmente)</a></li>
+<li><a href="https://baldwisdom.com/usb-midi-controller-theremin-style-on-arduino-uno/">Controlador MIDI</a></li>
+<li><a href="https://physicslight.wordpress.com/2013/10/25/psychedelic-music-arduino/">Controlador de música lumínico</a></li>
+<li><a href="https://www.instructables.com/Scanning-Laser-Microscope-With-Arduino/">Microscopio Láser</a></li>
+<li><a href="http://lajpe.org/dec18/12_4_14.pdf">Aprendizaje basado en proyectos con Arduino</a></li>
+<li><a href="https://uvadoc.uva.es/bitstream/handle/10324/43373/TFM-G1248.pdf?sequence=1">Aprender física con Arduino</a></li>
+<li><a href="https://lopegonzalez.es/eso-y-bachillerato/computacion-y-robotica-2o-eso/tema-4-fundamentos-de-la-computacion-fisica/proyectos-de-computacion-fisica-con-arduino/">Proyectos de computación física con Arduino</a></li>
+<li><a href="https://ri.conicet.gov.ar/bitstream/handle/11336/61251/CONICET_Digital_Nro.78a479e2-e021-46cd-abb2-a16b425afefb_A.pdf">Experimentos de física utilizando Arduino (Revista enseñanza de la física)</a></li>
+<li><a href="https://www.ucentral.cl/ucentral/site/docs/20220930/20220930121511/arduino_f.pdf">Aprendizaje basado en proyectos usando Arduino</a></li>
+<li><a href="https://repositorio.unican.es/xmlui/bitstream/handle/10902/22653/SantamartadelRiveroMaria.pdf?sequence=1">Desarrollando experimentos utilizando la robótica de Arduino en la asignatura de Física de 2º de Bachillerato</a></li>
+<li><a href="https://proyectosinteresantes.com/">Proyectos para Aruino (Web con muchos proyectos)</a></li>
+<li><a href="https://jornadasctei.unr.edu.ar/estudio-de-un-circuito-rc-mediante-la-plataforma-arduino-una-propuesta-de-aula/">Circuito RC</a></li>
+<li><a href="https://indoc.uca.es/articulos/sol-201800111587-tra.pdf">Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste</a></li>
+<li><a href="https://profesorcharly.wordpress.com/wp-content/uploads/2018/06/formacic3b3n-en-fc3adsica-experimental-mediada-con-arduino.pdf">Formación en Física Experimental mediada con Arduino (INSPT)</a></li>
+<li><a href="https://www.researchgate.net/publication/320686169_Esperiencias_de_Fisica_con_Arduino_para_la_Tecnologia_en_la_Secundaria">Esperiencias de Física con Arduino para la Tecnología en la Secundaria</a></li>
+<li><a href="https://www.researchgate.net/publication/360240244_Creacion_de_carro_funcional_con_arduino_para_la_ensenanza_de_la_fisica_Criacao_de_um_carrinho_funcional_com_arduino_para_o_ensino_da_fisica">Creación de carro funcional con arduino para la enseñanza de la física</a></li>
+</ul>
+</section>
+<section id="videos" class="level3">
+<h3 class="anchored" data-anchor-id="videos">Videos</h3>
+<ul>
+<li><a href="https://youtube.com/playlist?list=PL9PJqFxm8gqAm0hv6lqCGOozq6bvRIO_x&amp;si=irwuZdmqqmUn3Amo">Fisica Arduino (en portugués)</a></li>
+<li><a href="https://www.youtube.com/watch?v=6CyMfOgkfvI">Ondas estacionarias</a></li>
+<li><a href="https://www.youtube.com/watch?v=HwE6PdPQPv4">Termómetro con luz</a></li>
+<li><a href="https://youtu.be/S0ezrmLNWUs?si=MEBaFmKj6preKJTB">Proyectos varios (en inglés)</a></li>
 </ul>
 
 
+<!-- -->
+
+</section>
 </section>
 </section>
 
@@ -1188,16 +1084,98 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Apuntes/02 Contenedores y loops.html" class="pagination-link" aria-label="02 Contenedores y bucles">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">02 Contenedores y bucles</span>
+      <a href="../Practicas/TP 12 Arduino 06.html" class="pagination-link" aria-label="TP 12 Arduino 06">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 12 Arduino 06</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Apuntes/04 Pandas y Manejo de archivos.html" class="pagination-link" aria-label="04 Módulos: Pandas">
-        <span class="nav-page-text">04 Módulos: Pandas</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "TP 13 Trabajo de final"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        number-sections: false</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">        html-math-method: katex</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Trabajo de final</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regularización de la materia</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>La regularización de la materia requerirá (junto a la aprobación del primer parcial) de la presentación, a modo de segundo parcial, de una introducción conceptual y justificación del proyecto elegido como trabajo de final cuyos requisitos se describen a continuación.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descripción general</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>El trabajo consistirá en una aplicación de las herramientas vistas durante la cursada a una situación experimental o de didáctica de la física (que por supuesto, puede ser experimental). Se puede pensar en aplicaciones que utilicen la placa Arduino, Python como lenguaje de programación o ambos elementos en conjunto.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>El trabajo no deberá seguir el formato de un informe de laboratorio formal, pero puede incluir sus secciones o estructuras si el desarrollo de la experiencia lo requiriera (por ejemplo para describir un montaje experimental o desarrollo teórico).</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Tampoco deberá atenerse a los formatos de publicaciones científicas, pero pueden usarse sus</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Elementos del documento</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Los nombres son sólo a fines ilustrativos y pueden ser elegidos por los estudiantes acorde a especificidad o conveniencia. Pueden ser secciones por separado, alterarse el orden siempre y cuando se garantice la presencia de los contenidos.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Introducción, descripción y justificación:** Se deberá entrega antes de finalizar la cursada para regularizar. En ella se describe a grandes rasgos el trabajo en cuanto a los objetivos que persigue y las herramientas utilizadas. Puede ser modificada para la versión final del trabajo.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Materiales necesarios:** Listado de elementos necesarios con su descripción o detalle según sea conveniente (componentes electrónicos, software u otros elementos físicos)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Desarrollo de la experiencia:** Describe lo que se hizo (o debería hacerse) para llevar a cabo la experiencia de laboratorio o ejecutar las tareas o procedimientos relativos al trabajo. Puede ser de extensión variable y contener explicaciones adicionales en cuanto al manejo de las herramientas utilizadas, los principios físicos o matemáticos que se describen o utilizan.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Descripción de las herramientas utilizadas:** Toda herramienta utilizada, ya sea código de programación o materiales externos o de elaboración propia deberán estar acompañadas de una explicación de su funcionamiento que de cuentas de que rol cumplen en el desarrollo del trabajo. Ejemplo: comentar el código utilizado (aunque no fuera de elaboración propia) describiendo el trabajo que realiza cada bloque o sección del mismo. Explicar el funcionamiento de piezas, herramientas o materiales empleados que no resulten evidentes o de uso cotidiano.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Consideraciones sobre el uso de la tecnología:** Análisis crítico sobre la conveniencia o no del empleo de las herramientas tecnológicas utilizadas en el trabajo en relación a experiencias equivalentes o similares que utilicen otros materiales más tradicionales n</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Reflexiones o conclusiones:** Deberán estar en relación a los objetivos propuestos para el trabajo.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aportes teóricos</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>El uso de las herramientas tecnológicas para facilitar tareas o mejorar procesos son inherentes al desarrollo del ser humano como tal. Sin embargo, la reflexión sobre la conveniencia o la efectividad de las mismas en relación a los objetivos por que se las han desarrollado o utilizado en primer lugar y en comparación a opciones existentes o previas representa un ejercicio necesario para no ser víctimas de comportamientos tecnocráticos que perjudican tanto al conocimiento básico como a la tecnología por igual. Por eso, les comparto algunos trabajos académicos respecto del uso de la tecnología en situaciones de enseñanza-aprendizaje que podrían ayudar poner en contexto y en valor las herramientas empleadas durante la cursada con el objetivo de promover un uso criterioso y adecuado de las mismas, entendiendo por tecnología no sólo a los dispositivos eléctricos, mecánicos o computacionales sino en sentido más amplio, como todo conjunto de instrumentos, técnicas, procedimientos o habilidades.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">¿Cómo enseñar ciencias?</span><span class="co">](https://ddd.uab.cat/pub/edlc/02124521v17n2/02124521v17n2p179.pdf)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Teaching physics with python</span><span class="co">](https://www.iop.org/sites/default/files/2019-07/python.pdf)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Pytthon en un primer curso de física</span><span class="co">](https://web.mit.edu/fnl/volume/302/rebusco_et%20al.html)</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Aportes para la comprensión de la física a través de programas en Python</span><span class="co">](https://ria.utn.edu.ar/bitstream/handle/20.500.12272/8118/Aportaciones%20para%20la%20comprensi%C3%B3n....pdf?sequence=1)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Física Computacional: una propuesta educativa</span><span class="co">](https://www.fcfm.buap.mx/frojas/PDF/FisicaComputacionaalPython_SMFE.pdf)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Aprendizaje basado en Proyectos para la Enseñanza de Ciencias Físicas usando Arduino Physics Lab</span><span class="co">](https://riull.ull.es/xmlui/bitstream/handle/915/29552/J.%20Vidal%2c%20D.%20A.%20Bravo%20and%20C.%20F.%20Rengifo.pdf?sequence=1)</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste</span><span class="co">](https://indoc.uca.es/articulos/sol-201800111587-tra.pdf)</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recursos</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>A continuación se da una lista no exhaustiva de recursos con ejemplos y publicaciones para orientarse en las posibilidades existentes. Se los invita a buscar e investigar a conciencia para lograr un proyecto que pueda unir sus intereses personales con los de la carrera que están cursando.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Links Python</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Python para hacer física</span><span class="co">](https://marceluda.github.io/python-para-fisicos/)</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ajustes de curvas con interfaz gráfica</span><span class="co">](https://marceluda.github.io/python-para-fisicos/tuto/labo2/toolkit_ajustes/)</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Orbitales atómicos</span><span class="co">](https://marceluda.github.io/python-para-fisicos/tuto/orbitales/)</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Óptica del rayo con Python</span><span class="co">](http://blog.espol.edu.ec/ccpg1001/category/unidades/unidad-9-fisica-con-python-opcional/)</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Links Arduino</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Sensores de bajo coste en el laboratorio de Física</span><span class="co">](https://fisica-arduino.gitbook.io/sensores)</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Taller Física con Arduino</span><span class="co">](https://smarterphysics.blogspot.com/p/taller-fisica-con-arduino.html)</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Experimentos de física (en alemán, pero se puede traducir facilmente)</span><span class="co">](https://stoppi-homemade-physics.de/)</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Controlador MIDI</span><span class="co">](https://baldwisdom.com/usb-midi-controller-theremin-style-on-arduino-uno/)</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Controlador de música lumínico</span><span class="co">](https://physicslight.wordpress.com/2013/10/25/psychedelic-music-arduino/)</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Microscopio Láser</span><span class="co">](https://www.instructables.com/Scanning-Laser-Microscope-With-Arduino/)</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Aprendizaje basado en proyectos con Arduino</span><span class="co">](http://lajpe.org/dec18/12_4_14.pdf)</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Aprender física con Arduino</span><span class="co">](https://uvadoc.uva.es/bitstream/handle/10324/43373/TFM-G1248.pdf?sequence=1)</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Proyectos de computación física con Arduino</span><span class="co">](https://lopegonzalez.es/eso-y-bachillerato/computacion-y-robotica-2o-eso/tema-4-fundamentos-de-la-computacion-fisica/proyectos-de-computacion-fisica-con-arduino/)</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Experimentos de física utilizando Arduino (Revista enseñanza de la física)</span><span class="co">](https://ri.conicet.gov.ar/bitstream/handle/11336/61251/CONICET_Digital_Nro.78a479e2-e021-46cd-abb2-a16b425afefb_A.pdf)</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Aprendizaje basado en proyectos usando Arduino</span><span class="co">](https://www.ucentral.cl/ucentral/site/docs/20220930/20220930121511/arduino_f.pdf)</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Desarrollando experimentos utilizando la robótica de Arduino en la asignatura de Física de 2º de Bachillerato</span><span class="co">](https://repositorio.unican.es/xmlui/bitstream/handle/10902/22653/SantamartadelRiveroMaria.pdf?sequence=1)</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Proyectos para Aruino (Web con muchos proyectos)</span><span class="co">](https://proyectosinteresantes.com/)</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Circuito RC </span><span class="co">](https://jornadasctei.unr.edu.ar/estudio-de-un-circuito-rc-mediante-la-plataforma-arduino-una-propuesta-de-aula/)</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste</span><span class="co">](https://indoc.uca.es/articulos/sol-201800111587-tra.pdf)</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Formación en Física Experimental mediada con Arduino (INSPT)</span><span class="co">](https://profesorcharly.wordpress.com/wp-content/uploads/2018/06/formacic3b3n-en-fc3adsica-experimental-mediada-con-arduino.pdf)</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Esperiencias de Física con Arduino para la Tecnología en la Secundaria</span><span class="co">](https://www.researchgate.net/publication/320686169_Esperiencias_de_Fisica_con_Arduino_para_la_Tecnologia_en_la_Secundaria)</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Creación de carro funcional con arduino para la enseñanza de la física</span><span class="co">](https://www.researchgate.net/publication/360240244_Creacion_de_carro_funcional_con_arduino_para_la_ensenanza_de_la_fisica_Criacao_de_um_carrinho_funcional_com_arduino_para_o_ensino_da_fisica)</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Videos</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Fisica Arduino (en portugués)</span><span class="co">](https://youtube.com/playlist?list=PL9PJqFxm8gqAm0hv6lqCGOozq6bvRIO_x&amp;si=irwuZdmqqmUn3Amo)</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ondas estacionarias</span><span class="co">](https://www.youtube.com/watch?v=6CyMfOgkfvI)</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Termómetro con luz</span><span class="co">](https://www.youtube.com/watch?v=HwE6PdPQPv4)</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Proyectos varios (en inglés)</span><span class="co">](https://youtu.be/S0ezrmLNWUs?si=MEBaFmKj6preKJTB)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

@@ -75,7 +75,6 @@ delay(500);
 motor.write(ANG);
 }
 
-
 ```
 
 ## Actividades
@@ -91,7 +90,9 @@ motor.write(ANG);
 - [Proyectos usando el sensor ultrasónico](https://proyectosconarduino.com/sensores/sensor-de-distancia-hc-sr04/?expand_article=1)
 
 ## Video tutorial de servomotores en Arduino
+
 {{< video https://youtu.be/6bPVZg17vKc?si=IItqUcN2aR88ZWMY >}}
 
 ## Alimentación externa para Arduino
+
 {{< video https://youtu.be/9SKD_p9sFcI?si=m8Fmv-sWjBGs5RF5 >}}

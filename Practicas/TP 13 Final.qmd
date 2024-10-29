@@ -1,0 +1,84 @@
+---
+title: "TP 13 Trabajo de final"
+format: 
+    html: 
+        toc: true
+        number-sections: false
+        html-math-method: katex
+---
+
+# Trabajo de final
+
+## Regularización de la materia
+
+La regularización de la materia requerirá (junto a la aprobación del primer parcial) de la presentación, a modo de segundo parcial, de una introducción conceptual y justificación del proyecto elegido como trabajo de final cuyos requisitos se describen a continuación.
+
+## Descripción general
+
+El trabajo consistirá en una aplicación de las herramientas vistas durante la cursada a una situación experimental o de didáctica de la física (que por supuesto, puede ser experimental). Se puede pensar en aplicaciones que utilicen la placa Arduino, Python como lenguaje de programación o ambos elementos en conjunto.
+
+El trabajo no deberá seguir el formato de un informe de laboratorio formal, pero puede incluir sus secciones o estructuras si el desarrollo de la experiencia lo requiriera (por ejemplo para describir un montaje experimental o desarrollo teórico).
+
+Tampoco deberá atenerse a los formatos de publicaciones científicas, pero pueden usarse sus
+
+### Elementos del documento
+
+Los nombres son sólo a fines ilustrativos y pueden ser elegidos por los estudiantes acorde a especificidad o conveniencia. Pueden ser secciones por separado, alterarse el orden siempre y cuando se garantice la presencia de los contenidos.
+
+-   **Introducción, descripción y justificación:** Se deberá entrega antes de finalizar la cursada para regularizar. En ella se describe a grandes rasgos el trabajo en cuanto a los objetivos que persigue y las herramientas utilizadas. Puede ser modificada para la versión final del trabajo.
+-   **Materiales necesarios:** Listado de elementos necesarios con su descripción o detalle según sea conveniente (componentes electrónicos, software u otros elementos físicos)
+-   **Desarrollo de la experiencia:** Describe lo que se hizo (o debería hacerse) para llevar a cabo la experiencia de laboratorio o ejecutar las tareas o procedimientos relativos al trabajo. Puede ser de extensión variable y contener explicaciones adicionales en cuanto al manejo de las herramientas utilizadas, los principios físicos o matemáticos que se describen o utilizan.
+-   **Descripción de las herramientas utilizadas:** Toda herramienta utilizada, ya sea código de programación o materiales externos o de elaboración propia deberán estar acompañadas de una explicación de su funcionamiento que de cuentas de que rol cumplen en el desarrollo del trabajo. Ejemplo: comentar el código utilizado (aunque no fuera de elaboración propia) describiendo el trabajo que realiza cada bloque o sección del mismo. Explicar el funcionamiento de piezas, herramientas o materiales empleados que no resulten evidentes o de uso cotidiano.
+-   **Consideraciones sobre el uso de la tecnología:** Análisis crítico sobre la conveniencia o no del empleo de las herramientas tecnológicas utilizadas en el trabajo en relación a experiencias equivalentes o similares que utilicen otros materiales más tradicionales n
+-   **Reflexiones o conclusiones:** Deberán estar en relación a los objetivos propuestos para el trabajo.
+
+## Aportes teóricos
+
+El uso de las herramientas tecnológicas para facilitar tareas o mejorar procesos son inherentes al desarrollo del ser humano como tal. Sin embargo, la reflexión sobre la conveniencia o la efectividad de las mismas en relación a los objetivos por que se las han desarrollado o utilizado en primer lugar y en comparación a opciones existentes o previas representa un ejercicio necesario para no ser víctimas de comportamientos tecnocráticos que perjudican tanto al conocimiento básico como a la tecnología por igual. Por eso, les comparto algunos trabajos académicos respecto del uso de la tecnología en situaciones de enseñanza-aprendizaje que podrían ayudar poner en contexto y en valor las herramientas empleadas durante la cursada con el objetivo de promover un uso criterioso y adecuado de las mismas, entendiendo por tecnología no sólo a los dispositivos eléctricos, mecánicos o computacionales sino en sentido más amplio, como todo conjunto de instrumentos, técnicas, procedimientos o habilidades.
+
+-   [¿Cómo enseñar ciencias?](https://ddd.uab.cat/pub/edlc/02124521v17n2/02124521v17n2p179.pdf)
+-   [Teaching physics with python](https://www.iop.org/sites/default/files/2019-07/python.pdf)
+-   [Pytthon en un primer curso de física](https://web.mit.edu/fnl/volume/302/rebusco_et%20al.html)
+-   [Aportes para la comprensión de la física a través de programas en Python](https://ria.utn.edu.ar/bitstream/handle/20.500.12272/8118/Aportaciones%20para%20la%20comprensi%C3%B3n....pdf?sequence=1)
+-   [Física Computacional: una propuesta educativa](https://www.fcfm.buap.mx/frojas/PDF/FisicaComputacionaalPython_SMFE.pdf)
+-   [Aprendizaje basado en Proyectos para la Enseñanza de Ciencias Físicas usando Arduino Physics Lab](https://riull.ull.es/xmlui/bitstream/handle/915/29552/J.%20Vidal%2c%20D.%20A.%20Bravo%20and%20C.%20F.%20Rengifo.pdf?sequence=1)
+-   [Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste](https://indoc.uca.es/articulos/sol-201800111587-tra.pdf)
+
+## Recursos
+
+A continuación se da una lista no exhaustiva de recursos con ejemplos y publicaciones para orientarse en las posibilidades existentes. Se los invita a buscar e investigar a conciencia para lograr un proyecto que pueda unir sus intereses personales con los de la carrera que están cursando.
+
+### Links Python
+
+-   [Python para hacer física](https://marceluda.github.io/python-para-fisicos/)
+-   [Ajustes de curvas con interfaz gráfica](https://marceluda.github.io/python-para-fisicos/tuto/labo2/toolkit_ajustes/)
+-   [Orbitales atómicos](https://marceluda.github.io/python-para-fisicos/tuto/orbitales/)
+-   [Óptica del rayo con Python](http://blog.espol.edu.ec/ccpg1001/category/unidades/unidad-9-fisica-con-python-opcional/)
+
+### Links Arduino
+
+-   [Sensores de bajo coste en el laboratorio de Física](https://fisica-arduino.gitbook.io/sensores)
+-   [Taller Física con Arduino](https://smarterphysics.blogspot.com/p/taller-fisica-con-arduino.html)
+-   [Experimentos de física (en alemán, pero se puede traducir facilmente)](https://stoppi-homemade-physics.de/)
+-   [Controlador MIDI](https://baldwisdom.com/usb-midi-controller-theremin-style-on-arduino-uno/)
+-   [Controlador de música lumínico](https://physicslight.wordpress.com/2013/10/25/psychedelic-music-arduino/)
+-   [Microscopio Láser](https://www.instructables.com/Scanning-Laser-Microscope-With-Arduino/)
+-   [Aprendizaje basado en proyectos con Arduino](http://lajpe.org/dec18/12_4_14.pdf)
+-   [Aprender física con Arduino](https://uvadoc.uva.es/bitstream/handle/10324/43373/TFM-G1248.pdf?sequence=1)
+-   [Proyectos de computación física con Arduino](https://lopegonzalez.es/eso-y-bachillerato/computacion-y-robotica-2o-eso/tema-4-fundamentos-de-la-computacion-fisica/proyectos-de-computacion-fisica-con-arduino/)
+-   [Experimentos de física utilizando Arduino (Revista enseñanza de la física)](https://ri.conicet.gov.ar/bitstream/handle/11336/61251/CONICET_Digital_Nro.78a479e2-e021-46cd-abb2-a16b425afefb_A.pdf)
+-   [Aprendizaje basado en proyectos usando Arduino](https://www.ucentral.cl/ucentral/site/docs/20220930/20220930121511/arduino_f.pdf)
+-   [Desarrollando experimentos utilizando la robótica de Arduino en la asignatura de Física de 2º de Bachillerato](https://repositorio.unican.es/xmlui/bitstream/handle/10902/22653/SantamartadelRiveroMaria.pdf?sequence=1)
+-   [Proyectos para Aruino (Web con muchos proyectos)](https://proyectosinteresantes.com/)
+-   [Circuito RC ](https://jornadasctei.unr.edu.ar/estudio-de-un-circuito-rc-mediante-la-plataforma-arduino-una-propuesta-de-aula/)
+-   [Mejorando una práctica del laboratorio docente de Física mediante el uso de Arduino y de sensores de bajo coste](https://indoc.uca.es/articulos/sol-201800111587-tra.pdf)
+-   [Formación en Física Experimental mediada con Arduino (INSPT)](https://profesorcharly.wordpress.com/wp-content/uploads/2018/06/formacic3b3n-en-fc3adsica-experimental-mediada-con-arduino.pdf)
+-   [Esperiencias de Física con Arduino para la Tecnología en la Secundaria](https://www.researchgate.net/publication/320686169_Esperiencias_de_Fisica_con_Arduino_para_la_Tecnologia_en_la_Secundaria)
+-   [Creación de carro funcional con arduino para la enseñanza de la física](https://www.researchgate.net/publication/360240244_Creacion_de_carro_funcional_con_arduino_para_la_ensenanza_de_la_fisica_Criacao_de_um_carrinho_funcional_com_arduino_para_o_ensino_da_fisica)
+
+### Videos
+
+-   [Fisica Arduino (en portugués)](https://youtube.com/playlist?list=PL9PJqFxm8gqAm0hv6lqCGOozq6bvRIO_x&si=irwuZdmqqmUn3Amo)
+-   [Ondas estacionarias](https://www.youtube.com/watch?v=6CyMfOgkfvI)
+-   [Termómetro con luz](https://www.youtube.com/watch?v=HwE6PdPQPv4)
+-   [Proyectos varios (en inglés)](https://youtu.be/S0ezrmLNWUs?si=MEBaFmKj6preKJTB)
